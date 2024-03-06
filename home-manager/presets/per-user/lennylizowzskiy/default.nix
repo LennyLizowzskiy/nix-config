@@ -40,9 +40,11 @@ in
     ./configs/dev/java.nix
 
     ./configs/gui/apps/obs.nix
-    ./configs/gui/apps/theming-gtkqt.nix
+    # ./configs/gui/apps/theming-gtkqt.nix
+    ./configs/stylix.nix
     ./configs/gui/apps/gaming/mangohud.nix
-    ./configs/gui/apps/terminals/kitty.nix
+    # ./configs/gui/apps/terminals/kitty.nix
+    ./configs/gui/apps/terminals/alacritty.nix
     # ./configs/gui/apps/text-editors/vscode.nix
 
     # ./configs/gui/de/hypr/hyprland-full.nix

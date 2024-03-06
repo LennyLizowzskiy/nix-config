@@ -23,9 +23,12 @@
 
     nixos-hardware.url = github:NixOS/nixos-hardware;
 
-    # kde2nix.url = github:K900/nixpkgs/plasma-6;
-	  # kde2nix.inputs.nixpkgs.follows = "nixpkgs";
-	
+    stylix = {
+      url = github:danth/stylix;
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
     rust-overlay = {
       url = github:oxalica/rust-overlay;
       inputs.nixpkgs.follows = "nixpkgs";

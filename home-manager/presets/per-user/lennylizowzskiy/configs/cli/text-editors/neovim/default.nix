@@ -1,6 +1,10 @@
 { pkgs, config, ... }:
 
 {
+  home.packages = with pkgs; [
+    neovide
+  ];
+
   programs.neovim = {
     enable = true;
 
@@ -11,16 +15,23 @@
       unzip
       gnutar
       gzip
-      
+
+      fd
+      ripgrep
+
+      just
+
+      zig
+      gcc
+      rocmPackages.llvm.clang
+
       nodePackages_latest.prettier
       stylua
-      just
-      rustfmt
       shfmt
       yamlfmt
       lua54Packages.luacheck
       nixd
-      rust-analyzer
+      rust-analyzer # replace with 
       jdt-language-server
       luajitPackages.lua-lsp
     ];

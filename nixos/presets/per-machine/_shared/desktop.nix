@@ -4,7 +4,8 @@
   imports = [
     ./common.nix
     ./specifics/distrobox.nix
-    ./specifics/fonts.nix
+    # ./specifics/fonts.nix
+    ./specifics/stylix.nix
     ./specifics/gamemode.nix
     ./specifics/git.nix
     ./specifics/graphics.nix
