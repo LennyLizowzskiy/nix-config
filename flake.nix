@@ -101,23 +101,5 @@
             ];
           };
         };
-        
-
-      # homeConfigurations =
-      #   let
-      #     mkHomeConf = { args ? {}, modules ? [], isGenericLinux ? false }: with inputs;
-      #       inputs.home-manager.lib.homeManagerConfiguration {
-
-      #       };
-      #   in
-      #   {
-      #     genericLinux-desktop-x86 = mkHomeConf {
-
-      #     };
-
-      #     genericLinux-server-x86 = mkHomeConf {
-
-      #     };
-      #   };
     };
 }
