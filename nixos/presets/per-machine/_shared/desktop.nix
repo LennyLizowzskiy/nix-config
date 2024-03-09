@@ -30,6 +30,8 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    wl-clipboard-x11
+
     steam-run # FHS env on demand
 
     genymotion

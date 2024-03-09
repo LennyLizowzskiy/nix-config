@@ -1,6 +1,8 @@
 { pkgs, config, ... }:
 
 {
+  home.file.".vim/plugins/telescope-fzf-native-nvim".source = pkgs.vimPlugins.telescope-fzf-native-nvim.out;
+
   home.packages = with pkgs; [
     neovide
   ];
@@ -15,25 +17,44 @@
       unzip
       gnutar
       gzip
-
       fd
       ripgrep
+      fzf
+      gnumake
+      cmake
 
       just
+      tree-sitter
 
+      nodePackages.nodejs
       zig
       gcc
+      typescript
       rocmPackages.llvm.clang
 
-      nodePackages_latest.prettier
+      taplo
+      biome
+
+      prettierd
+      nodePackages.prettier-plugin-toml
+      markdownlint-cli2
       stylua
-      shfmt
-      yamlfmt
-      lua54Packages.luacheck
+      ruff
+      shellcheck
+      # rustfmt and clippy defined in rust.nix
+
+      vscode-extensions.vadimcn.vscode-lldb.adapter
+
+      slint-lsp
+      nodePackages.typescript-language-server
       nixd
-      rust-analyzer # replace with 
-      jdt-language-server
-      luajitPackages.lua-lsp
+      vscode-langservers-extracted
+      lua-language-server
+      tailwindcss-language-server
+      typst-lsp
+      ruff
+      zls
+      # rust-analyzer defined in rust.nix
     ];
   };
 

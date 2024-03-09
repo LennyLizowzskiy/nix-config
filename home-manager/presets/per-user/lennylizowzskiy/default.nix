@@ -23,6 +23,7 @@ in
     ./configs/cli/less.nix
     ./configs/cli/yt-dlp.nix
     ./configs/cli/zoxide.nix
+    ./configs/cli/zellij.nix
     ./configs/cli/file-managers/lf
     ./configs/cli/git/git-cliff.nix
     # ./configs/cli/git/git-cred-oauth.nix
@@ -34,6 +35,7 @@ in
 
     ./configs/cli/text-editors/micro.nix
     ./configs/cli/text-editors/neovim
+    ./configs/cli/text-editors/helix
 
     ./configs/dev/android-sdk.nix
     ./configs/dev/direnv.nix
@@ -43,8 +45,11 @@ in
     # ./configs/gui/apps/theming-gtkqt.nix
     ./configs/stylix.nix
     ./configs/gui/apps/gaming/mangohud.nix
+
     # ./configs/gui/apps/terminals/kitty.nix
     ./configs/gui/apps/terminals/alacritty.nix
+    ./configs/gui/apps/terminals/foot.nix
+
     # ./configs/gui/apps/text-editors/vscode.nix
 
     # ./configs/gui/de/hypr/hyprland-full.nix
