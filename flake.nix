@@ -2,7 +2,7 @@
   description = "liz's nix configuration";
 
   inputs = {
-    # flake-utils.url = github:numtide/flake-utils;
+    flake-utils.url = github:numtide/flake-utils;
 
     nixpkgs.url = github:nixos/nixpkgs/nixos-unstable;
     nixpkgs-stable.url = github:nixos/nixpkgs/nixos-23.11;
@@ -66,7 +66,7 @@
               specialArgs = {
                 inherit inputs enableGui;
 
-                # etc = import ./etc;
+                etc = import ./etc;
                 etcDir = ./etc;
                 shared = import ./_shared;
                 sharedDir = ./_shared;
@@ -80,6 +80,10 @@
                       
                     })
                   ] ++ sharedOverlays;
+
+                  nixpkgs.config.permittedInsecurePackages = [
+                    "nix-2.16.2"
+                  ];
                 })
               ] ++ modules;
             };

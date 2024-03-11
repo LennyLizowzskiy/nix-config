@@ -22,6 +22,6 @@
   documentation.man.enable = false;
 
   environment.systemPackages = with pkgs; [
-    
+    just
   ] ++ ((import "${sharedDir}/presets/packages/common.nix") pkgs);
 }

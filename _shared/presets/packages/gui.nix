@@ -13,7 +13,7 @@ with pkgs; [
   figma-linux
   vesktop
   figma-linux
-  gimp-with-plugins
+  gimp
   inkscape-with-extensions
   nicotine-plus
   onlyoffice-bin
