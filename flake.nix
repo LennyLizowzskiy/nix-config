@@ -2,7 +2,7 @@
   description = "liz's nix configuration";
 
   inputs = {
-    flake-utils.url = github:numtide/flake-utils;
+    # flake-utils.url = github:numtide/flake-utils;
 
     nixpkgs.url = github:nixos/nixpkgs/nixos-unstable;
     nixpkgs-stable.url = github:nixos/nixpkgs/nixos-23.11;
@@ -47,7 +47,7 @@
       sharedOverlays = [
         android-nixpkgs.overlays.default
         rust-overlay.overlays.default
-        
+
         (f: p: {
           stable = inputs.nixpkgs-stable.legacyPackages.${p.system};
           unfree = inputs.nixpkgs-unfree.legacyPackages.${p.system};
@@ -77,7 +77,7 @@
                 ({ ... }: {
                   nixpkgs.overlays = [
                     (f: p: {
-                      nixos-rebuild = f.stable.nixos-rebuild;
+                      
                     })
                   ] ++ sharedOverlays;
                 })

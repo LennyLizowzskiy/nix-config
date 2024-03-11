@@ -31,10 +31,11 @@
 
   environment.systemPackages = with pkgs; [
     wl-clipboard-x11
-
+    
     steam-run # FHS env on demand
 
     genymotion
+    httpie
   ] ++ ((import "${sharedDir}/presets/packages/gui.nix") pkgs);
 
   services.flatpak.enable = true;

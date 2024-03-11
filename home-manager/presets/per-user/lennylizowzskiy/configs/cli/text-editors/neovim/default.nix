@@ -1,11 +1,18 @@
-{ pkgs, config, ... }:
+{ pkgs, lib, config, ... }:
 
+let
+  vimResPath = ".vim";
+  mkVimPluginPaths = with lib; (plugins:
+    builtins.foldl' (acc: x: acc // { "${vimResPath}/plugins/${x.pname}".source = x; }) {} plugins
+  );
+in
 {
-  home.file.".vim/plugins/telescope-fzf-native-nvim".source = pkgs.vimPlugins.telescope-fzf-native-nvim.out;
-
-  home.packages = with pkgs; [
-    neovide
-  ];
+  home.file = (mkVimPluginPaths (with pkgs.vimPlugins; [
+    telescope-fzf-native-nvim
+    nvim-treesitter.withAllGrammars
+  ])) // {
+    "${vimResPath}/etc/vscode-codelldb".source = pkgs.vscode-extensions.vadimcn.vscode-lldb.adapter.out;
+  };
 
   programs.neovim = {
     enable = true;
@@ -22,6 +29,9 @@
       fzf
       gnumake
       cmake
+      html-tidy
+      jaq
+      curl
 
       just
       tree-sitter
@@ -42,8 +52,6 @@
       ruff
       shellcheck
       # rustfmt and clippy defined in rust.nix
-
-      vscode-extensions.vadimcn.vscode-lldb.adapter
 
       slint-lsp
       nodePackages.typescript-language-server
