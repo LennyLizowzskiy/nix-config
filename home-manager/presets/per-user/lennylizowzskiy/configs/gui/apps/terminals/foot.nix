@@ -4,11 +4,13 @@
   programs.foot = {
     enable = true;
     settings = {
+      main = {
+        dpi-aware = "yes";
+      };
+
       mouse = {
         hide-when-typing = "yes";
       };
-
-      dpi-aware = "yes";
 
       key-bindings = {
         scrollback-up-page = "none";

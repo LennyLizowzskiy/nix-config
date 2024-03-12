@@ -37,6 +37,8 @@ in
       tree-sitter
 
       nodePackages.nodejs
+      yarn
+      
       zig
       gcc
       typescript
@@ -57,6 +59,7 @@ in
       nodePackages.typescript-language-server
       nixd
       vscode-langservers-extracted
+      marksman
       lua-language-server
       tailwindcss-language-server
       typst-lsp
