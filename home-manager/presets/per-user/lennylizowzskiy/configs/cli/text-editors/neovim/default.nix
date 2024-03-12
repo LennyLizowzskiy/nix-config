@@ -8,8 +8,7 @@ let
 in
 {
   home.file = (mkVimPluginPaths (with pkgs.vimPlugins; [
-    telescope-fzf-native-nvim
-    nvim-treesitter.withAllGrammars
+    
   ])) // {
     "${vimResPath}/etc/vscode-codelldb".source = pkgs.vscode-extensions.vadimcn.vscode-lldb.adapter.out;
   };
@@ -29,7 +28,7 @@ in
       fzf
       gnumake
       cmake
-      html-tidy
+      jq
       jaq
       curl
 
@@ -46,6 +45,7 @@ in
 
       taplo
       biome
+      html-tidy
 
       prettierd
       nodePackages.prettier-plugin-toml

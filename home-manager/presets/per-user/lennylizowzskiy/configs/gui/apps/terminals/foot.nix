@@ -1,11 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   programs.foot = {
     enable = true;
     settings = {
       main = {
-        dpi-aware = "yes";
+        dpi-aware = lib.mkForce "yes";
       };
 
       mouse = {
