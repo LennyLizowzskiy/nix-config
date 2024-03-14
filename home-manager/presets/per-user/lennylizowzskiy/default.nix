@@ -11,7 +11,8 @@ in
     inputs.personalPkgs.homeManagerModules.default
 
     ./configs/nix.nix
-    ./configs/boilerplate.nix
+    ./configs/stylix.nix
+    # ./configs/boilerplate.nix
 
     ./configs/cli/aria2.nix
     ./configs/cli/bat.nix
@@ -29,7 +30,7 @@ in
     # ./configs/cli/git/git-cred-oauth.nix
     ./configs/cli/git/git.nix
     ./configs/cli/git/lazygit.nix
-    
+
     # ./configs/cli/shell/fish.nix
     ./configs/cli/shell/nushell
 
@@ -43,8 +44,8 @@ in
 
     ./configs/gui/apps/obs.nix
     # ./configs/gui/apps/theming-gtkqt.nix
-    ./configs/stylix.nix
     ./configs/gui/apps/gaming/mangohud.nix
+    ./configs/gui/apps/obsidian.nix
 
     # ./configs/gui/apps/terminals/kitty.nix
     ./configs/gui/apps/terminals/alacritty.nix
@@ -62,6 +63,4 @@ in
     userName  = "Lenny Lizowzskiy";
     userEmail = "contact@lizowzskiy.su";
   };
-
-  
 }

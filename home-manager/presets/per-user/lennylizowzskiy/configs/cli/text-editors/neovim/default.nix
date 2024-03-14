@@ -63,6 +63,7 @@ in
       lua-language-server
       tailwindcss-language-server
       typst-lsp
+      ols
       ruff
       zls
       # rust-analyzer defined in rust.nix
