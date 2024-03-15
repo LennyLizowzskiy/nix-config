@@ -1,4 +1,4 @@
-{ pkgs, rootDir, sharedDir, ... }:
+{ pkgs, rootDir, lib, sharedDir, ... }:
 
 {
   imports = [
@@ -31,7 +31,7 @@
 
   environment.systemPackages = with pkgs; [
     wl-clipboard-x11
-    
+
     steam-run # FHS env on demand
 
     genymotion
@@ -46,14 +46,14 @@
     kernelPackages = pkgs.linuxPackages_zen;
 
     extraModulePackages = with pkgs.linuxKernel.packages.linux_zen; [
-      xpadneo
-      xone
+      # xpadneo
+      # xone
     ];
   };
 
   environment.sessionVariables = {
-    EDITOR = "micro";
-    VISUAL = "micro";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
   };
 
   # "A fuse filesystem that dynamically populates contents of /bin and /usr/bin/ so that it contains all executables from the PATH of the requesting process"
