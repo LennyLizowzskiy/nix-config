@@ -1,0 +1,12 @@
+return {
+  {
+    "echasnovski/mini.notify",
+    version = "*",
+    event = "VimEnter",
+    opts = {
+      lsp_progress = {
+        enable = false,
+      },
+    },
+  },
+}
