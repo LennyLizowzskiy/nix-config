@@ -22,11 +22,6 @@ return {
       require("mini.comment").setup()
     end,
   },
-  --   { -- better quickfix window
-  --
-  --   },
-  { -- [ & ] moves
-  },
   { -- align text
     "echasnovski/mini.align",
     version = false,
@@ -55,8 +50,6 @@ return {
       "Note",
       "NoteIndex",
     },
-  },
-  { -- per-window buffer scope
   },
   { -- search and replace
     "nvim-pack/nvim-spectre",

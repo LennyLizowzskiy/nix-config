@@ -6,4 +6,4 @@ system-update-full:
     just system-update
 
 force-link-dots:
-    bash ./etc/link-dots.sh ./etc/dots
+    ./etc/link-dots.sh ./dots

@@ -1,29 +1,21 @@
 #!/usr/bin/env bash
 
-# Check if a path was provided as a parameter
-if [ -z "$1" ]; then
-  echo "Usage: $0 path"
-  exit 1
-fi
+# force-link-dots
 
-# Set the source and target directories
-src_dir="$1"
-target_dir="$HOME/.config"
+# Get the directory where the script is located
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-# Loop through each directory in the source directory
-for dir in "$src_dir"/*/; do
-  # Set the name of the target directory
-  target="$target_dir/$(basename "$dir")"
+# Loop through each directory in the script's directory
+for dir in "$script_dir"/dots/*/; do
+    # Get the name of the directory
+    dir_name="$(basename "$dir")"
 
-  # Check if the target directory already exists and is a symbolic link
-  if [ -L "$target" ]; then
-    # Remove the existing symbolic link
-    rm "$target"
-  elif [ -d "$target" ]; then
-    # Remove the existing directory and all of its contents
-    rm -rf "$target"
-  fi
+    # Check if the respective folder in ~/.config exists or is a symlink
+    if [ -e ~/.config/"$dir_name" ] || [ -L ~/.config/"$dir_name" ]; then
+        # If it is, remove it
+        rm -rf ~/.config/"$dir_name"
+    fi
 
-  # Create a symbolic link from the target directory to the source directory
-  ln -s "$dir" "$target"
+    # Create a symlink from the directory to the respective folder in ~/.config
+    ln -s "$dir" ~/.config/"$dir_name"
 done

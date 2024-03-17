@@ -32,10 +32,10 @@
         minimize = "none";
         maximize = "none";
         fullscreen = "none";
-        pipe-visible = "none";
-        pipe-scrollback = "none";
-        pipe-selected = "none";
-        pipe-command-output = "[wl-copy]";
+        # pipe-visible = "none";
+        # pipe-scrollback = "none";
+        # pipe-selected = "none";
+        # pipe-command-output = "[wl-copy] none";
         show-urls-launch = "none";
         show-urls-copy = "none";
         show-urls-persistent = "none";
