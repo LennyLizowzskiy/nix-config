@@ -1,15 +1,7 @@
 return {
   {
     "smoka7/hop.nvim",
-    cmd = {
-      "HopWord",
-      "HopChar1",
-      "HopChar2",
-      "HopPattern",
-      "HopLine",
-      "HopLineStart",
-      "HopAnywhere",
-    },
+    event = "VeryLazy",
     keys = {
       { "<leader>ho", "<cmd>HopWord<cr>", desc = "Jump to any word (all windows)" },
       { "<leader>hO", "<cmd>HopWordMW<cr>", desc = "Jump to any word (all windows)" },

@@ -10,8 +10,8 @@ in
   };
 
   home.file = with pkgs; {
-    "${jdkDir}/8-temurin".source = temurin-bin-8;
+    # "${jdkDir}/8-temurin".source = temurin-bin-8;
     "${jdkDir}/17-temurin".source = temurin-bin-17;
-    "${jdkDir}/21-temurin".source = temurin-bin-21;
+    # "${jdkDir}/21-temurin".source = temurin-bin-21;
   };
 }

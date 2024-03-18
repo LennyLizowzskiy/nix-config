@@ -10,12 +10,9 @@ return {
     },
   },]]
   {
-    "vigoux/notifier.nvim",
+    "rcarriga/nvim-notify",
+    version = "*",
     event = "VimEnter",
-    opts = {
-      components = {
-        "nvim",
-      },
-    },
+    opts = {},
   },
 }

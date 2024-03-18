@@ -20,14 +20,14 @@ in
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
-    
+
     settings = {
       exec-once = [
         "hyprctl setcursor \"Phinger Cursors\" ${builtins.toString config.home.pointerCursor.size}"
       ];
 
       monitor = monitors.${nixosArgs.config.nixdiffs.machine.name};
-      
+
       xwayland = {
         force_zero_scaling = "true";
       };
@@ -82,7 +82,7 @@ in
 
       animations = {
         enabled = "yes";
-        
+
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
 
         animation = [
@@ -105,7 +105,7 @@ in
         workspace_swipe_cancel_ratio = "0.3";
       };
 
-      windowrule = 
+      windowrule =
         let
           pip = "title:^(Picture in picture)$";
           idea = "^jetbrains-idea.*";
@@ -117,7 +117,7 @@ in
         in
         [
           "tile, ^(lite-xl)$"
-          
+
           "pin, ${pip}"
           "float, ${pip}"
           "noborder, ${pip}"
@@ -156,10 +156,10 @@ in
         ];
 
       windowrulev2 = [
-        
+
       ];
 
-      bindm = 
+      bindm =
         let
           mainMod = "SUPER";
           buttons = {
@@ -171,8 +171,8 @@ in
           "${mainMod}, ${LMB}, movewindow"
           "${mainMod}, ${RMB}, resizewindow"
         ];
-    
-      bind = 
+
+      bind =
         let
           mainMod = "SUPER";
           buttons = {
@@ -202,7 +202,7 @@ in
           "SUPER SHIFT ALT, S, exec, ${screenshotAreaAndEdit}"
 
           "${mainMod}, Q, exec, kitty"
-          
+
           "${mainMod}, C, killactive,"
           "${mainMod}, M, exit,"
           "${mainMod}, D, togglefloating,"
@@ -245,7 +245,7 @@ in
           "${mainMod} SHIFT, 8, movetoworkspace, 8"
           "${mainMod} SHIFT, 9, movetoworkspace, 9"
           "${mainMod} SHIFT, 0, movetoworkspace, 10"
-          
+
           "${mainMod} ALT, 1, movetoworkspacesilent, 1"
           "${mainMod} ALT, 2, movetoworkspacesilent, 2"
           "${mainMod} ALT, 3, movetoworkspacesilent, 3"

@@ -1,14 +1,13 @@
 return {
   {
     "rest-nvim/rest.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = { {
+      "vhyrro/luarocks.nvim",
+      opts = {},
+    } },
     ft = "http",
-    opts = {
-      result = {
-        formatters = {
-          json = "jaq",
-        },
-      },
-    },
+    config = function()
+      require("rest-nvim").setup()
+    end,
   },
 }

@@ -77,6 +77,20 @@ return {
     "echasnovski/mini.trailspace",
     version = "*",
     event = "VimEnter",
+    keys = {
+      -- { "<leader>fs", [[<cmd>lua require'mini.trailspace'.trim()<cr>]], desc = "Trim all trailing whitespace" }, -- format space
+    },
+    init = function()
+      local augroup = vim.api.nvim_create_augroup("TrimTrailingWhitespace", {})
+
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        group = augroup,
+        pattern = "*",
+        callback = function()
+          require("mini.trailspace").trim()
+        end,
+      })
+    end,
     opts = {},
   },
   { -- split and join blocks of code
