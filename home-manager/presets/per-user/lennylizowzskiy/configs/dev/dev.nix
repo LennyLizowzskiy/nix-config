@@ -24,11 +24,12 @@
     wasmer
     yarn
 
-    ## compilers & runtimes
+    ## compilers, linkers & runtimes
     nodePackages.nodejs
     python3
     zig
     gcc
+    mold
     odin
     typescript
     llvmPackages_latest.llvm

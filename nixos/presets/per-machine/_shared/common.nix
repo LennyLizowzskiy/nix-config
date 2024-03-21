@@ -1,4 +1,4 @@
-{ pkgs, sharedDir, ... }@inputs:
+{ pkgs, lib, sharedDir, ... }@inputs:
 
 {
   imports = [
@@ -20,6 +20,8 @@
   # programs.nix-ld.dev.enable = true;
 
   documentation.man.enable = false;
+
+  programs.gnupg.agent.pinentryPackage = lib.mkForce pkgs.pinentry-all;
 
   environment.systemPackages = with pkgs; [
     just
