@@ -14,10 +14,15 @@
     cargo-leptos
     slint-lsp
 
-    rustc
-    cargo
-    rustup
-    clippy
+    (rust-bin.stable.latest.default.override {
+      extensions = [
+        "rust-analyzer"
+      ];
+
+      targets = [
+        "x86_64-pc-windows-gnu"
+      ];
+    })
 
     ## cargo plugins
     cargo-expand

@@ -30,7 +30,7 @@
     };
 
     rust-overlay = {
-      url = github:oxalica/rust-overlay;
+      url = github:oxalica/rust-overlay/stable;
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
@@ -49,6 +49,8 @@
         rust-overlay.overlays.default
 
         (f: p: {
+          clang = p.lib.hiPrio p.clang;
+
           stable = inputs.nixpkgs-stable.legacyPackages.${p.system};
           unfree = inputs.nixpkgs-unfree.legacyPackages.${p.system};
         })
@@ -77,7 +79,7 @@
                 ({ ... }: {
                   nixpkgs.overlays = [
                     (f: p: {
-                      
+
                     })
                   ] ++ sharedOverlays;
 
