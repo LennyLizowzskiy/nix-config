@@ -59,5 +59,5 @@
     # pyre # py lsp (type-checker)
     zls # zig lsp
     # rust-analyzer defined in rust.nix
-    ];
+  ];
 }

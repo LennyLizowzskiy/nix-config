@@ -20,6 +20,7 @@ in
   home.shellAliases = {
     vi = "nvim";
     vim = "nvim";
+    n = "nvim";
   };
 
   # xdg.configFile = {
