@@ -13,14 +13,17 @@
     leptosfmt
     cargo-leptos
     slint-lsp
+    trunk
 
     (rust-bin.stable.latest.default.override {
       extensions = [
+        "rust-src"
         "rust-analyzer"
       ];
 
       targets = [
         "x86_64-pc-windows-gnu"
+        "wasm32-unknown-unknown"
       ];
     })
 

@@ -11,7 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.cmd("runtime! lua/*.lua")
+-- vim.cmd("runtime! lua/*.lua")
+require("bindings")
+require("vim-options")
 
 require("lazy").setup({
   { import = "plugins" },

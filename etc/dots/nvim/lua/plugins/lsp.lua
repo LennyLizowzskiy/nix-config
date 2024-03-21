@@ -33,6 +33,7 @@ return {
   },
   {
     "Wansmer/symbol-usage.nvim",
+    optional = true,
     event = "BufReadPre",
     opts = {},
   },
@@ -44,10 +45,15 @@ return {
       vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
         update_in_insert = true,
       })
+
+      -- local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
+      -- for type, icon in pairs(signs) do
+      --   local hl = "DiagnosticSign" .. type
+      --   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+      -- end
     end,
     config = function()
       local cfg = require("lspconfig")
-
       cfg.lua_ls.setup({
         settings = {
           Lua = {

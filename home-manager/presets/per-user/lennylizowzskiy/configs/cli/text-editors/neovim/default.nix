@@ -8,7 +8,7 @@
 # in
 {
   home.packages = with pkgs; [
-    neovim
+    neovim-nightly
   ];
 
   home.shellAliases = {

@@ -40,6 +40,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+
+    neovim-nightly.url = github:nix-community/neovim-nightly-overlay;
   };
 
   outputs = { self, ... }@inputs: with inputs;
@@ -51,8 +53,10 @@
         (f: p: {
           clang = p.lib.hiPrio p.clang;
 
-          stable = inputs.nixpkgs-stable.legacyPackages.${p.system};
-          unfree = inputs.nixpkgs-unfree.legacyPackages.${p.system};
+          neovim-nightly = neovim-nightly.packages.${p.system}.default;
+
+          stable = nixpkgs-stable.legacyPackages.${p.system};
+          unfree = nixpkgs-unfree.legacyPackages.${p.system};
         })
       ];
     in
