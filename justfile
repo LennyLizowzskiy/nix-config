@@ -1,10 +1,10 @@
 pull:
-    git pull
+    git pull origin main
 
 push:
     git add -A
     git commit -m "+"
-    git push
+    git push origin main
 
 system-update:
     rm -f ~/gtkrc-2.0*
