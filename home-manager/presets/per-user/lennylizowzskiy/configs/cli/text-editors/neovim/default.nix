@@ -1,18 +1,12 @@
 { pkgs, lib, config, ... }:
 
-let
-  vimResPath = ".vim";
-  mkVimPluginPaths = with lib; (plugins:
-    builtins.foldl' (acc: x: acc // { "${vimResPath}/plugins/${x.pname}".source = x; }) {} plugins
-  );
-in
+# let
+  #vimResPath = ".vim";
+  #mkVimPluginPaths = with lib; (plugins:
+  #  builtins.foldl' (acc: x: acc // { "${vimResPath}/plugins/${x.pname}".source = x; }) {} plugins
+  #);
+# in
 {
-  home.file = (mkVimPluginPaths (with pkgs.vimPlugins; [
-
-  ])) // {
-    "${vimResPath}/etc/vscode-codelldb".source = pkgs.vscode-extensions.vadimcn.vscode-lldb.adapter.out;
-  };
-
   home.packages = with pkgs; [
     neovim
   ];

@@ -20,7 +20,6 @@ in
     ./configs/cli/eza.nix
     ./configs/cli/fastfetch.nix
     ./configs/cli/fzf.nix
-    ./configs/cli/jaq.nix
     ./configs/cli/less.nix
     ./configs/cli/yt-dlp.nix
     ./configs/cli/zoxide.nix

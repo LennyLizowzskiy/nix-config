@@ -1,6 +1,18 @@
 { pkgs, ... }:
 
+let
+  devPath = ".misc/dev/";
+  mkDevPluginPaths = with lib; (plugins:
+    builtins.foldl' (acc: x: acc // { "${devPath}/${x.pname}".source = x; }) {} plugins
+  );
+in
 {
+  home.file = (mkDevPluginPaths (with pkgs; [
+    mold
+  ])) // {
+    "${devPath}/vscode-codelldb-adapter".source = pkgs.vscode-extensions.vadimcn.vscode-lldb.adapter.out;
+  };
+
   home.packages = with pkgs; [
     ## supplementary
     git

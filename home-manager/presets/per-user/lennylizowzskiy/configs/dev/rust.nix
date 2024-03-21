@@ -1,10 +1,6 @@
 { pkgs, inputs, ... }:
 
 {
-  # nixpkgs.overlays = [ inputs.rust-overlay.overlays.default ];
-
-  home.
-
   home.packages = with pkgs; [
     ## basic build dependencies
     pkg-config
@@ -23,7 +19,7 @@
     rustup
     clippy
 
-    ## cargo additions
+    ## cargo plugins
     cargo-expand
     cargo-deb
     cargo-ndk
@@ -41,21 +37,7 @@
     cargo-about
     cargo-wizard
     cargo-xwin
-    cargo-appimage
-    cargo-ft
-
-#     (rust-bin.stable.latest.default.override {
-#       extensions = [
-#         "rustc"
-#         "cargo"
-#         "rust-std"
-#         "rust-docs"
-#         "rust-analyzer"
-#         "clippy"
-#         "rustfmt"
-# #         "miri"
-#         "rust-src"
-#       ];
-#     })
+    # cargo-appimage
+    # cargo-ft
   ];
 }

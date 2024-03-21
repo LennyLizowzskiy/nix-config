@@ -3,7 +3,7 @@ return {
     "mrcjkb/rustaceanvim",
     ft = { "rust" },
     config = function()
-      local ext_path = vim.env.HOME .. "/.vim/etc/vscode-codelldb"
+      local ext_path = vim.env.HOME .. "/.misc/dev/vscode-codelldb-adapter"
       local codelldb_path = ext_path .. "/adapter/codelldb"
       local liblldb_path = ext_path .. "/lldb/lib/liblldb.so" --  WARNING: linux only
 
