@@ -39,6 +39,7 @@ in
     ./configs/cli/text-editors/helix
 
     ./configs/dev/dev.nix
+    ./configs/dev/rust.nix
     ./configs/dev/android-sdk.nix
     ./configs/dev/direnv.nix
     ./configs/dev/java.nix

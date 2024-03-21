@@ -13,7 +13,7 @@
     ./specifics/locale.nix
     ./specifics/nix.nix
     ./specifics/pipewire.nix
-    ./specifics/rust.nix
+    # ./specifics/rust.nix
     ./specifics/sudo.nix
     ./specifics/waydroid.nix
     ./specifics/wireshark.nix
