@@ -29,7 +29,7 @@ in
       #   "hyprctl setcursor \"Phinger Cursors\" ${builtins.toString config.home.pointerCursor.size}"
       # ];
 
-      monitor = monitors.grogoroth;
+      monitor = monitors.rher;
 
       xwayland = {
         force_zero_scaling = "true";
@@ -45,8 +45,8 @@ in
         gaps_in = "2";
         gaps_out = "0";
         border_size = "2";
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
+        # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        # "col.inactive_border" = "rgba(595959aa)";
         no_focus_fallback = "true";
         no_cursor_warps = "true";
 
@@ -76,7 +76,7 @@ in
         drop_shadow = "yes";
         shadow_range = "4";
         shadow_render_power = "3";
-        "col.shadow" = "rgba(1a1a1aee)";
+        # "col.shadow" = "rgba(1a1a1aee)";
       };
 
       misc = {

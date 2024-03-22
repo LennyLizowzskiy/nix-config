@@ -1,4 +1,4 @@
-{ config, etcDir, lib, ... }:
+{ config, extraArgs, lib, ... }:
 
 let
   pictures =
@@ -6,7 +6,7 @@ let
       wallpaperFolder = "mi";
     in
       {
-        nix-flake-lightblue = "${etcDir}/wallpapers/nix-flake-lightblue.png";
+        nix-flake-lightblue = "${extraArgs.etcDir}/wallpapers/circuit.png";
       };
 
   monitors = with pictures; {
