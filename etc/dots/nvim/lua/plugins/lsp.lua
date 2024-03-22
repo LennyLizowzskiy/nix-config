@@ -38,6 +38,11 @@ return {
     opts = {},
   },
   {
+    "nvimdev/lspsaga.nvim",
+    event = "LspAttach",
+    opts = {},
+  },
+  {
     "neovim/nvim-lspconfig",
     event = "VeryLazy",
     init = function()
@@ -46,11 +51,11 @@ return {
         update_in_insert = true,
       })
 
-      -- local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
-      -- for type, icon in pairs(signs) do
-      --   local hl = "DiagnosticSign" .. type
-      --   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-      -- end
+      local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
+      for type, icon in pairs(signs) do
+        local hl = "DiagnosticSign" .. type
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+      end
     end,
     config = function()
       local cfg = require("lspconfig")
@@ -67,13 +72,16 @@ return {
               },
             },
             workspace = {
-              library = {
-                vim.api.nvim_get_runtime_file("", true),
-                [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-              },
+              -- library = {
+              --   vim.api.nvim_get_runtime_file("", true),
+              --   [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+              --   [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+              -- },
               maxPreload = 10000,
               preloadFileSize = 1000,
+            },
+            hint = {
+              enable = true,
             },
             telemetry = {
               enable = false,

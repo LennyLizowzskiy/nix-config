@@ -48,13 +48,13 @@ in
     ./configs/gui/apps/gaming/mangohud.nix
     ./configs/gui/apps/obsidian.nix
 
-    # ./configs/gui/apps/terminals/kitty.nix
+    ./configs/gui/apps/terminals/kitty.nix
     ./configs/gui/apps/terminals/alacritty.nix
     ./configs/gui/apps/terminals/foot.nix
 
     # ./configs/gui/apps/text-editors/vscode.nix
 
-    # ./configs/gui/de/hypr/hyprland-full.nix
+    ./configs/gui/de/hypr/hyprland-full.nix
   ];
 
   manual.manpages.enable = false;

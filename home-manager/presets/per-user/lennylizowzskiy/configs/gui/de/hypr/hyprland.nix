@@ -1,4 +1,4 @@
-{ nixosArgs, config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 let
   monitors = {
@@ -10,23 +10,26 @@ let
       ", highrr, auto, 1"
     ];
   };
-
-  scaling = {
-    rher = 2;
-    grogoroth = 1;
-  };
 in
 {
+  home.packages = with pkgs; [
+    grim
+    slurp
+    brightnessctl
+    wireplumber
+    imagemagick
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
 
     settings = {
-      exec-once = [
-        "hyprctl setcursor \"Phinger Cursors\" ${builtins.toString config.home.pointerCursor.size}"
-      ];
+      # exec-once = [
+      #   "hyprctl setcursor \"Phinger Cursors\" ${builtins.toString config.home.pointerCursor.size}"
+      # ];
 
-      monitor = monitors.${nixosArgs.config.nixdiffs.machine.name};
+      monitor = monitors.grogoroth;
 
       xwayland = {
         force_zero_scaling = "true";
@@ -51,17 +54,17 @@ in
       };
 
       input = {
-        kb_layout = "us,ru";
-        kb_options = "grp:caps_toggle";
+        # kb_layout = "us,ru";
+        # kb_options = "grp:caps_toggle";
         numlock_by_default = "true";
 
         follow_mouse = "1";
         mouse_refocus = "false";
 
         touchpad = {
-            natural_scroll = "true";
-            middle_button_emulation = "true";
-            tap-and-drag = "true";
+          natural_scroll = "true";
+          middle_button_emulation = "true";
+          tap-and-drag = "true";
         };
 
         sensitivity = "0";
@@ -77,6 +80,8 @@ in
       };
 
       misc = {
+        vrr = "1";
+        disable_splash_rendering = "true";
         force_default_wallpaper = "0";
       };
 
@@ -201,7 +206,7 @@ in
           "SUPER SHIFT, S, exec, ${screenshotArea}"
           "SUPER SHIFT ALT, S, exec, ${screenshotAreaAndEdit}"
 
-          "${mainMod}, Q, exec, kitty"
+          "${mainMod}, Q, exec, foot"
 
           "${mainMod}, C, killactive,"
           "${mainMod}, M, exit,"

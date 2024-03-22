@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   programs.hyprland = {
@@ -15,7 +15,7 @@
     ];
   };
 
-  services.gnome.gnome-keyring.enable = true;
+  # services.gnome.gnome-keyring.enable = true;
 
   programs.nm-applet = {
     enable = true;
@@ -26,7 +26,7 @@
     enable = true;
     settings = rec {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --remember --time --cmd Hyprland";
+        command = "${lib.getExe pkgs.greetd.tuigreet} --remember --time --cmd Hyprland";
         user = "greeter";
       };
       initial_session = default_session;

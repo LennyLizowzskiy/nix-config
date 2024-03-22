@@ -7,7 +7,7 @@
 
     settings = {
       pyprland.plugins = [ "scratchpads" ];
-      
+
       scratchpads = {
         term = {
           command = "kitty --class kitty-dropterm";
@@ -28,7 +28,7 @@
     exec-once = [
       "pypr &"
     ];
-    
+
     bind =
       let
         mainMod = "SUPER";
@@ -49,7 +49,7 @@
         "float, ${scratchpavucontrol}"
         "size 40% 90%, ${scratchpavucontrol}"
         "move 200% 5%, ${scratchpavucontrol}"
-      
+
         "workspace special:scratch_term silent, ${scratchterm}"
         "float, ${scratchterm}"
         "size 75% 60%, ${scratchterm}"

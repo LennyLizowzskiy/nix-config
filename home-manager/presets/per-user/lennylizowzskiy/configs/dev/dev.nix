@@ -31,6 +31,7 @@ in
     curl
     just
     tree-sitter
+    flatpak-builder
 
     ## extra package managers
     wasmer

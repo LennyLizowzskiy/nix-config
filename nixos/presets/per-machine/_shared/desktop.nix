@@ -22,9 +22,9 @@
     ./specifics/steam.nix
     ./specifics/shadowsocks.nix
 
-    # ./specifics/de/hyprland.nix
+    ./specifics/de/hyprland.nix
     # ./specifics/de/plasma5.nix
-    ./specifics/de/plasma6.nix
+    # ./specifics/de/plasma6.nix
 
     "${rootDir}/home-manager/nixos-impl.nix"
   ];

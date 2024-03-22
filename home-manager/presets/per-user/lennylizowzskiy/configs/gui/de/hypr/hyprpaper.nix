@@ -21,7 +21,7 @@ let
 
   getHyprpapers = lib.attrsets.mapAttrsToList
     (name: value: "${name}, ${value}")
-    monitors.${nixosArgs.config.nixdiffs.machine.name};
+    monitors.rher;
 in
 {
   programs.hyprpaper = {
