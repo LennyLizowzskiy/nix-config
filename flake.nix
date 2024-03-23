@@ -64,6 +64,7 @@
       nixosConfigurations =
         let
           mkNixOsConf = {
+            hostname,
             args ? {},
             modules ? [],
             enableGui ? false,
@@ -71,6 +72,8 @@
             nixpkgs.lib.nixosSystem {
               specialArgs = {
                 inherit inputs enableGui;
+
+                hostname = hostname;
 
                 etc = import ./etc;
                 etcDir = ./etc;
@@ -96,6 +99,7 @@
         in
         {
           grogoroth = mkNixOsConf {
+            hostname = "grogoroth";
             enableGui = true;
 
             modules = [
@@ -104,6 +108,7 @@
           };
 
           rher = mkNixOsConf {
+            hostname = "rher";
             enableGui = true;
 
             modules = [

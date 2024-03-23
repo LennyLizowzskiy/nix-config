@@ -1,13 +1,18 @@
-{ config, pkgs, ... }:
+{ config, pkgs, hostname, ... }:
 
 let
+  scaling = {
+    rher = "2";
+    grogoroth = "1";
+  };
+
   monitors = {
     rher = [
-      ", highres, auto, 2"
+      ", highres, auto, ${scaling.rher}"
     ];
 
     grogoroth = [
-      ", highrr, auto, 1"
+      ", highrr, auto, ${scaling.grogoroth}"
     ];
   };
 in
@@ -15,6 +20,7 @@ in
   home.packages = with pkgs; [
     grim
     slurp
+    wl-clipboard
     brightnessctl
     wireplumber
     imagemagick
@@ -29,14 +35,14 @@ in
       #   "hyprctl setcursor \"Phinger Cursors\" ${builtins.toString config.home.pointerCursor.size}"
       # ];
 
-      monitor = monitors.rher;
+      monitor = monitors."${hostname}";
 
       xwayland = {
         force_zero_scaling = "true";
       };
 
       env = [
-        "GDK_SCALE, 2"
+        "GDK_SCALE, ${scaling."${hostname}"}"
         "WLR_DRM_NO_ATOMIC, 1"
       ];
 
@@ -224,8 +230,8 @@ in
           "${mainMod}, mouse_down, workspace, e+1"
           "${mainMod}, mouse_up, workspace, e-1"
 
-          # "${mainMod}, S, exec, tofi-drun --drun-launch=true"
-          "${mainMod}, S, exec, hyprctl dispatch exec $(tofi-run)"
+          "${mainMod}, S, exec, tofi-drun --drun-launch=true"
+          # "${mainMod}, S, exec, hyprctl dispatch exec $(tofi-run)"
 
           "ALT, Tab, workspace, previous"
 

@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, ... }@vars:
+{ inputs, pkgs, hostname, config, ... }@vars:
 
 {
   imports = [
@@ -13,6 +13,7 @@
 
     extraSpecialArgs = {
       inherit inputs;
+      hostname = hostname;
       extraArgs = vars;
     };
 

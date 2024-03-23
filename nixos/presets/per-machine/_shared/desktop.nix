@@ -36,6 +36,11 @@
 
     genymotion
     httpie
+
+    p7zip
+    rar
+    unrar
+    archiver
   ] ++ ((import "${sharedDir}/presets/packages/gui.nix") pkgs);
 
   services.flatpak.enable = true;

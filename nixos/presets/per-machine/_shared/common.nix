@@ -25,5 +25,6 @@
 
   environment.systemPackages = with pkgs; [
     just
+    vifm
   ] ++ ((import "${sharedDir}/presets/packages/common.nix") pkgs);
 }

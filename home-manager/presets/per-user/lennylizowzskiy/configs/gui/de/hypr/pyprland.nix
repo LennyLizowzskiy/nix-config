@@ -10,7 +10,7 @@
 
       scratchpads = {
         term = {
-          command = "kitty --class kitty-dropterm";
+          command = "foot --app-id __dropterm";
           animation = "fromTop";
           margin = 50;
           unfocus = "hide";
@@ -42,7 +42,7 @@
     windowrule =
       let
         scratchpavucontrol = "^(pavucontrol)$";
-        scratchterm = "^(kitty-dropterm)$";
+        scratchterm = "^(__dropterm)$";
       in
       [
         "workspace special:scratch_volume silent, ${scratchpavucontrol}"
