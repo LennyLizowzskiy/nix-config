@@ -7,7 +7,7 @@
 
     xkb = {
       layout = "us,ru";
-      options = "grp:lctrl_lwin_toggle";
+      options = "grp:win_space_toggle";
     };
 
     excludePackages = with pkgs; [

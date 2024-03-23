@@ -19,6 +19,7 @@
         volume = {
           command = "pavucontrol";
           animation = "fromRight";
+          unfocus = "hide";
         };
       };
     };

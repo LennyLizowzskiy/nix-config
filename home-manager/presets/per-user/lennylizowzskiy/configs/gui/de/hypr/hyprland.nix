@@ -60,8 +60,8 @@ in
       };
 
       input = {
-        # kb_layout = "us,ru";
-        # kb_options = "grp:caps_toggle";
+        kb_layout = "us,ru";
+        kb_options = "grp:win_space_toggle";
         numlock_by_default = "true";
 
         follow_mouse = "1";
