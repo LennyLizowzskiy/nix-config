@@ -11,11 +11,10 @@ system-clean:
     sudo nix-collect-garbage --delete-older-than 7d
     sudo nix store gc
 
-system-update:
-    rm -f ~/.gtkrc-2.0*
+update:
     sudo nixos-rebuild switch --flake .?submodules=1
 
-system-update-full:
+update-full:
     nix flake update
     just system-update
 

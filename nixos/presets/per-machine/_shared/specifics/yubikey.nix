@@ -11,19 +11,20 @@
     stable.yubikey-personalization
   ];
 
-  programs.ssh.startAgent = true;
+  # programs.ssh.startAgent = true;
 
   # programs.gnupg.agent = {
   #   enable = true;
   #   enableSSHSupport = true;
   # };
 
-  services.pcscd.enable = true;
+  # services.pcscd.enable = true;
 
   environment.systemPackages = with pkgs; [
     gnupg
     stable.yubioath-flutter
+    stable.yubikey-manager
     stable.yubikey-manager-qt
-    yubico-piv-tool
+    stable.yubico-piv-tool
   ];
 }

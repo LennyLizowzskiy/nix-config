@@ -22,6 +22,7 @@
     ./specifics/steam.nix
     ./specifics/shadowsocks.nix
 
+    ./specifics/gnome-keyring.nix
     ./specifics/de/hyprland-full.nix
     # ./specifics/de/plasma5.nix
     # ./specifics/de/plasma6.nix

@@ -14,5 +14,6 @@
     ../../../services/batsignal.nix
     ../../../services/udiskie.nix
     ../../../services/applets/blueman.nix
+    ../../../services/secrets/gnome-keyring.nix
   ];
 }
