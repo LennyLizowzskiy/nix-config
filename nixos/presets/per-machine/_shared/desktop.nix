@@ -43,6 +43,13 @@
     archiver
   ] ++ ((import "${sharedDir}/presets/packages/gui.nix") pkgs);
 
+  programs.command-not-found.enable = false;
+
+  # services.openssh.enable = true;
+  # services.openssh.settings.PasswordAuthentication = false;
+  programs.ssh.startAgent = true;
+  # security.pam.sshAgentAuth.enable = true;
+
   services.flatpak.enable = true;
   services.printing.enable = true;
   programs.adb.enable = true;

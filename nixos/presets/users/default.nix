@@ -8,7 +8,8 @@
       # ignoreShellProgramCheck = true;
       # linger = true;
 
-      shell = pkgs.nushellFull;
+      # shell = pkgs.nushellFull;
+      shell = pkgs.fish;
 
       initialHashedPassword = "$y$j9T$oJX8GijWaFwGIoyMQozuI0$IFMHCAQXsZIRLcRdFsifIT3ZJHuz9NcYHhHXPLA4cCA";
 
@@ -25,4 +26,6 @@
       ];
     };
   };
+
+  programs.fish.enable = true;
 }

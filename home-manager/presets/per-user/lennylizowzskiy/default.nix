@@ -1,15 +1,16 @@
 { inputs, config, pkgs, lib, ... }:
 
-let
-  username = "lennylizowzskiy";
-in
+# let
+  # username = "lennylizowzskiy";
+# in
 {
-  home.username = "${username}";
-  home.homeDirectory = "/home/${username}";
+  # home.username = "${username}";
+  # home.homeDirectory = "/home/${username}";
 
   imports = [
     inputs.personalPkgs.homeManagerModules.default
 
+    ./configs/command-not-found.nix
     ./configs/nix.nix
     ./configs/stylix.nix
     # ./configs/boilerplate.nix
@@ -30,7 +31,7 @@ in
     ./configs/cli/git/git.nix
     ./configs/cli/git/lazygit.nix
 
-    # ./configs/cli/shell/fish.nix
+    ./configs/cli/shell/fish.nix
     ./configs/cli/shell/nushell
 
     ./configs/cli/text-editors/micro.nix

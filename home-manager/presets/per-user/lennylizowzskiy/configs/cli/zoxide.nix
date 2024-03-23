@@ -3,9 +3,10 @@
 {
   programs.zoxide = {
     enable = true;
+    # enableFishIntegration = false;
   };
 
-  home.shellAliases = {
-    "cd" = "z";
-  };
+  # home.shellAliases = {
+    # "cd" = "__zoxide_z";
+  # };
 }
