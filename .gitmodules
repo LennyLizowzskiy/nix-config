@@ -1,3 +1,3 @@
 [submodule "etc/external/secrets"]
 	path = etc/external/secrets
-	url = https://github.com/LennyLizowzskiy/secrets
+	url = git@github.com:LennyLizowzskiy/secrets.git
