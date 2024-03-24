@@ -54,4 +54,51 @@ return {
     event = "VimEnter",
     opts = {},
   },
+  {
+    "echasnovski/mini.animate",
+    version = "*",
+    event = "VimEnter",
+    opts = {
+      scroll = {
+        enable = false,
+      },
+    }
+  },
+  -- {
+  --   "echasnovski/mini.hipatterns",
+  --   version = "*",
+  --   event = "VeryLazy",
+  --   opts = {
+  --     highlighters = {
+  --       hex_color = hipatterns.gen_highlighter.hex_color(),
+  --     }
+  --   },
+  -- },
+  {
+    "NvChad/nvim-colorizer.lua",
+    event = "VimEnter",
+    opts = {
+      user_default_options = {
+        names = false,
+        RRGGBBAA = false,
+        css = true,
+        css_fn = true,
+        tailwind = true,
+      },
+      filetypes = {
+        "*",
+        css = {
+          css = true,
+        },
+        html = {
+          names = false,
+          mode = "foreground",
+          tailwind = true,2
+        },
+        cmp_docs = {
+          always_update = true
+        },
+      },
+    },
+  }
 }

@@ -539,11 +539,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1701644509,
-        "narHash": "sha256-b376kjh8+wunFIpJb16wnFH/qF21XCM7AIKLba7y2zA=",
+        "lastModified": 1711318365,
+        "narHash": "sha256-6n1kiTCOHhnq+CAjDdc4NrLKNaopNn08j4ogr3j2xQ8=",
         "owner": "LennyLizowzskiy",
         "repo": "nix-repo",
-        "rev": "11cd46f5d36e9414aa7426f578b41b1c80ceeccc",
+        "rev": "ca9302c564a057e16c0e37cfdf0620201f38add2",
         "type": "github"
       },
       "original": {

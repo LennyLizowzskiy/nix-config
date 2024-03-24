@@ -6,6 +6,15 @@
 }:
 
 {
+  gtk = {
+    enable = true;
+
+    iconTheme = {
+      package = pkgs.gnome.adwaita-icon-theme;
+      name = "Adwaita-dark";
+    };
+  };
+
   stylix = {
     autoEnable = true;
 
@@ -14,7 +23,7 @@
       nixvim.enable = false;
       vscode.enable = false;
       firefox.enable = false;
-      kde.enable = false;
+      waybar.enable = false;
     };
   };
 }

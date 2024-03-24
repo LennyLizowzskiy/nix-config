@@ -46,6 +46,7 @@
       genymotion
       httpie
 
+      youtube-music
       p7zip
       rar
       unrar

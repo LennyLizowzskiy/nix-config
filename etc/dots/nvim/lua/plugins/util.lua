@@ -11,6 +11,20 @@ return {
       },
     },
   },
+  -- {
+  --   "ThePrimeagen/harpoon",
+  --   branch = "harpoon2",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+
+  --     "nvim-telescope/telescope.nvim",
+  --   },
+  --   event = "VeryLazy",
+  --   config = function()
+  --     local hp = require("harpoon")
+  --     hp:setup()
+  --   end,
+  -- },
   { -- commenter
     "echasnovski/mini.comment",
     version = false,

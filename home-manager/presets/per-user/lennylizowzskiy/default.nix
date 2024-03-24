@@ -52,8 +52,8 @@
     ./configs/dev/direnv.nix
     ./configs/dev/java.nix
 
+    # ./configs/gui/theming-gtkqt.nix
     ./configs/gui/apps/obs.nix
-    # ./configs/gui/apps/theming-gtkqt.nix
     ./configs/gui/apps/gaming/mangohud.nix
     ./configs/gui/apps/obsidian.nix
 

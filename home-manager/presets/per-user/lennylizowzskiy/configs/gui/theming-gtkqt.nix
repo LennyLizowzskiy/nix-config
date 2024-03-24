@@ -1,11 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-
-  ];
-
-  fonts.fontconfig.enable = true;
+  # fonts.fontconfig.enable = true;
 
   # home.pointerCursor = {
   #   gtk.enable = true;
@@ -37,9 +33,9 @@
       name = "Adwaita-dark";
     };
 
-    theme = {
-      package = pkgs.gnome.gnome-themes-extra;
-      name = "Adwaita-dark";
-    };
+    # theme = {
+    # package = pkgs.gnome.gnome-themes-extra;
+    # name = "Adwaita-dark";
+    # };
   };
 }
