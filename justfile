@@ -16,7 +16,7 @@ update:
 
 update-full:
     nix flake update
-    just system-update
+    just update
 
 force-link-dots:
     ./etc/link-dots.sh ./dots
