@@ -1,9 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    lf
-  ];
+  home.packages = with pkgs; [ lf ];
 
   # add config
 }

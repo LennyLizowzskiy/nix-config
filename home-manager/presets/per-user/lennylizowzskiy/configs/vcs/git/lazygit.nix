@@ -1,9 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    delta
-  ];
+  home.packages = with pkgs; [ delta ];
 
   programs.lazygit = {
     enable = true;

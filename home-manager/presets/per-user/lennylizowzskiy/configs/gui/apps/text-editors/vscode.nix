@@ -10,7 +10,8 @@
           name = "code";
           text = "${coreutils}/bin/env -u WAYLAND_DISPLAY ${vscode-fhs}/bin/code";
 
-          runtimeInputs = [ # all additional packages go there
+          runtimeInputs = [
+            # all additional packages go there
             # Compilers / Runtimes
             nodePackages_latest.nodejs
             zig

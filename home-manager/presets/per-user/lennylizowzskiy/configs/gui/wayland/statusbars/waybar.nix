@@ -9,10 +9,8 @@
       {
         height = 15;
         layer = "top";
-        
-        modules-left = [
-          "hyprland/workspaces"
-        ];
+
+        modules-left = [ "hyprland/workspaces" ];
 
         modules-right = [
           "wireplumber"
@@ -24,7 +22,7 @@
     ];
 
     # style = {
-      
+
     # };
   };
 }

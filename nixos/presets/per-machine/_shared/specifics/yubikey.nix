@@ -2,14 +2,14 @@
 
 {
   boot.tmp.cleanOnBoot = true;
-  boot.kernel.sysctl = { "kernel.unpriviliged_bpf_disabled" = 1; };
+  boot.kernel.sysctl = {
+    "kernel.unpriviliged_bpf_disabled" = 1;
+  };
 
   # services.yubikey-agent.enable = true;
   programs.yubikey-touch-detector.enable = true;
 
-  services.udev.packages = with pkgs; [
-    stable.yubikey-personalization
-  ];
+  services.udev.packages = with pkgs; [ stable.yubikey-personalization ];
 
   # programs.ssh.startAgent = true;
 

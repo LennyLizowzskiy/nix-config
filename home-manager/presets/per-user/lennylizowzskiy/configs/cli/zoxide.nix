@@ -7,6 +7,6 @@
   };
 
   # home.shellAliases = {
-    # "cd" = "__zoxide_z";
+  # "cd" = "__zoxide_z";
   # };
 }

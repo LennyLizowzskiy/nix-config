@@ -1,3 +1,1 @@
-{
-  extraModules = import ./extra-modules;
-}
+{ extraModules = import ./extra-modules; }

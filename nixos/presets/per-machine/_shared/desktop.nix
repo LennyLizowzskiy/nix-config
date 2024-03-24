@@ -1,4 +1,10 @@
-{ pkgs, rootDir, lib, sharedDir, ... }:
+{
+  pkgs,
+  rootDir,
+  lib,
+  sharedDir,
+  ...
+}:
 
 {
   imports = [
@@ -30,19 +36,22 @@
     "${rootDir}/home-manager/nixos-impl.nix"
   ];
 
-  environment.systemPackages = with pkgs; [
-    wl-clipboard-x11
+  environment.systemPackages =
+    with pkgs;
+    [
+      wl-clipboard-x11
 
-    steam-run # FHS env on demand
+      steam-run # FHS env on demand
 
-    genymotion
-    httpie
+      genymotion
+      httpie
 
-    p7zip
-    rar
-    unrar
-    archiver
-  ] ++ ((import "${sharedDir}/presets/packages/gui.nix") pkgs);
+      p7zip
+      rar
+      unrar
+      archiver
+    ]
+    ++ ((import "${sharedDir}/presets/packages/gui.nix") pkgs);
 
   programs.command-not-found.enable = false;
 

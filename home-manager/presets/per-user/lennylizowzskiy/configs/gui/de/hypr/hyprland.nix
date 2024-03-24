@@ -1,4 +1,9 @@
-{ config, pkgs, hostname, ... }:
+{
+  config,
+  pkgs,
+  hostname,
+  ...
+}:
 
 let
   scaling = {
@@ -7,13 +12,9 @@ let
   };
 
   monitors = {
-    rher = [
-      ", highres, auto, ${scaling.rher}"
-    ];
+    rher = [ ", highres, auto, ${scaling.rher}" ];
 
-    grogoroth = [
-      ", highrr, auto, ${scaling.grogoroth}"
-    ];
+    grogoroth = [ ", highrr, auto, ${scaling.grogoroth}" ];
   };
 in
 {
@@ -178,7 +179,8 @@ in
             RMB = "mouse:273";
           };
         in
-        with buttons; [
+        with buttons;
+        [
           "${mainMod}, ${LMB}, movewindow"
           "${mainMod}, ${RMB}, resizewindow"
         ];
@@ -200,7 +202,8 @@ in
             screenshotAreaAndEdit = "grim -g \"\$(slurp)\" - | convert - -shave 2x2 PNG:- | swappy -f -";
           };
         in
-        with commands; [
+        with commands;
+        [
           ", ${buttons.brightnessUp}, exec, brightnessctl set +10%"
           ", ${buttons.brightnessDown}, exec, brightnessctl set 10%-"
 

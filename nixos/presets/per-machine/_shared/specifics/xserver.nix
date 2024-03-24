@@ -10,8 +10,6 @@
       options = "grp:win_space_toggle";
     };
 
-    excludePackages = with pkgs; [
-      xterm
-    ];
+    excludePackages = with pkgs; [ xterm ];
   };
 }

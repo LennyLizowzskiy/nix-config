@@ -1,7 +1,13 @@
-{ inputs, config, pkgs, lib, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 # let
-  # username = "lennylizowzskiy";
+# username = "lennylizowzskiy";
 # in
 {
   # home.username = "${username}";
@@ -64,7 +70,7 @@
   programs.man.enable = false;
 
   programs.git = {
-    userName  = "Lenny Lizowzskiy";
+    userName = "Lenny Lizowzskiy";
     userEmail = "contact@lizowzskiy.su";
   };
 }

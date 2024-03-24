@@ -1,7 +1,5 @@
 { inputs, extraArgs, ... }:
 
 {
-  imports = [
-    "${extraArgs.sharedDir}/presets/nix.nix"
-  ];
+  imports = [ "${extraArgs.sharedDir}/presets/nix.nix" ];
 }

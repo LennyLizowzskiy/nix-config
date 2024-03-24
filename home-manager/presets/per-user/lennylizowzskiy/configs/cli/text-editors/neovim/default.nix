@@ -1,15 +1,18 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 # let
-  #vimResPath = ".vim";
-  #mkVimPluginPaths = with lib; (plugins:
-  #  builtins.foldl' (acc: x: acc // { "${vimResPath}/plugins/${x.pname}".source = x; }) {} plugins
-  #);
+#vimResPath = ".vim";
+#mkVimPluginPaths = with lib; (plugins:
+#  builtins.foldl' (acc: x: acc // { "${vimResPath}/plugins/${x.pname}".source = x; }) {} plugins
+#);
 # in
 {
-  home.packages = with pkgs; [
-    neovim-nightly
-  ];
+  home.packages = with pkgs; [ neovim-nightly ];
 
   home.shellAliases = {
     vi = "nvim";

@@ -51,7 +51,7 @@
 
       git_status = {
         format = ''([\[( $conflicted)( $stashed)( $deleted)( $renamed)( $modified)( $staged)( $untracked)( $ahead_behind) \]]($style) )'';
-        
+
         conflicted = "conflicted";
         ahead = "ahead";
         behind = "behind";
@@ -99,7 +99,7 @@
       dotnet = {
         symbol = "󰪮 ";
       };
-      
+
       kotlin = {
         symbol = "󱈙 ";
       };

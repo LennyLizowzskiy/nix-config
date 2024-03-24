@@ -1,4 +1,9 @@
-{ pkgs, lib, sharedDir, ... }@inputs:
+{
+  pkgs,
+  lib,
+  sharedDir,
+  ...
+}@inputs:
 
 {
   imports = [
@@ -9,7 +14,8 @@
 
   networking.networkmanager.enable = true;
   networking.nameservers = [
-    "8.8.8.8" "8.8.4.4"
+    "8.8.8.8"
+    "8.8.4.4"
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -23,7 +29,7 @@
 
   # programs.gnupg.agent.pinentryPackage = lib.mkForce pkgs.pinentry-all;
 
-  environment.systemPackages = with pkgs; [
-    just
-  ] ++ ((import "${sharedDir}/presets/packages/common.nix") pkgs);
+  environment.systemPackages =
+    with pkgs;
+    [ just ] ++ ((import "${sharedDir}/presets/packages/common.nix") pkgs);
 }

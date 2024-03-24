@@ -26,9 +26,7 @@
   };
 
   wayland.windowManager.hyprland.settings = {
-    exec-once = [
-      "pypr &"
-    ];
+    exec-once = [ "pypr &" ];
 
     bind =
       let

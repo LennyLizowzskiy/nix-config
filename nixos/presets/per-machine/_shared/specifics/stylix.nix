@@ -1,9 +1,12 @@
-{ inputs, pkgs, etcDir, ... }:
+{
+  inputs,
+  pkgs,
+  etcDir,
+  ...
+}:
 
 {
-  imports = [
-    inputs.stylix.nixosModules.stylix
-  ];
+  imports = [ inputs.stylix.nixosModules.stylix ];
 
   stylix = {
     autoEnable = true;

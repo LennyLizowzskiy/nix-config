@@ -1,9 +1,13 @@
-{ inputs, pkgs, hostname, config, ... }@vars:
+{
+  inputs,
+  pkgs,
+  hostname,
+  config,
+  ...
+}@vars:
 
 {
-  imports = [
-    inputs.home-manager.nixosModules.home-manager
-  ];
+  imports = [ inputs.home-manager.nixosModules.home-manager ];
 
   home-manager = {
     useGlobalPkgs = true;

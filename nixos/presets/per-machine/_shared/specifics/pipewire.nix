@@ -1,11 +1,15 @@
-{ pkgs, lib, stdenv, ... }:
-
+{
+  pkgs,
+  lib,
+  stdenv,
+  ...
+}:
 
 let
   writeWpPlugin =
     path: content:
     let
-      niceName = builtins.replaceStrings ["/"] ["-"] path;
+      niceName = builtins.replaceStrings [ "/" ] [ "-" ] path;
     in
     pkgs.writeTextFile {
       name = "wireplumber_plugin_${niceName}";

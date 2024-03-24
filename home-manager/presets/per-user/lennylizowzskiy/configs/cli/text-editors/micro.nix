@@ -3,7 +3,7 @@
 {
   programs.micro = {
     enable = true;
-    
+
     settings = {
       autosu = true;
       basename = true;

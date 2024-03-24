@@ -10,9 +10,7 @@
 
     config.common.default = "hyprland";
 
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-    ];
+    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
   };
 
   programs.nm-applet = {

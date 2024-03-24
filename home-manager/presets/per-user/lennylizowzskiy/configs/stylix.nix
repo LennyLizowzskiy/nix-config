@@ -1,4 +1,9 @@
-{ inputs, pkgs, etcDir, ... }:
+{
+  inputs,
+  pkgs,
+  etcDir,
+  ...
+}:
 
 {
   stylix = {

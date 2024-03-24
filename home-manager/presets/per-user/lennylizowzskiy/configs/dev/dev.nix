@@ -2,15 +2,14 @@
 
 let
   devPath = ".misc/dev/";
-  mkDevPluginPaths = with lib; (plugins:
-    builtins.foldl' (acc: x: acc // { "${devPath}/${x.pname}".source = x; }) {} plugins
-  );
+  mkDevPluginPaths =
+    with lib;
+    (plugins: builtins.foldl' (acc: x: acc // { "${devPath}/${x.pname}".source = x; }) { } plugins);
 in
 {
-  home.file = (mkDevPluginPaths (with pkgs; [
-    mold
-  ])) // {
-    "${devPath}/vscode-codelldb-adapter".source = pkgs.vscode-extensions.vadimcn.vscode-lldb.adapter.out;
+  home.file = (mkDevPluginPaths (with pkgs; [ mold ])) // {
+    "${devPath}/vscode-codelldb-adapter".source =
+      pkgs.vscode-extensions.vadimcn.vscode-lldb.adapter.out;
   };
 
   home.packages = with pkgs; [
@@ -60,6 +59,7 @@ in
     # rustfmt and clippy defined in rust.nix
     slint-lsp
     nodePackages.typescript-language-server
+    nixfmt-rfc-style
     nixd
     vscode-langservers-extracted # html, css, json, eslint lsp
     marksman # md lsp

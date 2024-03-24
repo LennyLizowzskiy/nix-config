@@ -1,9 +1,12 @@
-{ pkgs, modulesPath, inputs, ... }:
+{
+  pkgs,
+  modulesPath,
+  inputs,
+  ...
+}:
 
 {
-  imports = [
-    "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
-  ];
+  imports = [ "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix" ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
 
@@ -14,7 +17,11 @@
     micro
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" "repl-flake" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+    "repl-flake"
+  ];
 
   environment.etc."nixos-config".source = inputs.rootDir;
 }

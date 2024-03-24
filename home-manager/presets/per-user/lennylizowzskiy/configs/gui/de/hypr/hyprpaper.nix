@@ -1,13 +1,19 @@
-{ config, extraArgs, hostname, lib, ... }:
+{
+  config,
+  extraArgs,
+  hostname,
+  lib,
+  ...
+}:
 
 let
   pictures =
     let
       wallpaperFolder = "mi";
     in
-      {
-        nix-flake-lightblue = "${extraArgs.etcDir}/wallpapers/dark-colorful-polygons.png";
-      };
+    {
+      nix-flake-lightblue = "${extraArgs.etcDir}/wallpapers/dark-colorful-polygons.png";
+    };
 
   monitors = with pictures; {
     rher = {
@@ -19,9 +25,9 @@ let
     };
   };
 
-  getHyprpapers = lib.attrsets.mapAttrsToList
-    (name: value: "${name}, ${value}")
-    monitors."${hostname}";
+  getHyprpapers =
+    lib.attrsets.mapAttrsToList (name: value: "${name}, ${value}")
+      monitors."${hostname}";
 in
 {
   programs.hyprpaper = {

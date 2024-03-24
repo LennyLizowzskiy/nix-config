@@ -1,4 +1,4 @@
-{ ... }:
+{ hostname, lib, ... }:
 
 {
   imports = [
@@ -13,7 +13,6 @@
 
     ../../../services/batsignal.nix
     ../../../services/udiskie.nix
-    ../../../services/applets/blueman.nix
     ../../../services/secrets/gnome-keyring.nix
-  ];
+  ] ++ (if (hostname == "rher") then [ ../../../services/applets/blueman.nix ] else [ ]);
 }
