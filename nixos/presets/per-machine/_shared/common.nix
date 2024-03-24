@@ -21,7 +21,7 @@
 
   documentation.man.enable = false;
 
-  programs.gnupg.agent.pinentryPackage = lib.mkForce pkgs.pinentry-all;
+  # programs.gnupg.agent.pinentryPackage = lib.mkForce pkgs.pinentry-all;
 
   environment.systemPackages = with pkgs; [
     just

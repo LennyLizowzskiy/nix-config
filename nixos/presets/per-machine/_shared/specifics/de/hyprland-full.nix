@@ -3,14 +3,14 @@
 {
   programs.hyprland = {
     enable = true;
-    xwayland.enable = true;
   };
 
   xdg.portal = {
     enable = true;
 
+    config.common.default = "hyprland";
+
     extraPortals = with pkgs; [
-      xdg-desktop-portal-wlr
       xdg-desktop-portal-gtk
     ];
   };

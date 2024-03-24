@@ -227,6 +227,11 @@ in
           "${mainMod}, up, movefocus, u"
           "${mainMod}, down, movefocus, d"
 
+          "${mainMod}, H, movefocus, l"
+          "${mainMod}, J, movefocus, d"
+          "${mainMod}, K, movefocus, u"
+          "${mainMod}, L, movefocus, r"
+
           "${mainMod}, mouse_down, workspace, e+1"
           "${mainMod}, mouse_up, workspace, e-1"
 

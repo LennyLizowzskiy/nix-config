@@ -4,7 +4,7 @@ pull:
 push:
     git add -A
     git commit -m "+"
-    git push
+    git push origin
 
 system-clean:
     nix-collect-garbage --delete-older-than 7d

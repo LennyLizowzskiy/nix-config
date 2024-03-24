@@ -26,10 +26,12 @@
     ./configs/cli/zoxide.nix
     ./configs/cli/zellij.nix
     ./configs/cli/file-managers/lf
-    ./configs/cli/git/git-cliff.nix
-    # ./configs/cli/git/git-cred-oauth.nix
-    ./configs/cli/git/git.nix
-    ./configs/cli/git/lazygit.nix
+
+    ./configs/vcs/jj/jj.nix
+    ./configs/vcs/git/git-cliff.nix
+    # ./configs/vcs/git/git-cred-oauth.nix
+    ./configs/vcs/git/git.nix
+    ./configs/vcs/git/lazygit.nix
 
     ./configs/cli/shell/fish.nix
     ./configs/cli/shell/nushell
