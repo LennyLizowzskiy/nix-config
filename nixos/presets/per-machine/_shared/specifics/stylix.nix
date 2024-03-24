@@ -23,25 +23,53 @@
     };
 
     fonts = {
+      # packages = with pkgs; [
+      #   # mono
+      #   hackgen-nf-font
+      #
+      #   # sans
+      #   inter
+      #
+      #   # serif
+      #   libre-baskerville
+      # ];
+
       emoji = {
         package = pkgs.twitter-color-emoji;
         name = "Twitter Color Emoji";
       };
 
       monospace = {
-        package = pkgs.hackgen-nf-font;
-        name = "HackGen35 Console NF";
+        package = pkgs.nerdfonts.override {
+          fonts = [ "IBMPlexMono" ];
+        };
+        name = "BlexMono Nerd Font";
       };
 
+      # monospace = {
+      #   package = pkgs.hackgen-nf-font;
+      #   name = "HackGen35 Console NF";
+      # };
+
       sansSerif = {
-        package = pkgs.inter;
-        name = "Inter";
+        package = pkgs.ibm-plex;
+        name = "IBM Plex Sans";
       };
 
       serif = {
-        package = pkgs.libre-baskerville;
-        name = "Libre Baskerville";
+        package = pkgs.ibm-plex;
+        name = "IBM Plex Serif";
       };
+
+      # sansSerif = {
+      #   package = pkgs.inter;
+      #   name = "Inter";
+      # };
+      #
+      # serif = {
+      #   package = pkgs.libre-baskerville;
+      #   name = "Libre Baskerville";
+      # };
 
       sizes = {
         terminal = 13;
