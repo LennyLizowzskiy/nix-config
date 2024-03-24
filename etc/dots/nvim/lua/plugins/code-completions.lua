@@ -9,12 +9,28 @@ return {
       "hrsh7th/cmp-cmdline",
       "petertriho/cmp-git",
 
-      "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
+      {
+        "saadparwaiz1/cmp_luasnip",
+        dependencies = {
+          {
+            "L3MON4D3/LuaSnip",
+            version = "v2.*",
+            build = "make install_jsregexp"
+          }
+        }
+      },
+      {
+        "roobert/tailwindcss-colorizer-cmp.nvim",
+        opts = {}
+      }
     },
     config = function()
       local cmp = require("cmp")
       -- local lspkind = require("lspkind")
+
+      cmp.config.formatting = {
+        format = require("tailwindcss-colorizer-cmp").formatter
+      }
 
       cmp.setup({
         snippet = {
@@ -25,8 +41,9 @@ return {
         sources = {
           { name = "nvim_lsp" },
           { name = "luasnip" },
-          { name = "buffer" },
+          -- { name = "buffer" },
           { name = "path" },
+          { name = "crates" },
         },
       })
 
@@ -38,7 +55,7 @@ return {
         }),
       })
 
-      cmp.setup.cmdline("/", {
+      cmp.setup.cmdline({ "/", "?" }, {
         mapping = cmp.mapping.preset.cmdline(),
         sources = {
           { name = "buffer" },

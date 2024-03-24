@@ -42,12 +42,6 @@ return {
           lualine_c = {},
           lualine_x = { "diagnostics", "diff" },
           lualine_y = {
-            {
-              require("nvim-possession").status,
-              cond = function()
-                return require("nvim-possession").status() ~= nil
-              end,
-            },
             "branch",
             "filetype",
           },

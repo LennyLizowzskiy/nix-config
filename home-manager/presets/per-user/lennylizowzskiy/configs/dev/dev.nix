@@ -57,6 +57,7 @@ in
     ruff # py linter & formatter
     shellcheck
     # rustfmt and clippy defined in rust.nix
+    yaml-language-server
     slint-lsp
     nodePackages.typescript-language-server
     nixfmt-rfc-style

@@ -1,25 +1,20 @@
 vim.opt.encoding = "utf8"
 
 vim.opt.sessionoptions = {
+  "blank",
   "buffers",
+  "curdir",
+  "folds",
   "tabpages",
   "globals",
+  "tabpages",
+  "winsize",
+  "winpos",
+  "localoptions",
 }
 
--- vim.opt.sessionoptions = {
---   "blank",
---   "buffers",
---   "curdir",
---   "folds",
---   "tabpages",
---   "globals",
---   "help",
---   "tabpages",
---   "terminal",
---   "winsize",
---   "winpos",
---   "localoptions",
--- }
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 vim.opt.completeopt = { "menuone", "noselect" }
 
@@ -66,6 +61,8 @@ vim.opt.termguicolors = true
 vim.opt.colorcolumn = "90"
 
 vim.opt.clipboard = "unnamedplus"
+
+vim.wo.fillchars = "eob:"
 
 vim.opt.guicursor = {
   "n-v-c:block", -- Normal, visual, command-line: block cursor

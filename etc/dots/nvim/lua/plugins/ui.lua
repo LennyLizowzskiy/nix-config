@@ -3,21 +3,7 @@ return {
     "stevearc/dressing.nvim",
     opts = {},
   },
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-
-    init = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-    end,
-    opts = {},
-  },
   { "echasnovski/mini.cursorword", version = false, opts = {} },
-  {
-    "stevearc/dressing.nvim",
-    opts = {},
-  },
   {
     "lukas-reineke/indent-blankline.nvim",
     config = function()

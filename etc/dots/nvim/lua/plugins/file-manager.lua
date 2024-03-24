@@ -1,5 +1,11 @@
 return {
   {
+    "echasnovski/mini.files",
+    version = "*",
+    event = "VeryLazy",
+    opts = {}
+  },
+  {
     "miversen33/netman.nvim",
     event = "VimEnter",
     config = function()

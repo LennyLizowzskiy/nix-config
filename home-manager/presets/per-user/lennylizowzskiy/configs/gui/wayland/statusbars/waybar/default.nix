@@ -21,8 +21,6 @@
       }
     ];
 
-    # style = {
-
-    # };
+    style = builtins.readFile ./style.css;
   };
 }

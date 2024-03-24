@@ -12,20 +12,18 @@ return {
     },
   },
   { -- commenter
-    "echasnovski/mini.nvim",
-    version = "*",
-    name = "mini-comment",
+    "echasnovski/mini.comment",
+    version = false,
     event = "VeryLazy",
-    config = function()
-      vim.opt.commentstring = ""
+    opts = {
 
-      require("mini.comment").setup()
-    end,
+    }
   },
   { -- align text
     "echasnovski/mini.align",
     version = false,
     event = "VeryLazy",
+    opts = {}
   },
   { -- editorconfig support
     "gpanders/editorconfig.nvim",
@@ -40,10 +38,10 @@ return {
     event = "VeryLazy",
     opts = {},
   },
-  {
-    "brenton-leighton/multiple-cursors.nvim",
-    event = "VeryLazy",
-  },
+  -- {
+  --   "brenton-leighton/multiple-cursors.nvim",
+  --   event = "VeryLazy",
+  -- },
   { -- notes
     "gsuuon/note.nvim",
     cmd = {

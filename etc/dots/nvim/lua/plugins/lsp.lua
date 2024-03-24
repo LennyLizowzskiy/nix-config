@@ -45,6 +45,12 @@ return {
   {
     "neovim/nvim-lspconfig",
     event = "VeryLazy",
+    dependencies = {
+      {
+        "b0o/SchemaStore.nvim",
+        opts = nil,
+      }
+    },
     init = function()
       -- enable diagnostics in INSERT mode
       vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -102,15 +108,62 @@ return {
 
       cfg.cssls.setup({})
 
-      cfg.tailwindcss.setup({})
+      cfg.tailwindcss.setup({
+        filetypes_exclude = { "markdown" },
+      })
 
-      cfg.biome.setup({}) -- js, json, ts, tsx
+      cfg.biome.setup({
+        filetypes_exclude = { "json" },
+      }) -- js, json, ts, tsx
 
       cfg.ruff_lsp.setup({}) -- py
 
       cfg.zls.setup({}) -- zig
 
       cfg.taplo.setup({}) -- toml
+
+      cfg.yamlls.setup({
+        capabilities = {
+          textDocument = {
+            foldingRange = {
+              dynamicRegistration = false,
+              lineFoldingOnly = true,
+            },
+          },
+        },
+        settings = {
+          redhat = { telemetry = { enabled = false } },
+          yaml = {
+            keyOrdering = false,
+            format = {
+              enable = true,
+            },
+            validate = true,
+            schemaStore = {
+              enable = true,
+              url = "",
+            },
+            schemas = require("schemastore").yaml.schemas(),
+          },
+        },
+      })
+
+      cfg.jsonls.setup({
+        settings = {
+          json = {
+            schemas = require("schemastore").json.schemas({
+              ignore = {
+                ".eslintrc",
+                "package.json",
+              }
+            }),
+            format = {
+              enable = true
+            },
+            validate = { enable = true },
+          },
+        },
+      })
     end,
   },
 }

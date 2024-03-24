@@ -9,7 +9,7 @@
     ../../wayland/notifications/mako.nix
     ../../wayland/runners/tofi.nix
     ../../wayland/screenshots/swappy.nix
-    ../../wayland/statusbars/waybar.nix
+    ../../wayland/statusbars/waybar
 
     ../../../services/batsignal.nix
     ../../../services/udiskie.nix

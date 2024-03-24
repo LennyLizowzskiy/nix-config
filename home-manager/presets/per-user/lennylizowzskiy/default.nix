@@ -61,7 +61,7 @@
     ./configs/gui/apps/terminals/alacritty.nix
     ./configs/gui/apps/terminals/foot.nix
 
-    # ./configs/gui/apps/text-editors/vscode.nix
+    ./configs/gui/apps/text-editors/vscode.nix
 
     ./configs/gui/de/hypr/hyprland-full.nix
   ];

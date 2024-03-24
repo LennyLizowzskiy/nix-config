@@ -1,12 +1,11 @@
 return {
   {
-    "echasnovski/mini.nvim",
+    "echasnovski/mini.starter",
     version = "*",
-    name = "mini-starter",
-    event = "VimEnter",
-    main = "mini.starter",
+    lazy = false,
     opts = {
-      header = [[                  _
+      header = [[
+                  _
                  (_)
   _ __   __   __  _   _ __ ___
  | '_ \  \ \ / / | | | '_ ` _ \
@@ -15,12 +14,17 @@ return {
       items = {
         { name = "Projects", action = "Telescope project display_type=full", section = "" },
         { name = "Files (recent)", action = "Telescope oldfiles", section = "" },
-        { name = "Sessions (recent)", action = [[lua require("nvim-possession").list()]], section = "" },
-        { name = " ", action = "", section = "" },
+        { name = "Sessions (recent)", action = "Telescope session-lens", section = "" },
+        -- { name = " ", action = "", section = "" },
+        {
+          name = "Plugin manager",
+          action = "Lazy",
+          section = "󰣖 Util"
+        },
         {
           name = "Neovim configuration",
-          action = "Telescope file_browser path=" .. vim.env.HOME .. "/.config/nvim/",
-          section = "",
+          action = "Neotree dir=" .. vim.env.HOME .. "/.config/nvim/",
+          section = "󰣖 Util",
         },
       },
       footer = "",

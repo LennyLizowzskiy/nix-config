@@ -23,6 +23,9 @@ return {
         "nvim",
         "lsp",
       },
+      notify = {
+        clear_time = 3000
+      },
     },
   },
 }

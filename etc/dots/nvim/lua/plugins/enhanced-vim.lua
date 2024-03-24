@@ -18,7 +18,12 @@ return {
     event = "VeryLazy",
     opts = {},
   },
-  { "echasnovski/mini.bracketed", version = false, event = "VeryLazy", opts = {} },
+  {
+    "echasnovski/mini.bracketed",
+    version = false,
+    event = "VeryLazy",
+    opts = {}
+  },
   {
     "kevinhwang91/nvim-bqf",
     version = "1.*",

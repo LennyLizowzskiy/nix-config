@@ -18,7 +18,10 @@ return {
         dependencies = "nvim-telescope/telescope-file-browser.nvim",
       },
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-      -- "jonarrien/telescope-cmdline.nvim",
+      {
+        "rmagatti/session-lens",
+        dependencies = "rmagatti/auto-session",
+      },
     },
     cmd = {
       "Telescope",
@@ -83,6 +86,7 @@ return {
       ts.load_extension("fzf")
       ts.load_extension("project")
       ts.load_extension("file_browser")
+      ts.load_extension("session-lens")
       -- ts.load_extension("cmdline")
     end,
   },
