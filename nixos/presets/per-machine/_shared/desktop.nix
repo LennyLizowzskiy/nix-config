@@ -28,7 +28,7 @@
     ./specifics/shadowsocks.nix
     ./specifics/ssh.nix
 
-    # ./specifics/gnome-keyring.nix # in home-manager
+    ./specifics/gnome-keyring.nix
     ./specifics/de/hyprland-full.nix
     # ./specifics/de/plasma5.nix
     # ./specifics/de/plasma6.nix
@@ -36,47 +36,45 @@
     "${rootDir}/home-manager/nixos-impl.nix"
   ];
 
-  environment.systemPackages =
-    with pkgs;
-    [
-      wl-clipboard
-      wl-clipboard-x11
+  environment.systemPackages = with pkgs; [
+    wl-clipboard
+    wl-clipboard-x11
 
-      steam-run # FHS env on demand
+    steam-run # FHS env on demand
 
-      genymotion
-      httpie
-      youtube-music
-      p7zip
-      rar
-      unrar
-      zip
-      unzip
-      archiver
-      brave
-      firefox
-      prismlauncher
-      masterpdfeditor
-      partition-manager
-      haruna
-      microsoft-edge
-      telegram-desktop
-      audacity
-      figma-linux
-      vesktop
-      figma-linux
-      gimp
-      inkscape-with-extensions
-      nicotine-plus
-      onlyoffice-bin
-      scrcpy
-      xca
-      tealdeer
-      gnome.gnome-font-viewer
-      ripdrag
-      v2raya
-      fractal
-    ];
+    genymotion
+    httpie
+    youtube-music
+    p7zip
+    rar
+    unrar
+    zip
+    unzip
+    archiver
+    brave
+    firefox
+    prismlauncher
+    masterpdfeditor
+    partition-manager
+    haruna
+    microsoft-edge
+    telegram-desktop
+    audacity
+    figma-linux
+    vesktop
+    figma-linux
+    gimp
+    inkscape-with-extensions
+    nicotine-plus
+    onlyoffice-bin
+    scrcpy
+    xca
+    tealdeer
+    gnome.gnome-font-viewer
+    ripdrag
+    v2raya
+    fractal
+  ];
 
   programs.command-not-found.enable = false;
   services.flatpak.enable = true;
