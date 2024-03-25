@@ -253,9 +253,9 @@ in
           "${mainMod}, K, ${movefocus}, u"
           "${mainMod}, L, ${movefocus}, r"
           "${mainMod} SHIFT, H, ${movewindow}, l"
-          "${mainMod} SHIFT, J, ${movewindow}, r"
+          "${mainMod} SHIFT, J, ${movewindow}, d"
           "${mainMod} SHIFT, K, ${movewindow}, u"
-          "${mainMod} SHIFT, L, ${movewindow}, d"
+          "${mainMod} SHIFT, L, ${movewindow}, r"
 
           # "${mainMod}, T, hy3:makegroup"
           # "${mainMod}, R, hy3:changegroup, toggletab"
