@@ -2,6 +2,7 @@
   config,
   pkgs,
   hostname,
+  inputs,
   ...
 }:
 
@@ -31,10 +32,26 @@ in
     enable = true;
     systemd.enable = true;
 
+    # extraConfig = ''
+    #   plugin = ${inputs.hy3.packages.x86_64-linux.hy3}/lib/libhy3.so
+    # '';
+
     settings = {
       # exec-once = [
       #   "hyprctl setcursor \"Phinger Cursors\" ${builtins.toString config.home.pointerCursor.size}"
       # ];
+
+      # plugins = [ "${inputs.hy3.packages.${pkgs.system}.hy3}/lib/libhy3.so" ];
+
+      # hy3 = {
+      #   tabs = {
+      #     text_font = "monospace";
+      #   };
+      #
+      #   autotile = {
+      #     enable = "true";
+      #   };
+      # };
 
       monitor = monitors."${hostname}";
 
@@ -52,12 +69,17 @@ in
         gaps_in = "2";
         gaps_out = "0";
         border_size = "2";
-        # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg"; # stylix
         # "col.inactive_border" = "rgba(595959aa)";
         no_focus_fallback = "true";
         no_cursor_warps = "true";
 
         layout = "dwindle";
+      };
+
+      dwindle = {
+        pseudotile = "yes";
+        preserve_split = "yes";
       };
 
       input = {
@@ -105,11 +127,6 @@ in
           "fade, 1, 7, default"
           "workspaces, 1, 6, default"
         ];
-      };
-
-      dwindle = {
-        pseudotile = "yes";
-        preserve_split = "yes";
       };
 
       gestures = {
@@ -200,6 +217,8 @@ in
           commands = {
             screenshotArea = "grim -g \"\$(slurp)\" - | convert - -shave 2x2 PNG:- | wl-copy";
             screenshotAreaAndEdit = "grim -g \"\$(slurp)\" - | convert - -shave 2x2 PNG:- | swappy -f -";
+            movewindow = "movewindow";
+            movefocus = "movefocus";
           };
         in
         with commands;
@@ -225,15 +244,21 @@ in
           "${mainMod} SHIFT, F, fullscreen, 1"
           "${mainMod} CTRL, F, fakefullscreen,"
 
-          "${mainMod}, left, movefocus, l"
-          "${mainMod}, right, movefocus, r"
-          "${mainMod}, up, movefocus, u"
-          "${mainMod}, down, movefocus, d"
+          # "${mainMod}, left, movefocus, l"
+          # "${mainMod}, right, movefocus, r"
+          # "${mainMod}, up, movefocus, u"
+          # "${mainMod}, down, movefocus, d"
+          "${mainMod}, H, ${movefocus}, l"
+          "${mainMod}, J, ${movefocus}, d"
+          "${mainMod}, K, ${movefocus}, u"
+          "${mainMod}, L, ${movefocus}, r"
+          "${mainMod} SHIFT, H, ${movewindow}, l"
+          "${mainMod} SHIFT, J, ${movewindow}, r"
+          "${mainMod} SHIFT, K, ${movewindow}, u"
+          "${mainMod} SHIFT, L, ${movewindow}, d"
 
-          "${mainMod}, H, movefocus, l"
-          "${mainMod}, J, movefocus, d"
-          "${mainMod}, K, movefocus, u"
-          "${mainMod}, L, movefocus, r"
+          # "${mainMod}, T, hy3:makegroup"
+          # "${mainMod}, R, hy3:changegroup, toggletab"
 
           "${mainMod}, mouse_down, workspace, e+1"
           "${mainMod}, mouse_up, workspace, e-1"

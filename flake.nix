@@ -50,6 +50,17 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprland = {
+      url = "github:hyprwm/Hyprland?ref=v0.37.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    hy3 = {
+      url = "github:outfoxxed/hy3?ref=hl0.37.1";
+      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hyprland.follows = "hyprland";
+    };
   };
 
   outputs =
@@ -61,7 +72,7 @@
         rust-overlay.overlays.default
 
         (f: p: {
-          clang = p.lib.hiPrio p.clang;
+          clang = p.lib.hiPrio p.clang; # fix collisions with gcc
 
           neovim-nightly = neovim-nightly.packages.${p.system}.default;
 

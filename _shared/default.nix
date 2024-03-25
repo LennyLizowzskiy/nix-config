@@ -1,1 +1,0 @@
-{ extraModules = import ./extra-modules; }

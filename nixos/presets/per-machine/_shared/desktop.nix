@@ -19,7 +19,6 @@
     ./specifics/locale.nix
     ./specifics/nix.nix
     ./specifics/pipewire.nix
-    # ./specifics/rust.nix
     ./specifics/sudo.nix
     ./specifics/waydroid.nix
     ./specifics/wireshark.nix
@@ -27,8 +26,9 @@
     ./specifics/yubikey.nix
     ./specifics/steam.nix
     ./specifics/shadowsocks.nix
+    ./specifics/ssh.nix
 
-    ./specifics/gnome-keyring.nix
+    # ./specifics/gnome-keyring.nix # in home-manager
     ./specifics/de/hyprland-full.nix
     # ./specifics/de/plasma5.nix
     # ./specifics/de/plasma6.nix
@@ -39,28 +39,46 @@
   environment.systemPackages =
     with pkgs;
     [
+      wl-clipboard
       wl-clipboard-x11
 
       steam-run # FHS env on demand
 
       genymotion
       httpie
-
       youtube-music
       p7zip
       rar
       unrar
+      zip
+      unzip
       archiver
-    ]
-    ++ ((import "${sharedDir}/presets/packages/gui.nix") pkgs);
+      brave
+      firefox
+      prismlauncher
+      masterpdfeditor
+      partition-manager
+      haruna
+      microsoft-edge
+      telegram-desktop
+      audacity
+      figma-linux
+      vesktop
+      figma-linux
+      gimp
+      inkscape-with-extensions
+      nicotine-plus
+      onlyoffice-bin
+      scrcpy
+      xca
+      tealdeer
+      gnome.gnome-font-viewer
+      ripdrag
+      v2raya
+      fractal
+    ];
 
   programs.command-not-found.enable = false;
-
-  # services.openssh.enable = true;
-  # services.openssh.settings.PasswordAuthentication = false;
-  programs.ssh.startAgent = true;
-  # security.pam.sshAgentAuth.enable = true;
-
   services.flatpak.enable = true;
   services.printing.enable = true;
   programs.adb.enable = true;

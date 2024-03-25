@@ -7,21 +7,15 @@
 }:
 
 let
-  pictures =
-    let
-      wallpaperFolder = "mi";
-    in
-    {
-      nix-flake-lightblue = "${extraArgs.etcDir}/wallpapers/dark-colorful-polygons.png";
-    };
+  bg = "${extraArgs.etcDir}/wallpapers/dark-colorful-polygons.png";
 
-  monitors = with pictures; {
+  monitors = {
     rher = {
-      "eDP-1" = nix-flake-lightblue;
+      "eDP-1" = bg;
     };
 
     grogoroth = {
-      "DP-2" = nix-flake-lightblue;
+      "DP-2" = bg;
     };
   };
 
@@ -35,7 +29,7 @@ in
     systemd.enable = config.wayland.windowManager.hyprland.enable;
 
     settings = {
-      preload = builtins.attrValues pictures;
+      preload = [ bg ];
 
       wallpapers = getHyprpapers;
     };
