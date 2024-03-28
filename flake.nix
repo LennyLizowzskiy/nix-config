@@ -63,7 +63,7 @@
     };
 
     ironbar = {
-      url = "github:JakeStanger/ironbar";
+      url = "github:JakeStanger/ironbar?ref=v0.14.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

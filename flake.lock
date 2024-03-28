@@ -593,15 +593,16 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1711545728,
-        "narHash": "sha256-bw/VlfNDQzJLHAg5iVO49WNGXPQPFyuvwzUNAdNS/aw=",
+        "lastModified": 1707597934,
+        "narHash": "sha256-y4w4i/IVe1+wjB2tsCPQH6c7XTl93u45Q0pXFi3TY1E=",
         "owner": "JakeStanger",
         "repo": "ironbar",
-        "rev": "fc42f6c540131576d6eaf1201e78ba216861947d",
+        "rev": "bce8122bb97edcaa54b97b0539b89343d0bd466e",
         "type": "github"
       },
       "original": {
         "owner": "JakeStanger",
+        "ref": "v0.14.1",
         "repo": "ironbar",
         "type": "github"
       }

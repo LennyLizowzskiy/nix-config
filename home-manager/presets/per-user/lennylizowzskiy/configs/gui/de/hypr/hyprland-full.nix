@@ -10,6 +10,7 @@
     ../../wayland/runners/tofi.nix
     ../../wayland/screenshots/swappy.nix
     ../../wayland/statusbars/waybar
+    # ../../wayland/statusbars/ironbar
 
     ../../../services/batsignal.nix
     ../../../services/udiskie.nix
