@@ -1,10 +1,16 @@
+local function local_path()
+  local path = vim.fn.expand("%:h")
+  path = path:gsub("/home/" .. os.getenv("USER"), "~")
+  return path
+end
+
 return {
   {
     "nvim-lualine/lualine.nvim",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-    event = "VimEnter",
+    lazy = false,
     config = function()
       local ll = require("lualine")
 
@@ -14,12 +20,14 @@ return {
           section_separators = { left = "", right = "" },
           disabled_filetypes = {
             statusline = {
+              "CHADTree",
               "starter",
               "TelescopePrompt",
               "dbui",
             },
           },
           always_divide_middle = true,
+          -- globalstatus = true,
           refresh = {
             statusline = 1000,
           },
@@ -38,21 +46,20 @@ return {
               end,
             },
           },
-          lualine_b = { "buffers" },
-          lualine_c = {},
-          lualine_x = { "diagnostics", "diff" },
-          lualine_y = {
-            "branch",
-            "filetype",
+          lualine_b = { "branch" },
+          lualine_c = {
+            local_path(),
           },
+          lualine_x = { "diagnostics", "diff" },
+          lualine_y = {},
           lualine_z = {},
         },
         inactive_sections = {
           lualine_a = {},
           lualine_b = { "branch" },
           lualine_c = { "filename" },
-          lualine_x = { "location" },
-          lualine_y = {},
+          lualine_x = { "progress" },
+          lualine_y = { "location" },
           lualine_z = {},
         },
         tabline = {},

@@ -5,13 +5,19 @@ vim.opt.sessionoptions = {
   "buffers",
   "curdir",
   "folds",
+  "terminal",
   "tabpages",
   "globals",
   "tabpages",
+  "help",
   "winsize",
   "winpos",
   "localoptions",
 }
+
+-- hide netrw
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -23,7 +29,7 @@ vim.opt.autoread = true
 vim.opt.updatetime = 250
 -- vim.opt.synmaxcol = 300
 
-vim.opt.mouse = ""
+-- vim.opt.mouse = ""
 
 vim.opt.undofile = true
 vim.opt.undodir = vim.env.HOME .. "/.local/state/nvim/vim_undo"

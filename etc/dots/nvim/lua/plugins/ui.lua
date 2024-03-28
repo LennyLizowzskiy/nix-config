@@ -6,6 +6,7 @@ return {
   { "echasnovski/mini.cursorword", version = false, opts = {} },
   {
     "lukas-reineke/indent-blankline.nvim",
+    lazy = false,
     config = function()
       require("ibl").setup({
         indent = {
@@ -42,7 +43,7 @@ return {
   },
   {
     "folke/todo-comments.nvim",
-    event = "VimEnter",
+    lazy = false,
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = {
       { "<leader>tdl", "<cmd>TodoTelescope<cr>", desc = "Search through TODOs" },
@@ -51,8 +52,10 @@ return {
   },
   {
     "lukas-reineke/virt-column.nvim",
-    event = "VimEnter",
-    opts = {},
+    lazy = false,
+    opts = {
+      char = "|",
+    },
   },
   {
     "echasnovski/mini.animate",
@@ -62,7 +65,21 @@ return {
       scroll = {
         enable = false,
       },
-    }
+      cursor = {
+        enable = false,
+      },
+    },
+  },
+  {
+    "uga-rosa/ccc.nvim",
+    event = "VimEnter",
+    opts = {},
+    config = function(opts)
+      local ccc = require("ccc")
+      local mapping = ccc.mapping
+
+      ccc.setup(opts)
+    end,
   },
   -- {
   --   "echasnovski/mini.hipatterns",
@@ -74,31 +91,32 @@ return {
   --     }
   --   },
   -- },
-  {
-    "NvChad/nvim-colorizer.lua",
-    event = "VimEnter",
-    opts = {
-      user_default_options = {
-        names = false,
-        RRGGBBAA = false,
-        css = true,
-        css_fn = true,
-        tailwind = true,
-      },
-      filetypes = {
-        "*",
-        css = {
-          css = true,
-        },
-        html = {
-          names = false,
-          mode = "foreground",
-          tailwind = true,2
-        },
-        cmp_docs = {
-          always_update = true
-        },
-      },
-    },
-  }
+  -- {
+  --   "NvChad/nvim-colorizer.lua",
+  --   event = "VimEnter",
+  --   opts = {
+  --     user_default_options = {
+  --       names = false,
+  --       RRGGBBAA = false,
+  --       css = true,
+  --       css_fn = true,
+  --       tailwind = true,
+  --     },
+  --     filetypes = {
+  --       "*",
+  --       css = {
+  --         css = true,
+  --       },
+  --       html = {
+  --         names = false,
+  --         mode = "foreground",
+  --         tailwind = true,
+  --         2,
+  --       },
+  --       cmp_docs = {
+  --         always_update = true,
+  --       },
+  --     },
+  --   },
+  -- },
 }

@@ -29,26 +29,26 @@
 
   # programs.gnupg.agent.pinentryPackage = lib.mkForce pkgs.pinentry-all;
 
-  environment.systemPackages =
-    with pkgs; [
-      just
-      dua # disk storage usage util
-      duf # disk storage usage util
-      fd # find-like
-      sd # sed-like
-      fdupes # find duplicates
-      screen
-      nix-init
-      ffmpeg
-      imagemagickBig
-      steam-run
-      aria
-      btop
-      eza
-      sops
-      unzip
-      zip
-      archiver
-      archivemount
-    ];
+  environment.systemPackages = with pkgs; [
+    just
+    dua # disk storage usage util
+    duf # disk storage usage util
+    fd # find-like
+    sd # sed-like
+    fdupes # find duplicates
+    screen
+    nix-init
+    ffmpeg
+    imagemagickBig
+    busybox
+    steam-run
+    aria
+    btop
+    eza
+    sops
+    unzip
+    zip
+    archiver
+    archivemount
+  ];
 }

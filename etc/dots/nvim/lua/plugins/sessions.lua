@@ -10,8 +10,17 @@ return {
         "~/Downloads",
         "/",
         "~/@",
-        "~/@/projects"
+        "~/@/projects",
       },
-    }
+    },
+  },
+  {
+    "gnikdroy/projections.nvim",
+    branch = "pre_release",
+    opts = {
+      workspaces = {
+        "~/@/dev",
+      },
+    },
   },
 }

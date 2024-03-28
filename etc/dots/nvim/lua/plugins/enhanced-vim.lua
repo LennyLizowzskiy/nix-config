@@ -22,7 +22,7 @@ return {
     "echasnovski/mini.bracketed",
     version = false,
     event = "VeryLazy",
-    opts = {}
+    opts = {},
   },
   {
     "kevinhwang91/nvim-bqf",
@@ -50,19 +50,44 @@ return {
       stop_eof = false,
     },
   },
+  -- {
+  --   "gbprod/yanky.nvim",
+  --   event = "VeryLazy",
+  --   dependencies = {
+  --     "nvim-telescope/telescope.nvim",
+  --   },
+  --   config = function()
+  --     -- require("telescope").load_extension("yank_history")
+  --   end,
+  --   opts = {},
+  -- },
   {
-    "gbprod/yanky.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
+    "tenxsoydev/karen-yank.nvim",
+    opts = {},
+  },
+  -- {
+  --   "mg979/vim-visual-multi",
+  --   event = "VeryLazy",
+  -- },
+  {
+    "ariel-frischer/bmessages.nvim",
+    cmd = {
+      "Bmessages",
+      "Bmessagesvs",
+      "Bmessagessp",
+      "BmessagesEdit",
     },
-    config = function()
-      -- require("telescope").load_extension("yank_history")
-    end,
+  },
+  {
+    "echasnovski/mini.move",
+    version = "*",
+    event = "BufEnter",
     opts = {},
   },
   {
-    "mg979/vim-visual-multi",
+    "echasnovski/mini.bufremove",
+    version = "*",
     event = "VeryLazy",
+    opts = {},
   },
 }

@@ -18,31 +18,19 @@ return {
         dependencies = "nvim-telescope/telescope-file-browser.nvim",
       },
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-      {
-        "rmagatti/session-lens",
-        dependencies = "rmagatti/auto-session",
-      },
+      -- TODO:
+      "LukasPietzschmann/telescope-tabs",
+      "debugloop/telescope-undo.nvim",
+      "SalOrak/whaler.nvim",
+      "axkirillov/easypick.nvim",
+      "fdschmidt93/telescope-egrepify.nvim",
+      "polirritmico/telescope-lazy-plugins.nvim",
+      "nvim-telescope/telescope-ui-select.nvim",
     },
     cmd = {
       "Telescope",
       "ChangeColorscheme",
       "ListKeymaps",
-    },
-    keys = {
-      { "<leader>bl", "<cmd>Telescope buffers<cr>", desc = "Search through buffers" },
-      { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Search through files" },
-      { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Search through files' contents" },
-      { "<leader>gf", "<cmd>Telescope git_files<cr>", desc = "Search through git files" },
-      { "<leader>fm", "<cmd>Telescope file_browser<cr>", desc = "Browse files (Telescope)" },
-      { "<leader>pr", "<cmd>Telescope project<cr>", desc = "Open project manager" },
-      { "<leader>cf", "<cmd>Telescope oldfiles<cr>", desc = "Search through closed files" },
-      -- { "<leader>cmds", "<cmd>Telescope commands<cr>", desc = "Search through vim commands" },
-      { "<leader>lss", "<cmd>Telescope lsp_document_symbols<cr>", desc = "List LSP symbols (buffer)" },
-      { "<leader>lsS", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "List LSP symbols (workspace)" },
-      { "<leader>lsi", "<cmd>Telescope lsp_implementations<cr>", desc = "Goto/see LSP implementations(s)" },
-      { "<leader>lsdf", "<cmd>Telescope lsp_definitions<cr>", desc = "Goto/see LSP definitions(s)" },
-      { "<leader>lstd", "<cmd>Telescope lsp_type_definitions<cr>", desc = "Goto/see LSP type definition(s)" },
-      -- { ":", "<cmd>Telescope cmdline<cr>", desc = "Vim cmdline" },
     },
     config = function()
       local ts = require("telescope")
@@ -62,6 +50,7 @@ return {
             },
           },
         },
+
         extensions = {
           cmdline = {
             picker = {
@@ -87,7 +76,6 @@ return {
       ts.load_extension("project")
       ts.load_extension("file_browser")
       ts.load_extension("session-lens")
-      -- ts.load_extension("cmdline")
     end,
   },
 }

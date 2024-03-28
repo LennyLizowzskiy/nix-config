@@ -74,4 +74,29 @@ return {
       },
     },
   },
+  {
+    "GCBallesteros/jupytext.nvim",
+    event = "BufEnter",
+    opts = {},
+  },
+  {
+    "krady21/compiler-explorer.nvim",
+    dependencies = "stevearc/dressing.nvim",
+    event = "BufEnter",
+  },
+  {
+    "anuvyklack/fold-preview.nvim",
+    dependencies = "anuvyklack/keymap-amend.nvim",
+    event = "VimEnter",
+    opts = {},
+  },
+  {
+    url = "https://git.sr.ht/~reggie/licenses.nvim",
+    cmd = {
+      "LicenseInsert",
+      "LicenseFetch",
+      "LicenseUpdate",
+      "LicenseWrite",
+    },
+  },
 }

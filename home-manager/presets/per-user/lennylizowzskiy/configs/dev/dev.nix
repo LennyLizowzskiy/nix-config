@@ -26,12 +26,12 @@ in
     gnumake
     cmake
     jq
+    yq
     jaq
     curl
     just
     tree-sitter
     flatpak-builder
-
     ## extra package managers
     wasmer
     yarn
@@ -39,6 +39,7 @@ in
     ## compilers, linkers & runtimes
     nodePackages.nodejs
     python3
+    virtualenv
     zig
     gcc
     mold

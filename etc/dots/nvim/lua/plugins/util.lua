@@ -29,21 +29,19 @@ return {
     "echasnovski/mini.comment",
     version = false,
     event = "VeryLazy",
-    opts = {
-
-    }
+    opts = {},
   },
   { -- align text
     "echasnovski/mini.align",
     version = false,
     event = "VeryLazy",
-    opts = {}
+    opts = {},
   },
   { -- editorconfig support
     "gpanders/editorconfig.nvim",
     event = "VeryLazy",
     config = function()
-      local cfg = require("editorconfig")
+      -- local cfg = require("editorconfig")
     end,
   },
   { -- move any selection in any direction
@@ -132,10 +130,45 @@ return {
       },
     },
   },
+  -- {
+  --   "vhyrro/luarocks.nvim",
+  --   priority = 1000,
+  --   event = "VeryLazy",
+  --   config = true,
+  -- },
   {
-    "vhyrro/luarocks.nvim",
-    priority = 1000,
+    "sontungexpt/url-open",
     event = "VeryLazy",
-    config = true,
+    cmd = "URLOpenUnderCursor",
+    config = function()
+      local status_ok, url_open = pcall(require, "url-open")
+      if not status_ok then
+        return
+      end
+      url_open.setup({})
+    end,
+  },
+  {
+    "chrisgrieser/nvim-alt-substitute",
+    event = "CmdlineEnter",
+    opts = true,
+  },
+  -- {
+  --   "LintaoAmons/cd-project.nvim",
+  --   event = "VeryLazy",
+  --   opts = {
+  --     project_picker = "telescope",
+  --   },
+  -- }
+  {
+    "echasnovski/mini.visits",
+    event = "VeryLazy",
+    version = "*",
+    opts = {},
+  },
+  {
+    "ziontee113/icon-picker.nvim",
+    event = "VeryLazy",
+    opts = {},
   },
 }

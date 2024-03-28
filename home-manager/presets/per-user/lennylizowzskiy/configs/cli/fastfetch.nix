@@ -13,8 +13,8 @@
         disableLinewrap = false;
         hideCursor = false;
         binaryPrefix = "jedec";
-        temp = "ndigits";
-        unit = "CELSIUS";
+        # temp = "ndigits";
+        # unit = "CELSIUS";
       };
 
       modules = [

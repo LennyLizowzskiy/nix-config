@@ -8,6 +8,42 @@ return {
     opts = {},
   },
   {
+    "soulis-1256/eagle.nvim",
+    init = function()
+      vim.o.mousemoveevent = true
+    end,
+    opts = {},
+  },
+  {
+    "artemave/workspace-diagnostics.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
+  {
+    "aznhe21/actions-preview.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("actions-preview").setup({
+        highlight_commands = {
+          require("actions-preview.highlight").diff_highlight(),
+        },
+        telescope = {
+          sorting_strategy = "ascending",
+          layout_strategy = "vertical",
+          layout_config = {
+            width = 0.8,
+            height = 0.9,
+            prompt_position = "top",
+            preview_cutoff = 20,
+            preview_height = function(_, _, max_lines)
+              return max_lines - 15
+            end,
+          },
+        },
+      })
+    end,
+  },
+  {
     "smjonas/inc-rename.nvim",
     dependencies = {
       "stevearc/dressing.nvim",
@@ -29,6 +65,12 @@ return {
       max_width = 60,
       floating_window_abow_cur_line = false,
       hint_prefix = "󰐾 ",
+      hint_inline = function()
+        return true
+      end,
+      handler_opts = {
+        border = "shadow",
+      },
     },
   },
   {
@@ -43,13 +85,25 @@ return {
     opts = {},
   },
   {
+    "jinzhongjia/LspUI.nvim",
+    branch = "main",
+    event = "VeryLazy",
+    opts = {},
+  },
+  {
     "neovim/nvim-lspconfig",
     event = "VeryLazy",
     dependencies = {
+      "ray-x/lsp_signature.nvim",
       {
         "b0o/SchemaStore.nvim",
         opts = nil,
-      }
+      },
+      {
+        "folke/neodev.nvim",
+        event = "VeryLazy",
+        opts = {},
+      },
     },
     init = function()
       -- enable diagnostics in INSERT mode
@@ -68,24 +122,6 @@ return {
       cfg.lua_ls.setup({
         settings = {
           Lua = {
-            runtime = {
-              version = "LuaJIT",
-            },
-            diagnostics = {
-              globals = {
-                "vim",
-                "require",
-              },
-            },
-            workspace = {
-              -- library = {
-              --   vim.api.nvim_get_runtime_file("", true),
-              --   [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-              --   [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-              -- },
-              maxPreload = 10000,
-              preloadFileSize = 1000,
-            },
             hint = {
               enable = true,
             },
@@ -102,7 +138,7 @@ return {
 
       cfg.typst_lsp.setup({})
 
-      cfg.ols.setup({})
+      cfg.ols.setup({}) -- odin
 
       cfg.html.setup({})
 
@@ -112,11 +148,13 @@ return {
         filetypes_exclude = { "markdown" },
       })
 
-      cfg.biome.setup({
+      cfg.biome.setup({ -- js, json, ts, tsx
         filetypes_exclude = { "json" },
-      }) -- js, json, ts, tsx
+      })
 
-      cfg.ruff_lsp.setup({}) -- py
+      -- py
+      cfg.ruff_lsp.setup({})
+      cfg.pyright.setup({})
 
       cfg.zls.setup({}) -- zig
 
@@ -155,10 +193,10 @@ return {
               ignore = {
                 ".eslintrc",
                 "package.json",
-              }
+              },
             }),
             format = {
-              enable = true
+              enable = true,
             },
             validate = { enable = true },
           },

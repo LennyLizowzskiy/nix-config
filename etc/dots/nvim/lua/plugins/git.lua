@@ -30,4 +30,24 @@ return {
     event = "VeryLazy",
     opts = {},
   },
+  {
+    "ldelossa/gh.nvim",
+    dependencies = {
+      {
+        "ldelossa/litee.nvim",
+        main = "litee.lib",
+        opts = nil,
+      },
+    },
+    opts = nil,
+  },
+  {
+    "topaxi/gh-actions.nvim",
+    cmd = "GhActions",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+    },
+    opts = {},
+  },
 }

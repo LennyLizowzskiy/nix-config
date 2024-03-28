@@ -15,7 +15,7 @@
       num-results = 8;
       font = "monospace";
       background-color = "#000A";
-      matching-algorithm = "fuzzy";
+      # matching-algorithm = "fuzzy";
     };
   };
 }

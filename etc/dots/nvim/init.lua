@@ -12,7 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- vim.cmd("runtime! lua/*.lua")
-require("bindings")
 require("vim-options")
 
 require("lazy").setup({
@@ -23,3 +22,6 @@ require("lazy").setup({
     notify = false,
   },
 })
+
+require("bindings")
+require("commands")
