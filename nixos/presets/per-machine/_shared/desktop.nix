@@ -55,8 +55,6 @@
     firefox
     prismlauncher
     masterpdfeditor
-    partition-manager
-    haruna
     microsoft-edge
     telegram-desktop
     audacity
@@ -75,6 +73,16 @@
     v2raya
     fractal
     resources
+    mpv # vid
+    celluloid # vid
+    amberol # music
+    gparted # disk
+    thunderbird-bin
+    fractal
+    kdePackages.dolphin
+    popsicle # usb flasher
+    onefetch # git info fetcher
+    gping
   ];
 
   programs.command-not-found.enable = false;
