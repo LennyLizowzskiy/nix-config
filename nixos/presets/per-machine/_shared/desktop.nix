@@ -74,6 +74,7 @@
     ripdrag
     v2raya
     fractal
+    resources
   ];
 
   programs.command-not-found.enable = false;
