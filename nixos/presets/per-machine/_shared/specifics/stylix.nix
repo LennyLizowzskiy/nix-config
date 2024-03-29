@@ -11,10 +11,11 @@
   stylix = {
     autoEnable = true;
 
-    base16Scheme = builtins.fetchurl {
-      url = "https://raw.githubusercontent.com/tinted-theming/schemes/ae4ce8b0d1f9b247d3add88a23aec3d833ae76d1/base16/ia-dark.yaml";
-      sha256 = "1v9z2b3nq4rmc6ikf1magmqg7d6m2nwmizk33phkw6ld9c6y6xy0";
-    };
+    base16Scheme = "${etcDir}/themes/base16/kanagawa-dragon.yaml";
+    # builtins.fetchurl {
+    #   url = "https://raw.githubusercontent.com/tinted-theming/schemes/ae4ce8b0d1f9b247d3add88a23aec3d833ae76d1/base16/ia-dark.yaml";
+    #   sha256 = "1v9z2b3nq4rmc6ikf1magmqg7d6m2nwmizk33phkw6ld9c6y6xy0";
+    # };
 
     image = "${etcDir}/wallpapers/nix-wallpaper-nineish-dark-gray.png";
 
@@ -40,9 +41,7 @@
       };
 
       monospace = {
-        package = pkgs.nerdfonts.override {
-          fonts = [ "IBMPlexMono" ];
-        };
+        package = pkgs.nerdfonts.override { fonts = [ "IBMPlexMono" ]; };
         name = "BlexMono Nerd Font";
       };
 

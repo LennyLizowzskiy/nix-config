@@ -22,6 +22,3 @@ require("lazy").setup({
     notify = false,
   },
 })
-
-require("bindings")
-require("commands")

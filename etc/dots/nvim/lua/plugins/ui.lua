@@ -23,7 +23,6 @@ return {
   },
   {
     "mawkler/modicator.nvim",
-    dependencies = "projekt0n/github-nvim-theme",
     event = "VeryLazy",
     init = function()
       vim.o.termguicolors = true
@@ -54,7 +53,7 @@ return {
     "lukas-reineke/virt-column.nvim",
     lazy = false,
     opts = {
-      char = "|",
+      char = "│",
     },
   },
   {

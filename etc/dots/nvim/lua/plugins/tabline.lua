@@ -13,10 +13,10 @@ return {
       require("cokeline").setup({
         default_hl = {
           fg = function(buf)
-            return buf.is_focused and get_hex("MiniTablineCurrent", "fg") or get_hex("TablineSel", "fg")
+            return buf.is_focused and get_hex("TabLineSel", "fg") or get_hex("TabLine", "fg")
           end,
           bg = function(buf)
-            return buf.is_focused and get_hex("MiniTablineCurrent", "bg") or get_hex("TablineSel", "bg")
+            return buf.is_focused and get_hex("TabLineSel", "bg") or get_hex("TabLine", "bg")
           end,
         },
 
@@ -78,10 +78,10 @@ return {
                 return " " .. tab.number .. " "
               end,
               fg = function(tab)
-                return tab.is_active and get_hex("MatchParen", "fg") or get_hex("FloatShadow", "fg")
+                return tab.is_active and get_hex("WinBar", "fg") or get_hex("TabLine", "fg")
               end,
               bg = function(tab)
-                return tab.is_active and get_hex("MatchParen", "bg") or get_hex("FloatShadow", "bg")
+                return tab.is_active and get_hex("TabLineSel", "bg") or get_hex("TabLine", "bg")
               end,
             },
           },
