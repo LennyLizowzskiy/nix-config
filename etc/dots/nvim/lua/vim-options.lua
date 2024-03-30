@@ -15,6 +15,9 @@ vim.opt.sessionoptions = {
   "localoptions",
 }
 
+-- hide cmdline when it's not used
+-- vim.opt.cmdheight = 0
+
 -- hide netrw
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
@@ -35,6 +38,10 @@ vim.opt.updatetime = 250
 
 vim.opt.undofile = true
 vim.opt.undodir = vim.env.HOME .. "/.local/state/nvim/vim_undo"
+
+vim.o.inccommand = "nosplit"
+
+vim.o.scrolloff = 4
 
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
@@ -71,6 +78,11 @@ vim.opt.colorcolumn = "90"
 vim.opt.clipboard = "unnamedplus"
 
 vim.wo.fillchars = "eob:"
+
+vim.o.visualbell = true
+
+vim.opt.list = true
+vim.opt.listchars:append({ trail = "•", tab = "»·" })
 
 vim.opt.guicursor = {
   "n-v-c:block", -- Normal, visual, command-line: block cursor

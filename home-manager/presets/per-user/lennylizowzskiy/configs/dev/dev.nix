@@ -57,6 +57,10 @@ in
     stylua
     ruff # py linter & formatter
     shellcheck
+    nodePackages.graphql-language-service-cli
+    docker-compose-language-service
+    dockerfile-language-server-nodejs
+    clang-tools # c, c++, objc, cuda, proto lsp
     # rustfmt and clippy defined in rust.nix
     yaml-language-server
     slint-lsp

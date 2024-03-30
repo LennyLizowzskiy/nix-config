@@ -16,6 +16,7 @@ return {
       "JoosepAlviste/nvim-ts-context-commentstring",
       "IndianBoy42/tree-sitter-just",
     },
+    lazy = false,
     config = function()
       require("nvim-treesitter.install").compilers = { "gcc" }
 

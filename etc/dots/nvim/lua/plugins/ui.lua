@@ -18,6 +18,15 @@ return {
         scope = {
           enabled = false,
         },
+        exclude = {
+          filetypes = {
+            "help",
+            "Trouble",
+            "trouble",
+            "lazy",
+            "neo-tree",
+          },
+        },
       })
     end,
   },

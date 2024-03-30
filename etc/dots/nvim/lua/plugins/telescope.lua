@@ -1,37 +1,145 @@
+local function load(ext_name)
+  require("telescope").load_extension(ext_name)
+end
+
 return {
+  {
+    "LukasPietzschmann/telescope-tabs",
+    dependencies = "nvim-telescope/telescope.nvim",
+    config = function()
+      load("telescope-tabs")
+      require("telescope-tabs").setup({
+        
+      })
+    end,
+  },
+  -- {
+  --   "nvim-telescope/telescope-file-browser.nvim",
+  --   dependencies = {
+  --     "nvim-telescope/telescope.nvim",
+
+  --     "nvim-tree/nvim-web-devicons",
+  --     "nvim-lua/plenary.nvim",
+  --   },
+  --   config = function()
+  --     load("file_browser")
+  --   end,
+  -- },
+  -- {
+  --   "nvim-telescope/telescope-project.nvim",
+  --   dependencies = "nvim-telescope/telescope.nvim"
+  --   config = function()
+  --     load("project")
+  --   end,
+  -- },
+  {
+    "debugloop/telescope-undo.nvim",
+    dependencies = "nvim-telescope/telescope.nvim",
+    config = function()
+      local ts = require("telescope")
+      ts.setup({
+        extensions = {
+          undo = {
+            use_delta = true,
+          },
+        },
+      })
+      ts.load_extension("undo")
+    end,
+  },
+  {
+    "SalOrak/whaler.nvim",
+    dependencies = "nvim-telescope/telescope.nvim",
+    config = function()
+      local ts = require("telescope")
+      ts.setup({
+        extensions = {
+          whaler = {
+            directories = {
+              "~/@/projects",
+            },
+            file_explorer = "neotree",
+          },
+        },
+      })
+      ts.load_extension("whaler")
+    end,
+  },
+  {
+    "axkirillov/easypick.nvim",
+    dependencies = "nvim-telescope/telescope.nvim",
+    opts = {
+      pickers = {
+
+      },
+    }
+  },
+  {
+    "fdschmidt93/telescope-egrepify.nvim",
+    dependencies = "nvim-telescope/telescope.nvim",
+    config = function()
+      load("egrepify")
+    end,
+  },
+  {
+    "polirritmico/telescope-lazy-plugins.nvim",
+    dependencies = "nvim-telescope/telescope.nvim",
+    config = function()
+      load("lazy_plugins")
+    end,
+  },
+  {
+    "nvim-telescope/telescope-ui-select.nvim",
+    dependencies = "nvim-telescope/telescope.nvim",
+    config = function()
+      local ts = require("telescope")
+      ts.setup({
+        extensions = {
+          ["ui-select"] = {
+
+          },
+        },
+      })
+      ts.load_extension("ui-select")
+    end,
+  },
+  {
+    "rmagatti/session-lens",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      {
+        "rmagatti/auto-session",
+        dependencies = "nvim-telescope/telescope.nvim",
+        opts = {
+          auto_save_enabled = true,
+          auto_restore_enabled = false,
+          auto_session_suppress_dirs = {
+            "~/",
+            "~/Downloads",
+            "/",
+            "~/@",
+            "~/@/projects",
+          },
+        },
+      },
+    },
+    config = function()
+      load("session-lens")
+    end,
+  },
   {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons",
-
-      "nvim-telescope/telescope-file-browser.nvim",
-      {
-        "nvim-telescope/telescope-file-browser.nvim",
-        dependencies = {
-          "nvim-tree/nvim-web-devicons",
-          "nvim-lua/plenary.nvim",
-        },
-      },
-      {
-        "nvim-telescope/telescope-project.nvim",
-        dependencies = "nvim-telescope/telescope-file-browser.nvim",
-      },
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-      -- TODO:
-      "LukasPietzschmann/telescope-tabs",
-      "debugloop/telescope-undo.nvim",
-      "SalOrak/whaler.nvim",
-      "axkirillov/easypick.nvim",
-      "fdschmidt93/telescope-egrepify.nvim",
-      "polirritmico/telescope-lazy-plugins.nvim",
-      "nvim-telescope/telescope-ui-select.nvim",
     },
     cmd = {
       "Telescope",
       "ChangeColorscheme",
       "ListKeymaps",
     },
+    lazy = false,
     config = function()
       local ts = require("telescope")
       ts.setup({
@@ -64,18 +172,7 @@ return {
         },
       })
 
-      vim.api.nvim_create_user_command("ListColorschees", function()
-        require("telescope.builtin").colorscheme()
-      end, { desc = "List colorschemes (Telescope)" })
-
-      vim.api.nvim_create_user_command("ListKeymaps", function()
-        require("telescope.builtin").keymaps()
-      end, { desc = "List keymaps (Telescope)" })
-
       ts.load_extension("fzf")
-      ts.load_extension("project")
-      ts.load_extension("file_browser")
-      ts.load_extension("session-lens")
     end,
   },
 }

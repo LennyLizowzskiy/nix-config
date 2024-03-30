@@ -1,3 +1,5 @@
+local icons = shared.icons
+
 return {
   { -- list for showing diagnostics, references, telescope results, quickfix and location lists
     "folke/trouble.nvim",
@@ -16,12 +18,12 @@ return {
   },
   {
     "artemave/workspace-diagnostics.nvim",
-    event = "VeryLazy",
+    event = "LspAttach",
     opts = {},
   },
   {
     "aznhe21/actions-preview.nvim",
-    event = "VeryLazy",
+    event = "LspAttach",
     config = function()
       require("actions-preview").setup({
         highlight_commands = {
@@ -58,43 +60,134 @@ return {
     end,
   },
   -- {
-  --   "ray-x/lsp_signature.nvim",
-  --   event = "VeryLazy",
-  --   main = "lsp_signature",
-  --   opts = {
-  --     max_width = 60,
-  --     floating_window_abow_cur_line = false,
-  --     hint_prefix = "󰐾 ",
-  --     hint_inline = function()
-  --       return true
-  --     end,
-  --     handler_opts = {
-  --       border = "shadow",
-  --     },
-  --   },
-  -- },
-  -- {
   --   "Wansmer/symbol-usage.nvim",
   --   optional = true,
   --   event = "BufReadPre",
   --   opts = {},
   -- },
   {
-    "nvimdev/lspsaga.nvim",
-    event = "LspAttach",
-    opts = {},
+    "luckasRanarison/clear-action.nvim",
+    opts = {
+      signs = {
+        icons = {
+          quickfix = icons.quickfix .. " ",
+          refactor = icons.refactor .. " ",
+          source = icons.source .. " ",
+          combined = icons._fallback .. " "
+        },
+        update_on_insert = true,
+        show_count = false,
+      },
+      mappings = {
+        code_action = "<leader>aq"
+      },
+    }
   },
   {
-    "jinzhongjia/LspUI.nvim",
-    branch = "main",
-    event = "VeryLazy",
-    opts = {},
+    "nvimdev/lspsaga.nvim",
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-tree/nvim-web-devicons'
+    },
+    event = "LspAttach",
+    opts = {
+      breadcrumbs = {
+        show_file = false,
+      },
+      lightbulb = {
+        enable = false,
+      },
+      rename = {
+        auto_save = true,
+      },
+      definition = {
+        keys = {
+
+        },
+      },
+    },
+  },
+  -- {
+  --   "jinzhongjia/LspUI.nvim",
+  --   branch = "main",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     local lui = require("LspUI")
+  --     lui.setup({
+  --       rename = {
+  --         enable = false,
+  --       },
+  --       lightbulb = {
+  --         enable = false,
+  --       },
+  --       code_action = {
+  --         enable = false,
+  --       },
+  --       diagnostic = {
+  --         enable = false,
+  --       },
+  --       hover = {
+  --         enable = false,
+  --       },
+  --       inlay_hint = {
+  --         enable = false,
+  --       },
+  --       definition = {
+  --         enable = false,
+  --       },
+  --       type_definition = {
+  --         enable = false,
+  --       },
+  --       declaration = {
+  --         enable = false,
+  --       },
+  --       implementation = {
+  --         enable = false,
+  --       },
+  --       reference = {
+  --         enable = false,
+  --       },
+  --       pos_keybind = {
+  --         enable = false,
+  --       },
+  --       signature = {
+  --         enable = true,
+  --         icon = "",
+  --       },
+  --     })
+  --   end,
+  -- },
+  -- {
+  --   "nvimtools/none-ls.nvim",
+  --   dependencies = "nvim-lua/plenary.nvim",
+  --   config = function()
+  --     local nls = require("null-ls")
+  --     local b = nls.builtins
+  --     nls.setup({
+  --       sources = {
+
+  --       },
+  --     })
+  --   end,
+  -- },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "LspAttach",
+    opts = {
+      floating_window = true,
+      hint_enable = true,
+      hint_prefix = " ",
+      hint_inline = function() return true end,
+      select_signature_key = "<C-n>",
+    },
+    config = function(_, opts)
+      require("lsp_signature").setup(opts)
+    end,
   },
   {
     "neovim/nvim-lspconfig",
     event = "VeryLazy",
     dependencies = {
-      "ray-x/lsp_signature.nvim",
       {
         "b0o/SchemaStore.nvim",
         opts = nil,
@@ -111,20 +204,37 @@ return {
         update_in_insert = true,
       })
 
-      local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
+      local signs = {
+        Error = icons.error,
+        Warn = icons.warn,
+        Hint = icons.hint,
+        Info = icons.info
+      }
       for type, icon in pairs(signs) do
         local hl = "DiagnosticSign" .. type
-        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+        vim.fn.sign_define(hl, { text = icon .. " ", texthl = hl, numhl = hl })
       end
     end,
     config = function()
+      local on_attach = function(client, bufnr)
+        if client.server_capabilities.inlayHintProvider then
+          vim.lsp.inlay_hint.enable(bufnr, true)
+        end
+      end
+
+      local make_defaults = function()
+        return {
+          on_attach = on_attach,
+        }
+      end
+
       local cfg = require("lspconfig")
       cfg.lua_ls.setup({
         settings = {
           Lua = {
-            hint = {
-              enable = true,
-            },
+            -- hint = {
+            --   enable = true,
+            -- },
             telemetry = {
               enable = false,
             },
@@ -132,35 +242,46 @@ return {
         },
       })
 
-      cfg.nixd.setup({})
+      cfg.nixd.setup(make_defaults())
 
-      cfg.marksman.setup({}) -- md
+      cfg.marksman.setup(make_defaults()) -- md
 
-      cfg.typst_lsp.setup({})
+      cfg.typst_lsp.setup(make_defaults())
 
-      cfg.ols.setup({}) -- odin
+      cfg.ols.setup(make_defaults()) -- odin
 
-      cfg.html.setup({})
+      cfg.html.setup(make_defaults())
 
-      cfg.cssls.setup({})
+      cfg.cssls.setup(make_defaults())
 
       cfg.tailwindcss.setup({
+        on_attach = on_attach,
         filetypes_exclude = { "markdown" },
       })
 
       cfg.biome.setup({ -- js, json, ts, tsx
+        on_attach = on_attach,
         filetypes_exclude = { "json" },
       })
 
       -- py
-      cfg.ruff_lsp.setup({})
-      cfg.pyright.setup({})
+      cfg.ruff_lsp.setup(make_defaults())
+      cfg.pyright.setup(make_defaults())
 
-      cfg.zls.setup({}) -- zig
+      cfg.zls.setup(make_defaults()) -- zig
 
-      cfg.taplo.setup({}) -- toml
+      cfg.taplo.setup(make_defaults()) -- toml
+
+      cfg.docker_compose_language_service.setup(make_defaults())
+
+      cfg.graphql.setup(make_defaults())
+
+      cfg.clangd.setup(make_defaults())
+
+      cfg.dockerls.setup(make_defaults())
 
       cfg.yamlls.setup({
+        on_attach = on_attach,
         capabilities = {
           textDocument = {
             foldingRange = {
@@ -187,6 +308,7 @@ return {
       })
 
       cfg.jsonls.setup({
+        on_attach = on_attach,
         settings = {
           json = {
             schemas = require("schemastore").json.schemas({

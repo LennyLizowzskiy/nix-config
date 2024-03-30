@@ -28,7 +28,7 @@ return {
     opts = {
       format_on_save = {
         timeout_ms = 500,
-        lsp_fallback = true,
+        lsp_fallback = false,
       },
 
       formatters_by_ft = {
@@ -52,13 +52,11 @@ return {
       },
     },
   },
-  -- { -- Snippets
-  --   "L3MON4D3/LuaSnip",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     local luasnip = require("luasnip")
-  --   end,
-  -- },
+  {
+    "L3MON4D3/LuaSnip",
+    version = "v2.*",
+    build = "make install_jsregexp",
+  },
   { -- Code outline
     "stevearc/aerial.nvim",
     dependencies = {

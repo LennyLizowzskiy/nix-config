@@ -7,8 +7,8 @@ return {
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
       "nvim-neotest/nvim-nio",
-      "folke/trouble.nvim",
 
+      "folke/trouble.nvim",
       "mrcjkb/rustaceanvim",
     },
     ft = {

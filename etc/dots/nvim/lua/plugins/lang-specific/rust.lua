@@ -26,13 +26,15 @@ return {
                 prefix = "self",
               },
               cargo = {
+                allFeatures = true,
+                targetDir = true,
                 buildScripts = {
                   enable = true,
                 },
-                allFeatures = true,
                 loadOutDirsFromCheck = true,
                 runBuildScripts = true,
               },
+              ["check.command"] = "clippy",
               checkOnSave = {
                 allFeatures = true,
                 command = "clippy",

@@ -11,6 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+shared = require("shared")
+
 -- vim.cmd("runtime! lua/*.lua")
 require("vim-options")
 
