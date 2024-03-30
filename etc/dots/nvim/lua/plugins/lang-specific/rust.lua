@@ -1,13 +1,5 @@
 return {
   {
-    "saecki/crates.nvim",
-    tag = "stable",
-    event = { "BufRead Cargo.toml" },
-    opts = {
-      
-    },
-  },
-  {
     "mrcjkb/rustaceanvim",
     version = "^4",
     ft = { "rust" },
@@ -58,5 +50,11 @@ return {
         },
       }
     end,
+  },
+  {
+    "saecki/crates.nvim",
+    tag = "stable",
+    event = { "BufRead Cargo.toml" },
+    opts = {},
   },
 }

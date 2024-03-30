@@ -25,7 +25,7 @@ return {
     config = function()
       require("actions-preview").setup({
         highlight_commands = {
-          require("actions-preview.highlight").diff_highlight(),
+          require("actions-preview.highlight").delta(),
         },
         telescope = {
           sorting_strategy = "ascending",
@@ -57,28 +57,28 @@ return {
       })
     end,
   },
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "VeryLazy",
-    main = "lsp_signature",
-    opts = {
-      max_width = 60,
-      floating_window_abow_cur_line = false,
-      hint_prefix = "󰐾 ",
-      hint_inline = function()
-        return true
-      end,
-      handler_opts = {
-        border = "shadow",
-      },
-    },
-  },
-  {
-    "Wansmer/symbol-usage.nvim",
-    optional = true,
-    event = "BufReadPre",
-    opts = {},
-  },
+  -- {
+  --   "ray-x/lsp_signature.nvim",
+  --   event = "VeryLazy",
+  --   main = "lsp_signature",
+  --   opts = {
+  --     max_width = 60,
+  --     floating_window_abow_cur_line = false,
+  --     hint_prefix = "󰐾 ",
+  --     hint_inline = function()
+  --       return true
+  --     end,
+  --     handler_opts = {
+  --       border = "shadow",
+  --     },
+  --   },
+  -- },
+  -- {
+  --   "Wansmer/symbol-usage.nvim",
+  --   optional = true,
+  --   event = "BufReadPre",
+  --   opts = {},
+  -- },
   {
     "nvimdev/lspsaga.nvim",
     event = "LspAttach",

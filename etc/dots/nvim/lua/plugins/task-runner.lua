@@ -2,7 +2,9 @@ return {
   {
     "stevearc/overseer.nvim",
     event = "VeryLazy",
-    opt = {},
+    opt = {
+      strategy = "toggleterm",
+    },
   },
   {
     "pianocomposer321/officer.nvim",

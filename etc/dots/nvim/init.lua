@@ -17,6 +17,7 @@ require("vim-options")
 require("lazy").setup({
   { import = "plugins" },
   { import = "plugins.lang-specific" },
+  { import = "plugins.bindings" },
 }, {
   change_detection = {
     notify = false,

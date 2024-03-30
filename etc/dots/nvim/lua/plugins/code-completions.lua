@@ -5,31 +5,42 @@ return {
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
+      -- "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
       "petertriho/cmp-git",
-
+      -- {
+      --   "David-Kunz/cmp-npm",
+      --   dependencies = { "nvim-lua/plenary.nvim" },
+      --   ft = "json",
+      --   config = function()
+      --     require("cmp-npm").setup({})
+      --   end,
+      -- },
+      "Saecki/crates.nvim",
+      {
+        url = "https://codeberg.org/FelipeLema/cmp-async-path.git",
+      },
       {
         "saadparwaiz1/cmp_luasnip",
         dependencies = {
           {
             "L3MON4D3/LuaSnip",
             version = "v2.*",
-            build = "make install_jsregexp"
-          }
-        }
+            build = "make install_jsregexp",
+          },
+        },
       },
       {
         "roobert/tailwindcss-colorizer-cmp.nvim",
-        opts = {}
-      }
+        opts = {},
+      },
     },
     config = function()
       local cmp = require("cmp")
       -- local lspkind = require("lspkind")
 
       cmp.config.formatting = {
-        format = require("tailwindcss-colorizer-cmp").formatter
+        format = require("tailwindcss-colorizer-cmp").formatter,
       }
 
       cmp.setup({
@@ -41,8 +52,7 @@ return {
         sources = {
           { name = "nvim_lsp" },
           { name = "luasnip" },
-          -- { name = "buffer" },
-          { name = "path" },
+          { name = "async-path" },
           { name = "crates" },
         },
       })

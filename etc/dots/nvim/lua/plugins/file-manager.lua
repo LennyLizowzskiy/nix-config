@@ -33,10 +33,6 @@ return {
     },
     lazy = false,
     priority = 9,
-    keys = {
-      { "<leader>fM", "<cmd>Neotree toggle dir=" .. vim.fn.getcwd() .. "<cr>", desc = "Show project's file tree'" },
-      { "<leader>lsd", "<cmd>Neotree diagnostics toggle bottom<cr>", desc = "Toggle LSP diagnostics summary" },
-    },
     config = function()
       require("neo-tree").setup({
         sources = {

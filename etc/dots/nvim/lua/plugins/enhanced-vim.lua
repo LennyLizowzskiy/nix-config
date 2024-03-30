@@ -3,9 +3,7 @@ return {
     "altermo/ultimate-autopair.nvim",
     event = { "InsertEnter", "CmdlineEnter" },
     branch = "v0.6", --recommended as each new version will have breaking changes
-    opts = {
-      --Config goes here
-    },
+    opts = {},
   },
   {
     "max397574/better-escape.nvim",
@@ -24,20 +22,20 @@ return {
     event = "VeryLazy",
     opts = {},
   },
-  {
-    "kevinhwang91/nvim-bqf",
-    version = "1.*",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-    },
-    lazy = false,
-    -- cmd = {
-    --   "BqfEnable",
-    --   "BqfDisable",
-    --   "BqfToggle",
-    --   "BqfAutoToggle",
-    -- },
-  },
+  -- {
+  --   "kevinhwang91/nvim-bqf",
+  --   version = "1.*",
+  --   dependencies = {
+  --     "nvim-treesitter/nvim-treesitter",
+  --   },
+  --   lazy = false,
+  --   -- cmd = {
+  --   --   "BqfEnable",
+  --   --   "BqfDisable",
+  --   --   "BqfToggle",
+  --   --   "BqfAutoToggle",
+  --   -- },
+  -- },
   {
     "tiagovla/scope.nvim",
     event = "VimEnter",
@@ -50,21 +48,21 @@ return {
       stop_eof = false,
     },
   },
-  -- {
-  --   "gbprod/yanky.nvim",
-  --   event = "VeryLazy",
-  --   dependencies = {
-  --     "nvim-telescope/telescope.nvim",
-  --   },
-  --   config = function()
-  --     -- require("telescope").load_extension("yank_history")
-  --   end,
-  --   opts = {},
-  -- },
   {
-    "tenxsoydev/karen-yank.nvim",
+    "gbprod/yanky.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+    },
+    config = function()
+      require("telescope").load_extension("yank_history")
+    end,
     opts = {},
   },
+  -- {
+  --   "tenxsoydev/karen-yank.nvim",
+  --   opts = {},
+  -- },
   -- {
   --   "mg979/vim-visual-multi",
   --   event = "VeryLazy",
@@ -77,6 +75,7 @@ return {
       "Bmessagessp",
       "BmessagesEdit",
     },
+    opts = {},
   },
   {
     "echasnovski/mini.move",

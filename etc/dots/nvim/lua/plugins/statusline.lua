@@ -50,7 +50,7 @@ return {
           lualine_c = {
             local_path(),
           },
-          lualine_x = { "diagnostics", "diff" },
+          lualine_x = { "overseer", "diagnostics", "diff" },
           lualine_y = {},
           lualine_z = {},
         },

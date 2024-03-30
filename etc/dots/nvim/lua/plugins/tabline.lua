@@ -24,14 +24,14 @@ return {
           {
             text = " ",
           },
-          -- {
-          --   text = function(buf)
-          --     return buf.devicon.icon
-          --   end,
-          --   fg = function(buf)
-          --     return buf.devicon.color
-          --   end,
-          -- },
+          {
+            text = function(buf)
+              return buf.devicon.icon
+            end,
+            fg = function(buf)
+              return buf.devicon.color
+            end,
+          },
           {
             text = function(buf)
               return buf.unique_prefix
