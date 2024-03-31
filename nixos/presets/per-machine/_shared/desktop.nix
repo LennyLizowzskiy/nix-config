@@ -27,6 +27,7 @@
     ./specifics/steam.nix
     ./specifics/shadowsocks.nix
     ./specifics/ssh.nix
+    ./specifics/nix-alien.nix
 
     ./specifics/gnome-keyring.nix
     ./specifics/de/hyprland-full.nix
@@ -83,6 +84,7 @@
     popsicle # usb flasher
     onefetch # git info fetcher
     gping
+    nix-alien
   ];
 
   programs.command-not-found.enable = false;

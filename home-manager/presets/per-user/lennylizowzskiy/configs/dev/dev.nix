@@ -35,6 +35,7 @@ in
     ## extra package managers
     wasmer
     yarn
+    rpm
 
     ## compilers, linkers & runtimes
     nodePackages.nodejs
@@ -46,8 +47,12 @@ in
     odin
     typescript
     llvmPackages_latest.llvm
+    graphviz
 
     ## lsp & formatters
+    buf # proto linter, formatter, templater
+    editorconfig-checker
+    ktlint
     taplo # toml lsp
     biome # js, ts, jsx linter, formatter & lsp
     html-tidy # html validator

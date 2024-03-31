@@ -51,11 +51,8 @@ return {
         },
         experimental = {
           ghost_text = {
-            hl_group = "CmpGhostText",
+            hl_group = "Comment",
           },
-        },
-        completion = {
-          completeopt = "menu,menuone,noinsert",
         },
         mapping = cmp.mapping.preset.insert({
           ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -64,12 +61,12 @@ return {
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-          ["<S-CR>"] = cmp.mapping.confirm({
+          ["<Tab>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+          ["<S-Tab>"] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
           }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-          ["<C-CR>"] = function(fallback)
+          ["<C-Tab>"] = function(fallback)
             cmp.abort()
             fallback()
           end,

@@ -66,9 +66,6 @@ return {
         buffers = {
           focus_on_delete = "prev",
           new_buffers_position = "next",
-          -- filter_visible = function(buf)
-          --   return (filename ~= "nvim")
-          -- end,
         },
         tabs = {
           placement = "right",

@@ -27,7 +27,7 @@ vim.opt.background = "dark"
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.opt.completeopt = { "menuone", "noselect" }
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 vim.opt.autoread = true
 
@@ -81,8 +81,8 @@ vim.wo.fillchars = "eob:"
 
 vim.o.visualbell = true
 
-vim.opt.list = true
-vim.opt.listchars:append({ trail = "•", tab = "»·" })
+-- vim.opt.list = true
+-- vim.opt.listchars:append({ trail = "•", tab = "»·" })
 
 vim.opt.guicursor = {
   "n-v-c:block", -- Normal, visual, command-line: block cursor

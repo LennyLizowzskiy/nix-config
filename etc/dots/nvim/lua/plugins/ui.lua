@@ -1,9 +1,61 @@
+local icons = shared.icons
+
+local devicons = {
+  info = {
+    icon = icons.filetypes._info,
+    color = "#5f5f00",
+    cterm_color = "58"
+  },
+  git = {
+    icon = icons.filetypes._git,
+    color = "#d75f5f",
+    cterm_color = "167",
+    name = "git-related",
+  }
+}
+
 return {
   {
     "stevearc/dressing.nvim",
     opts = {},
   },
   { "echasnovski/mini.cursorword", version = false, opts = {} },
+  {
+    "nvim-tree/nvim-web-devicons",
+    opts = {
+      override = {
+        md = {
+          icon = icons.filetypes.markdown,
+        },
+        sh = {
+          icon = icons.filetypes.sh,
+        },
+        lock = {
+          icon = icons.filetypes.lock,
+        },
+        odin = {
+          icon = icons.filetypes.odin,
+          color = "#3982d2",
+          cterm_color = "32",
+          name = "odin",
+        },
+        txt = {
+          icon = icons.filetypes.txt,
+          color = "#9e9e9e",
+          cterm_color = "247",
+        },
+        nix = {
+          icon = icons.filetypes.nix,
+        },
+      },
+
+      override_by_filename = {
+        ["LICENSE"] = devicons.info,
+        [".gitignore"] = devicons.git,
+        [".gitmodules"] = devicons.git,
+      },
+    },
+  },
   {
     "lukas-reineke/indent-blankline.nvim",
     lazy = false,
@@ -54,7 +106,7 @@ return {
     lazy = false,
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = {
-      { "<leader>tdl", "<cmd>TodoTelescope<cr>", desc = "Search through TODOs" },
+
     },
     opts = {},
   },

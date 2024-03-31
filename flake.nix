@@ -66,6 +66,8 @@
       url = "github:JakeStanger/ironbar?ref=v0.14.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    nix-alien.url = "github:thiagokokada/nix-alien";
   };
 
   outputs =
@@ -80,6 +82,8 @@
           clang = p.lib.hiPrio p.clang; # fix collisions with gcc
 
           neovim-nightly = neovim-nightly.packages.${p.system}.default;
+
+          nix-alien = nix-alien.packages.${p.system}.nix-alien;
 
           stable = nixpkgs-stable.legacyPackages.${p.system};
           unfree = nixpkgs-unfree.legacyPackages.${p.system};

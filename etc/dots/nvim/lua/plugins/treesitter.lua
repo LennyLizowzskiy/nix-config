@@ -6,16 +6,60 @@ return {
     opts = {},
   },
   {
-    "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter-textobjects",
-      "nvim-treesitter/nvim-treesitter-context",
-      "RRethy/nvim-treesitter-textsubjects",
-      "hiphish/rainbow-delimiters.nvim",
-      "Wansmer/sibling-swap.nvim",
-      "JoosepAlviste/nvim-ts-context-commentstring",
-      "IndianBoy42/tree-sitter-just",
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    event = "VeryLazy",
+    main = "nvim-treesitter.configs",
+    opts = {
+      textobjects = {
+
+      },
     },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    event = "VimEnter",
+    opts = {
+
+    }
+  },
+  {
+    "RRethy/nvim-treesitter-textsubjects",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    event = "VimEnter",
+    main = "nvim-treesitter.configs",
+    opts = {
+      textsubjects = {
+        enable = true,
+      },
+    },
+  },
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    event = "VimEnter",
+    main = "rainbow-delimiters.setup",
+    opts = {
+
+    },
+  },
+  -- {
+  --   "Wansmer/sibling-swap.nvim",
+  --   dependencies = "nvim-treesitter/nvim-treesitter",
+  --   event = "VimEnter",
+  --   opts = {
+
+  --   },
+  -- },
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    event = "VimEnter",
+    -- opts = {}
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
     lazy = false,
     config = function()
       require("nvim-treesitter.install").compilers = { "gcc" }
@@ -24,7 +68,9 @@ return {
       configs.setup({
         indent = { enable = true },
         highlight = { enable = true },
-        autopairs = { enable = true },
+        additional_vim_regex_highlighting = false,
+        -- autotag = { enable = true },
+        -- autopairs = { enable = true },
 
         ensure_installed = {
           "c",
@@ -62,6 +108,7 @@ return {
           "jsdoc",
           "json5",
           "jsonc",
+          "just",
           "kdl",
           "kotlin",
           "lua",
@@ -77,6 +124,7 @@ return {
           "proto",
           "printf",
           "python",
+          "query",
           "ron",
           "rust",
           "scss",
@@ -98,12 +146,6 @@ return {
           "zig",
         },
       })
-
-      require("tree-sitter-just").setup({})
-
-      require("treesitter-context").setup({})
-
-      require("sibling-swap").setup({})
     end,
   },
 }

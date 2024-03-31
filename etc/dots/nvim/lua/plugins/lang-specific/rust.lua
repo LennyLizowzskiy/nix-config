@@ -1,9 +1,27 @@
+_G.rust_autocheck_enable = true
+
 return {
   {
     "mrcjkb/rustaceanvim",
     version = "^4",
     ft = { "rust" },
     init = function()
+      local autocmd = vim.api.nvim_create_autocmd
+
+      -- autocmd({ "FileReadPost", "FileAppendPost", "TextChanged" }, {
+      --   pattern = "rust",
+      --   callback = function()
+      --     if rust_autocheck_enable then
+      --       vim.cmd("RustLsp flyCheck run")
+      --     end
+      --   end,
+      -- })
+      -- autocmd({ "LspAttach", "FileAppendPost", "TextChangedI" }, {
+      --   pattern = { "rust" },
+      --   command = "RustLsp flyCheck run",
+      -- })
+    end,
+    config = function()
       local ext_path = vim.env.HOME .. "/.misc/dev/vscode-codelldb-adapter"
       local codelldb_path = ext_path .. "/adapter/codelldb"
       local liblldb_path = ext_path .. "/lldb/lib/liblldb.so" --  WARNING: linux only
@@ -34,11 +52,13 @@ return {
                 loadOutDirsFromCheck = true,
                 runBuildScripts = true,
               },
-              ["check.command"] = "clippy",
-              checkOnSave = {
-                allFeatures = true,
+              check = {
                 command = "clippy",
+                allTargets = false,
+                extraArgs = { "--no-deps" },
               },
+              ["check.command"] = "clippy",
+              checkOnSave = false,
               procMacro = {
                 enable = true,
                 ignored = {

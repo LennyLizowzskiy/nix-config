@@ -1,6 +1,7 @@
 return {
   {
     "altermo/ultimate-autopair.nvim",
+    dependencies = "nvim-treesitter/nvim-treesitter",
     event = { "InsertEnter", "CmdlineEnter" },
     branch = "v0.6", --recommended as each new version will have breaking changes
     opts = {},

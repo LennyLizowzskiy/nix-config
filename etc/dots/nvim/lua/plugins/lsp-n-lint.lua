@@ -3,13 +3,14 @@ local icons = shared.icons
 return {
   { -- list for showing diagnostics, references, telescope results, quickfix and location lists
     "folke/trouble.nvim",
+    branch = "dev",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
     event = "VeryLazy",
     opts = {},
   },
-  {
+  { -- lsp info on mouse hover
     "soulis-1256/eagle.nvim",
     init = function()
       vim.o.mousemoveevent = true
@@ -33,8 +34,8 @@ return {
           sorting_strategy = "ascending",
           layout_strategy = "vertical",
           layout_config = {
-            width = 0.8,
-            height = 0.9,
+            width = 0.4,
+            height = 0.6,
             prompt_position = "top",
             preview_cutoff = 20,
             preview_height = function(_, _, max_lines)
@@ -91,11 +92,12 @@ return {
     },
     event = "LspAttach",
     opts = {
-      breadcrumbs = {
-        show_file = false,
-      },
+      -- symbol_in_winbar = {
+      --   show_file = false,
+      -- },
       lightbulb = {
         enable = false,
+        sign = icons.hint,
       },
       rename = {
         auto_save = true,
@@ -171,6 +173,41 @@ return {
   --   end,
   -- },
   {
+    "nvimtools/none-ls.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
+    event = "VeryLazy",
+    config = function()
+      local nls = require("null-ls")
+
+      nls.setup({
+        sources = {
+          nls.builtins.diagnostics.buf,
+          nls.builtins.diagnostics.editorconfig_checker,
+          nls.builtins.diagnostics.ktlint,
+          nls.builtins.diagnostics.rpmspec,
+        },
+      })
+    end,
+  },
+  {
+    "nvimdev/guard.nvim",
+    dependencies = {
+      "LennyLizowzskiy/guard-collection",
+      branch = "clippy_lint"
+    },
+    event = "VeryLazy",
+    config = function()
+      local ft = require("guard.filetype")
+
+      ft("rust")
+        :lint("clippy-driver")
+
+      require("guard").setup({
+        fmt_on_save = false,
+      })
+    end,
+  },
+  {
     "ray-x/lsp_signature.nvim",
     event = "LspAttach",
     opts = {
@@ -192,11 +229,7 @@ return {
         "b0o/SchemaStore.nvim",
         opts = nil,
       },
-      {
-        "folke/neodev.nvim",
-        event = "VeryLazy",
-        opts = {},
-      },
+      "folke/neodev.nvim",
     },
     init = function()
       -- enable diagnostics in INSERT mode
@@ -276,7 +309,10 @@ return {
 
       cfg.graphql.setup(make_defaults())
 
-      cfg.clangd.setup(make_defaults())
+      cfg.clangd.setup({
+        on_attach = on_attach,
+        filetypes_exclude = { "proto" },
+      }) -- c, cpp, objc, objcpp, cuda, proto
 
       cfg.dockerls.setup(make_defaults())
 
