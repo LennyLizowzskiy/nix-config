@@ -1,6 +1,8 @@
 { pkgs, lib, ... }:
 
 {
+  home.packages = with pkgs; [ ueberzugpp ];
+
   programs.foot = {
     enable = true;
     settings = {

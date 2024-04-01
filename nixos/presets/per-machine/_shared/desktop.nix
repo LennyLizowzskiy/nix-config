@@ -73,6 +73,11 @@
     ripdrag
     v2raya
     fractal
+    atool
+    trash-cli
+    lame
+    sshfs
+    bubblewrap
     resources
     mpv # vid
     celluloid # vid

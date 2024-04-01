@@ -4,14 +4,14 @@ local devicons = {
   info = {
     icon = icons.filetypes._info,
     color = "#5f5f00",
-    cterm_color = "58"
+    cterm_color = "58",
   },
   git = {
     icon = icons.filetypes._git,
     color = "#d75f5f",
     cterm_color = "167",
     name = "git-related",
-  }
+  },
 }
 
 return {
@@ -54,6 +54,15 @@ return {
         [".gitignore"] = devicons.git,
         [".gitmodules"] = devicons.git,
       },
+    },
+  },
+  {
+    "3rd/image.nvim",
+    lazy = false,
+    opts = {
+      backend = "ueberzug",
+      max_width_window_percentage = 60,
+      max_height_window_percentage = 50,
     },
   },
   {
@@ -105,9 +114,7 @@ return {
     "folke/todo-comments.nvim",
     lazy = false,
     dependencies = { "nvim-lua/plenary.nvim" },
-    keys = {
-
-    },
+    keys = {},
     opts = {},
   },
   {

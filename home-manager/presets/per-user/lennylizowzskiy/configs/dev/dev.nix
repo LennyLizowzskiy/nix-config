@@ -12,6 +12,12 @@ in
       pkgs.vscode-extensions.vadimcn.vscode-lldb.adapter.out;
   };
 
+  home.shellAliases = {
+    edithex = "hexcurses";
+    editfile = "nvim";
+    editdir = "nvim";
+  };
+
   home.packages = with pkgs; [
     ## supplementary
     git
@@ -36,6 +42,11 @@ in
     wasmer
     yarn
     rpm
+    # luajitPackages.luarocks
+
+    ## hex editors
+    hexcurse
+    gnome.ghex
 
     ## compilers, linkers & runtimes
     nodePackages.nodejs
