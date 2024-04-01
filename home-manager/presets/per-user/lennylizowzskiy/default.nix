@@ -49,6 +49,7 @@
     ./configs/dev/dev.nix
     ./configs/dev/rust.nix
     # ./configs/dev/android-sdk.nix
+    ./configs/dev/idea.nix
     ./configs/dev/direnv.nix
     ./configs/dev/java.nix
 

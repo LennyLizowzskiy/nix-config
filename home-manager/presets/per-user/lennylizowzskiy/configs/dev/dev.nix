@@ -54,6 +54,11 @@ in
     virtualenv
     zig
     gcc
+    kotlin
+    kotlin-native
+    detekt
+    ktlint
+    ktfmt
     mold
     odin
     typescript
