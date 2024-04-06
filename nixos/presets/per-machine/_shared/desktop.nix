@@ -26,8 +26,9 @@
     ./specifics/yubikey.nix
     ./specifics/steam.nix
     ./specifics/shadowsocks.nix
-    ./specifics/ssh.nix
+    ./specifics/keys.nix
     ./specifics/nix-alien.nix
+    ./specifics/hardened.nix
 
     ./specifics/gnome-keyring.nix
     ./specifics/de/hyprland-full.nix
