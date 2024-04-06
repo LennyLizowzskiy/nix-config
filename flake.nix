@@ -52,21 +52,21 @@
     };
 
     hyprland = {
-      url = "github:hyprwm/Hyprland?ref=v0.37.1";
+      url = "github:hyprwm/Hyprland?ref=v0.38.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hy3 = {
-      url = "github:outfoxxed/hy3?ref=hl0.37.1";
-      # inputs.nixpkgs.follows = "nixpkgs";
-      inputs.hyprland.follows = "hyprland";
-    };
+    # hy3 = {
+    #   url = "github:outfoxxed/hy3?ref=hl0.37.1";
+    #   # inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
 
     ironbar = {
       url = "github:JakeStanger/ironbar?ref=v0.14.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     nix-alien.url = "github:thiagokokada/nix-alien";
   };
 
