@@ -13,10 +13,10 @@
     enable = true;
   };
 
-  environment = {
-    memoryAllocator.provider = "scudo";
-    variables.SCUDO_OPTIONS = lib.mkDefault "ZeroContents=1";
-  };
+  # environment = {
+  #   memoryAllocator.provider = "scudo";
+  #   variables.SCUDO_OPTIONS = "ZeroContents=1";
+  # };
 
   boot = {
     tmp.cleanOnBoot = true;
