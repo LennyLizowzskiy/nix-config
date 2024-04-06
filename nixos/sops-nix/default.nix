@@ -1,15 +1,24 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, config, etcDir, ... }:
 
 {
-  imports = [
-    inputs.sops-nix.nixosModules.sops
-  ];
+  # imports = [
+  #   inputs.sops-nix.nixosModules.sops
+  # ];
 
-  home.packages = with pkgs; [
-    sops
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   sops
+  # ];
 
-  sops = {
-    
-  };
+  # sops = {
+  #   gnupg.home = "${config.users.users.lennylizowzskiy.home}/.gnupg";
+
+  #   defaultSopsFile = ./secrets/main.yaml;
+  #   defaultSopsFormat = "yaml";
+
+  #   secrets = {
+  #     "test" = {
+        
+  #     };
+  #   };
+  # };
 }

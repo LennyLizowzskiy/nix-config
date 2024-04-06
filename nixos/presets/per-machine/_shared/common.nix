@@ -2,6 +2,7 @@
   pkgs,
   lib,
   sharedDir,
+  rootDir,
   ...
 }@inputs:
 
@@ -10,6 +11,7 @@
     ../../users
     ./specifics/nix.nix
     ./specifics/sudo.nix
+    "${rootDir}/nixos/sops-nix"
   ];
 
   networking.networkmanager.enable = true;
