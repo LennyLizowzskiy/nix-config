@@ -1,3 +1,5 @@
+local icons = shared.icons
+
 return {
   { -- Docs generator
     "kkoomen/vim-doge",
@@ -65,10 +67,10 @@ return {
     event = "VeryLazy",
     opts = {
       guides = {
-        mid_item = "├╴  ",
-        last_item = "╰╴  ",
-        nested_top = "│  ",
-        whitespace = "   ",
+        mid_item = icons.window_guides.mid_item,
+        last_item = icons.window_guides.last_item,
+        nested_top = icons.window_guides.nested_top,
+        whitespace = icons.window_guides.whitespace,
       },
     },
   },
@@ -80,13 +82,25 @@ return {
   {
     "krady21/compiler-explorer.nvim",
     dependencies = "stevearc/dressing.nvim",
-    event = "BufEnter",
+    cmd = {
+      "CECompile",
+      "CECompileLive",
+      "CEFormat",
+      "CEAddLibrary",
+      "CELoadExample",
+      "CEOpenWebsite",
+      "CEDeleteCache",
+      "CEShowTooltip",
+      "CEGotoLabel",
+    },
   },
   {
     "anuvyklack/fold-preview.nvim",
     dependencies = "anuvyklack/keymap-amend.nvim",
     event = "VimEnter",
-    opts = {},
+    -- opts = {
+    --   auto = true,
+    -- },
   },
   {
     url = "https://git.sr.ht/~reggie/licenses.nvim",

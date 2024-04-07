@@ -56,6 +56,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nh = {
+      url = "github:ViperML/nh";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # hy3 = {
     #   url = "github:outfoxxed/hy3?ref=hl0.37.1";
     #   # inputs.nixpkgs.follows = "nixpkgs";

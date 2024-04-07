@@ -42,11 +42,13 @@ in
     wasmer
     yarn
     rpm
-    # luajitPackages.luarocks
 
     ## hex editors
     hexcurse
     gnome.ghex
+
+    ## util
+    python312Packages.jupytext
 
     ## compilers, linkers & runtimes
     nodePackages.nodejs
@@ -64,6 +66,7 @@ in
     typescript
     llvmPackages_latest.llvm
     graphviz
+    actionlint
 
     ## lsp & formatters
     buf # proto linter, formatter, templater

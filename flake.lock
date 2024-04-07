@@ -685,6 +685,26 @@
         "type": "github"
       }
     },
+    "nh": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1712310030,
+        "narHash": "sha256-YsTIJWqANadeXKKAtw41IKGOD55/bML7H9No8lu3h4Q=",
+        "owner": "ViperML",
+        "repo": "nh",
+        "rev": "fd98e31fbf741045b9a649b004b99dfa61f5a63b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ViperML",
+        "repo": "nh",
+        "type": "github"
+      }
+    },
     "nix-alien": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -905,6 +925,7 @@
         "hyprland": "hyprland",
         "ironbar": "ironbar",
         "neovim-nightly": "neovim-nightly",
+        "nh": "nh",
         "nix-alien": "nix-alien",
         "nix-index-database": "nix-index-database_2",
         "nixos-hardware": "nixos-hardware",

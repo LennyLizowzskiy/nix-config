@@ -1,3 +1,6 @@
+local mappings = shared.mappings
+local commands = shared.commands
+
 return {
   {
     "echasnovski/mini.clue",
@@ -38,7 +41,7 @@ return {
     lazy = false,
     opts = {
       keymaps = {},
-      commands = {},
+      commands = commands,
       funcs = {},
       extensions = {
         nvim_tree = false,

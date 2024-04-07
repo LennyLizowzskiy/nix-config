@@ -11,9 +11,10 @@ return {
       "folke/trouble.nvim",
       "mrcjkb/rustaceanvim",
     },
-    ft = {
-      "rust",
-    },
+    event = "VeryLazy",
+    -- ft = {
+    --   "rust",
+    -- },
     config = function()
       require("neotest").setup({
         adapters = {

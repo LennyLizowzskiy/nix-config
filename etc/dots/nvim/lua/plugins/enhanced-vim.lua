@@ -13,13 +13,11 @@ return {
   },
   { -- extended a & i text objects
     "echasnovski/mini.ai",
-    version = false,
     event = "VeryLazy",
     opts = {},
   },
   {
     "echasnovski/mini.bracketed",
-    version = false,
     event = "VeryLazy",
     opts = {},
   },

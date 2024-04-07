@@ -74,7 +74,7 @@ return {
     end,
   },
   {
-    "saecki/crates.nvim",
+    "saecki/Crates.nvim",
     tag = "stable",
     event = { "BufRead Cargo.toml" },
     opts = {},

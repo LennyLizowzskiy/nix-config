@@ -17,6 +17,17 @@ return {
     },
   },
   {
+    "RRethy/nvim-treesitter-endwise",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    event = "VeryLazy",
+    main = "nvim-treesitter.configs",
+    opts = {
+      endwise = {
+        enable = true,
+      },
+    },
+  },
+  {
     "nvim-treesitter/nvim-treesitter-context",
     dependencies = "nvim-treesitter/nvim-treesitter",
     event = "VimEnter",
@@ -69,8 +80,6 @@ return {
         indent = { enable = true },
         highlight = { enable = true },
         additional_vim_regex_highlighting = false,
-        -- autotag = { enable = true },
-        -- autopairs = { enable = true },
 
         ensure_installed = {
           "c",

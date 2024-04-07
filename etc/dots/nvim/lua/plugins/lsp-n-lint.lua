@@ -173,40 +173,50 @@ return {
   --   end,
   -- },
   {
-    "nvimtools/none-ls.nvim",
-    dependencies = "nvim-lua/plenary.nvim",
-    event = "VeryLazy",
-    config = function()
-      local nls = require("null-ls")
-
-      nls.setup({
-        sources = {
-          nls.builtins.diagnostics.buf,
-          nls.builtins.diagnostics.editorconfig_checker,
-          nls.builtins.diagnostics.ktlint,
-          nls.builtins.diagnostics.rpmspec,
-        },
-      })
-    end,
-  },
-  {
-    "nvimdev/guard.nvim",
-    dependencies = {
-      "LennyLizowzskiy/guard-collection",
-      branch = "clippy_lint"
+    "mfussenegger/nvim-lint",
+    -- event = "VeryLazy",
+    ft = {
+      "proto",
+      "editorconfig",
+      "kotlin",
+      "spec",
+      "yaml",
     },
-    event = "VeryLazy",
+    init = function()
+      
+    end,
     config = function()
-      local ft = require("guard.filetype")
+      local lint = require("lint")
 
-      ft("rust")
-        :lint("clippy-driver")
-
-      require("guard").setup({
-        fmt_on_save = false,
-      })
+      lint.linters_by_ft = {
+        proto = { "buf_lint" },
+        editorconfig = { "editorconfig-checker" },
+        kotlin = { "ktlint" },
+        spec = { "rpmspec" },
+        yaml = {
+          "actionlint" -- TODO: make it activate only when file is in the "*/.github/workflows/*"
+        },
+      }
     end,
   },
+  -- {
+  --   "nvimdev/guard.nvim",
+  --   dependencies = {
+  --     "LennyLizowzskiy/guard-collection",
+  --     branch = "clippy_lint"
+  --   },
+  --   event = "VeryLazy",
+  --   config = function()
+  --     local ft = require("guard.filetype")
+
+  --     -- ft("rust")
+  --     --   :lint("clippy-driver")
+
+  --     require("guard").setup({
+  --       fmt_on_save = false,
+  --     })
+  --   end,
+  -- },
   {
     "ray-x/lsp_signature.nvim",
     event = "LspAttach",

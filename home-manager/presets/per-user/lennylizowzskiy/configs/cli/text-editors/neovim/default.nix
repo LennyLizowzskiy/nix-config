@@ -15,6 +15,7 @@
   # home.packages = with pkgs; [ neovim-nightly ];
 
   home.shellAliases = {
+    v = "nvim";
     vi = "nvim";
     vim = "nvim";
     n = "nvim";
@@ -23,7 +24,13 @@
   programs.neovim = {
     enable = true;
     package = pkgs.neovim-nightly;
-    extraLuaPackages = ps: [ ps.magick ];
+    extraLuaPackages = ps: with ps; [
+      magick
+      lua-curl
+      nvim-nio
+      mimetypes
+      xml2lua
+    ];
   };
 
   # xdg.configFile = {

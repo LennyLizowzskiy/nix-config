@@ -1,4 +1,17 @@
 return {
+  {
+    "ramojus/mellifluous.nvim",
+    name = "mellifluos-theme",
+    lazy = false,
+    priority = 999,
+    config = function()
+      require("mellifluous").setup({
+        color_set = "kanagawa_dragon",
+      })
+
+      vim.cmd.colorscheme("mellifluous")
+    end,
+  },
   -- {
   --   "projekt0n/github-nvim-theme",
   --   lazy = false,
@@ -63,26 +76,13 @@ return {
   --     -- vim.cmd.colorscheme("embark")
   --   end,
   -- },
-  {
-    "rose-pine/neovim",
-    -- name = "rose-pine-theme",
-    -- lazy = false,
-    priority = 999,
-    config = function()
-      -- vim.cmd.colorscheme("rose-pine-moon")
-    end,
-  },
-  {
-    "ramojus/mellifluous.nvim",
-    name = "mellifluos-theme",
-    lazy = false,
-    priority = 999,
-    config = function()
-      require("mellifluous").setup({
-        color_set = "kanagawa_dragon",
-      })
-
-      vim.cmd.colorscheme("mellifluous")
-    end,
-  },
+  -- {
+  --   "rose-pine/neovim",
+  --   -- name = "rose-pine-theme",
+  --   -- lazy = false,
+  --   priority = 999,
+  --   config = function()
+  --     -- vim.cmd.colorscheme("rose-pine-moon")
+  --   end,
+  -- },
 }
