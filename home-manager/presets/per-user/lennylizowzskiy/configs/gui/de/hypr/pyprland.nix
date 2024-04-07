@@ -1,9 +1,11 @@
-{ config, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   programs.pyprland = {
     enable = config.wayland.windowManager.hyprland.enable;
     # systemd.enable = true;
+
+    package = inputs.pyprland.packages.${pkgs.system}.default;
 
     settings = {
       pyprland.plugins = [ "scratchpads" ];

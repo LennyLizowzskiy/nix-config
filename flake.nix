@@ -3,6 +3,10 @@
 
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
@@ -44,6 +48,7 @@
     neovim-nightly = {
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
     };
 
     nix-index-database = {
@@ -52,13 +57,18 @@
     };
 
     hyprland = {
-      url = "github:hyprwm/Hyprland?ref=v0.38.0";
+      url = "github:hyprwm/Hyprland?ref=v0.38.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    pyprland = {
+      url = "github:hyprland-community/pyprland?ref=2.2.2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nh = {
       url = "github:ViperML/nh";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     # hy3 = {
@@ -70,13 +80,20 @@
     ironbar = {
       url = "github:JakeStanger/ironbar?ref=v0.14.1";
       inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.rust-overlay.follows = "rust-overlay";
     };
 
-    nix-alien.url = "github:thiagokokada/nix-alien";
+    nix-alien = {
+      url = "github:thiagokokada/nix-alien";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.nix-index-database.follows = "nix-index-database";
+    };
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-stable.follows = "nixpkgs-stable";
     };
   };
 

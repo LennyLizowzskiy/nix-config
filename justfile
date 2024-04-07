@@ -3,7 +3,7 @@ pull:
 
 push:
     git add -A
-    git commit -m "+"
+    git commit -S -m "+"
     git push origin
 
 system-clean:

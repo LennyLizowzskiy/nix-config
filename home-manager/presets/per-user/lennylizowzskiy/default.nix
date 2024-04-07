@@ -75,6 +75,11 @@
 
   programs.git = {
     userName = "Lenny Lizowzskiy";
-    userEmail = "contact@lizowzskiy.su";
+    userEmail = "contact@lizowzskiy.ru";
+
+    signing = {
+      key = "130A9DC3C6ED6BF3";
+      signByDefault = true;
+    };
   };
 }
