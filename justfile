@@ -12,7 +12,7 @@ system-clean:
     sudo nix store gc
 
 update:
-    sudo nh os switch ".?submodules=1"
+    nh os switch ".?submodules=1"
 
 update-full:
     nix flake update

@@ -1,5 +1,8 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, hostname, ... }:
 
+let
+  fontSize = (if hostname == "rher" then "6" else "14");
+in
 {
   home.packages = with pkgs; [ ueberzugpp ];
 
@@ -8,6 +11,8 @@
     settings = {
       main = {
         dpi-aware = lib.mkForce "yes";
+        # term = "xterm-256color";
+        font = lib.mkForce "monospace:size=${fontSize}";
       };
 
       mouse = {
