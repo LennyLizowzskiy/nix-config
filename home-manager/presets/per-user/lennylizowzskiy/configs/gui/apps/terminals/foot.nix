@@ -1,7 +1,12 @@
-{ pkgs, lib, hostname, ... }:
+{
+  pkgs,
+  lib,
+  hostname,
+  ...
+}:
 
 let
-  fontSize = (if hostname == "rher" then "6" else "14");
+  fontSize = (if hostname == "rher" then "10" else "14");
 in
 {
   home.packages = with pkgs; [ ueberzugpp ];
