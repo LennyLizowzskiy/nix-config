@@ -45,8 +45,11 @@
 
     steam-run # FHS env on demand
 
+    git-open
     genymotion
-    httpie
+    # httpie
+    hoppscotch
+    git-extras
     youtube-music
     p7zip
     rar
