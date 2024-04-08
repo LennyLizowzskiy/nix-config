@@ -39,6 +39,17 @@
       inputs.flake-utils.follows = "flake-utils";
     };
 
+    # crate2nix = {
+    #   url = "github:nix-community/crate2nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.flake-parts.follows = "flake-parts";
+    # };
+
+    crane = {
+      url = "github:ipetkov/crane?ref=v0.16.3";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     android-nixpkgs = {
       url = "github:tadfisher/android-nixpkgs/stable";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -94,6 +105,12 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-stable.follows = "nixpkgs-stable";
+    };
+
+    niri-flake = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
     };
   };
 

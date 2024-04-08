@@ -84,7 +84,7 @@ in
 
       input = {
         kb_layout = "us,ru";
-        kb_options = "grp:win_space_toggle";
+        kb_options = "grp:toggle";
         numlock_by_default = "true";
 
         follow_mouse = "1";

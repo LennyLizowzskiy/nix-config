@@ -7,7 +7,7 @@
 
     xkb = {
       layout = "us,ru";
-      options = "grp:win_space_toggle";
+      options = "grp:toggle";
     };
 
     excludePackages = with pkgs; [ xterm ];

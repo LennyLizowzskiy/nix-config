@@ -66,6 +66,7 @@
 
     ./configs/gui/apps/text-editors/vscode.nix
 
+    # ./configs/gui/de/niri
     ./configs/gui/de/hypr/hyprland-full.nix
 
     ./configs/services/secrets/gnupg.nix
