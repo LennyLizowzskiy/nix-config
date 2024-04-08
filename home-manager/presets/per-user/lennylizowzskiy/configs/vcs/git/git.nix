@@ -54,6 +54,8 @@
         cm = "commit";
         br = "branch";
         d = "diff";
+        c = "clone";
+        cs = "clone --depth 1 --single-branch";
         
         tags = "tag -l";
         branches = "branch -a";
