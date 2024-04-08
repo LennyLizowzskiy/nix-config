@@ -58,6 +58,7 @@
     unzip
     archiver
     brave
+    opera
     firefox
     prismlauncher
     masterpdfeditor
