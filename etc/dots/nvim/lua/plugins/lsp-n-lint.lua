@@ -183,7 +183,7 @@ return {
       "yaml",
     },
     init = function()
-      
+
     end,
     config = function()
       local lint = require("lint")
@@ -261,7 +261,7 @@ return {
     config = function()
       local on_attach = function(client, bufnr)
         if client.server_capabilities.inlayHintProvider then
-          vim.lsp.inlay_hint.enable(bufnr, true)
+          -- vim.lsp.inlay_hint.enable(true)
         end
       end
 

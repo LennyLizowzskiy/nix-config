@@ -25,3 +25,4 @@ end
 -- end
 
 _G.shared.funcs = _G.shared.funcs or M
+return M

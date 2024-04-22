@@ -30,6 +30,7 @@
     ./specifics/nix-alien.nix
     ./specifics/hardened.nix
     ./specifics/nh.nix
+    ./specifics/qmk.nix
 
     ./specifics/gnome-keyring.nix
     ./specifics/de/hyprland-full.nix

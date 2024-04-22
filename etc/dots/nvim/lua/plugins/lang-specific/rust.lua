@@ -33,7 +33,7 @@ return {
         },
         server = {
           on_attach = function(client, bufnr)
-            vim.lsp.inlay_hint.enable(bufnr)
+            -- vim.lsp.inlay_hint.enable(true)
           end,
           default_settings = {
             ["rust_analyzer"] = {
