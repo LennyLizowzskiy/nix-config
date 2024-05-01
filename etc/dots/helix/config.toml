@@ -1,0 +1,43 @@
+theme = "kanagawa"
+
+[editor]
+line-number = "relative"
+mouse = false
+shell = ["bash", "-c"]
+default-line-ending = "lf"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+mode.normal = "NOR"
+mode.insert = "INS"
+mode.select = "SEL"
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+nbsp = "none"
+nnbsp = "none"
+newline = "none"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "·"
+nnbsp = "·"
+tab = "·"
+newline = "·"
+tabpad = "·"
+
+[editor.indent-guides]
+render = true
+character = "⸽"
+skip-levels = 1
+
+[editor.soft-wrap]
+enable = true

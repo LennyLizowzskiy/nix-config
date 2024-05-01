@@ -68,6 +68,7 @@
     telegram-desktop
     audacity
     figma-linux
+    warp-terminal
     vesktop
     figma-linux
     gimp

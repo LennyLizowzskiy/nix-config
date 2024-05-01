@@ -24,6 +24,9 @@
       vscode.enable = false;
       firefox.enable = false;
       waybar.enable = false;
+      helix.enable = false;
+
+      kitty.variant256Colors = true; 
     };
   };
 }
