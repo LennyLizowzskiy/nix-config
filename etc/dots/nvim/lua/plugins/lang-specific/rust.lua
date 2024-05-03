@@ -57,7 +57,6 @@ return {
                 allTargets = false,
                 extraArgs = { "--no-deps" },
               },
-              ["check.command"] = "clippy",
               checkOnSave = false,
               procMacro = {
                 enable = true,

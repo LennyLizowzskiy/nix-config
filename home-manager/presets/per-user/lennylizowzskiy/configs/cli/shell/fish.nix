@@ -6,30 +6,30 @@
   programs.fish = {
     enable = true;
     plugins = with pkgs.fishPlugins; [
-      {
-        name = "z";
-        src = z.src;
-      }
-      {
-        name = "sponge";
-        src = sponge.src;
-      }
-      {
-        name = "puffer";
-        src = puffer.src;
-      }
-      {
-        name = "pisces";
-        src = pisces.src;
-      }
-      {
-        name = "hydro";
-        src = hydro.src;
-      }
-      {
-        name = "humantime-fish";
-        src = humantime-fish.src;
-      }
+      # {
+      #   name = "z";
+      #   src = z.src;
+      # }
+      # {
+      #   name = "sponge";
+      #   src = sponge.src;
+      # }
+      # {
+      #   name = "puffer";
+      #   src = puffer.src;
+      # }
+      # {
+      #   name = "pisces";
+      #   src = pisces.src;
+      # }
+      # {
+      #   name = "hydro";
+      #   src = hydro.src;
+      # }
+      # {
+      #   name = "humantime-fish";
+      #   src = humantime-fish.src;
+      # }
       {
         name = "colored-man-pages";
         src = colored-man-pages.src;

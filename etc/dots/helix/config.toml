@@ -1,10 +1,15 @@
-theme = "kanagawa"
+# theme = "kanagawa-dragon" # inlay hints are broken
+theme = "autumn_night_variant"
 
 [editor]
 line-number = "relative"
 mouse = false
 shell = ["bash", "-c"]
 default-line-ending = "lf"
+color-modes = true
+auto-save = true
+completion-replace = true
+bufferline = "multiple"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -12,12 +17,20 @@ normal = "block"
 select = "underline"
 
 [editor.statusline]
+left = ["mode", "spinner", "version-control", "file-name", "read-only-indicator", "file-modification-indicator"]
+center = []
+right = ["diagnostics", "selections", "file-type"]
 mode.normal = "NOR"
 mode.insert = "INS"
 mode.select = "SEL"
 
 [editor.lsp]
 display-inlay-hints = true
+display-messages = true
+
+[editor.file-picker]
+ignore = false
+git-global = false
 
 [editor.whitespace.render]
 space = "all"
@@ -27,12 +40,12 @@ nnbsp = "none"
 newline = "none"
 
 [editor.whitespace.characters]
-space = "·"
-nbsp = "·"
-nnbsp = "·"
-tab = "·"
-newline = "·"
-tabpad = "·"
+space = " "
+nbsp = " "
+nnbsp = " "
+tab = " "
+newline = " "
+tabpad = " "
 
 [editor.indent-guides]
 render = true

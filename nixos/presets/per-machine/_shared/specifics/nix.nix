@@ -6,6 +6,8 @@
   environment.etc."channels/nixpkgs".source = inputs.nixpkgs.outPath;
   nix.settings.system-features = [ "recursive-nix" ];
 
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+
   system.stateVersion = "23.11";
   
   environment.systemPackages = with pkgs; [

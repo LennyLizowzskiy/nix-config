@@ -14,8 +14,8 @@ in
 
   home.shellAliases = {
     edithex = "hexcurses";
-    editfile = "nvim";
-    editdir = "nvim";
+    editfile = "hx";
+    editdir = "hx";
   };
 
   home.packages = with pkgs; [
@@ -49,6 +49,7 @@ in
 
     ## util
     python312Packages.jupytext
+    lldb
 
     ## compilers, linkers & runtimes
     nodePackages.nodejs
@@ -87,6 +88,7 @@ in
     clang-tools # c, c++, objc, cuda, proto lsp
     # rustfmt and clippy defined in rust.nix
     yaml-language-server
+    nodePackages.bash-language-server
     slint-lsp
     nodePackages.typescript-language-server
     nixfmt-rfc-style
@@ -97,6 +99,7 @@ in
     tailwindcss-language-server
     typst-lsp
     ols # odin lsp
+    ruff
     ruff-lsp # py lsp (linter)
     nodePackages.pyright # py lsp (type-checker)
     # pyre # py lsp (type-checker)

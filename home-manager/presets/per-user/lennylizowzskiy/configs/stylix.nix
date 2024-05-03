@@ -26,7 +26,7 @@
       waybar.enable = false;
       helix.enable = false;
 
-      kitty.variant256Colors = true; 
+      kitty.variant256Colors = true;
     };
   };
 }

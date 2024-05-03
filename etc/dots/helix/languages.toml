@@ -1,0 +1,53 @@
+[language-server.nixd]
+command = "nixd"
+
+[[language]]
+name = "nix"
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+formatter = { command = "nixfmt", args = ["--quiet"] }
+language-servers = ["nixd"]
+
+
+[language-server.biome]
+command = "biome"
+args = ["lsp-proxy"]
+
+[[language]]
+name = "javascript"
+auto-format = true
+language-servers = ["biome"]
+
+[[language]]
+name = "typescript"
+auto-format = true
+language-servers = ["biome"]
+
+[[language]]
+name = "jsx"
+auto-format = true
+language-servers = ["biome"]
+
+[[language]]
+name = "json"
+file-types = ["json"]
+scope = "source.json"
+auto-format = true
+language-servers = ["biome"]
+
+
+[language-server.rust-analyzer.config]
+imports = { granularity = { group = "module" }, prefix = "self" }
+cargo = { allFeatures = true, targetDir = true, buildScripts = { enable = true }, loadOutDirsFromCheck = true, runBuildScripts = true }
+check = { command = "clippy", allTargets = false }
+procMacro = { enable = true, ignored = { leptos_macro = ["server"] } }
+
+[[language]]
+name = "rust"
+
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'

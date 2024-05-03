@@ -15,9 +15,9 @@
   # home.packages = with pkgs; [ neovim-nightly ];
 
   home.shellAliases = {
-    v = "nvim";
-    vi = "nvim";
-    vim = "nvim";
+    # v = "nvim";
+    # vi = "nvim";
+    # vim = "nvim";
     n = "nvim";
   };
 
@@ -32,6 +32,8 @@
       xml2lua
     ];
   };
+
+  # programs.git.extraConfig.core.editor = "nvim";
 
   # xdg.configFile = {
   #   "nvim" = {

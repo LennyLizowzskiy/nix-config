@@ -115,15 +115,16 @@
     ];
   };
 
-  environment.sessionVariables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
-  };
-
   systemd.services.NetworkManager-wait-online.enable = false;
 
   # "A fuse filesystem that dynamically populates contents of /bin and /usr/bin/ so that it contains all executables from the PATH of the requesting process"
-  zramSwap.enable = true;
+  zramSwap = {
+    enable = true;
+    priority = 1000;
+    algorithm = "zstd";
+    swapDevices = 1;
+    memoryPercent = 50;
+  };
 
   # "daemon, tools and libraries to access and manipulate disks, storage devices and technologies"
   services.udisks2.enable = true;

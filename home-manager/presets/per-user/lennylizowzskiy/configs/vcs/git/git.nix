@@ -18,9 +18,12 @@
       "result/"
       ".idea/"
       ".gradle/"
+      ".direnv/"
       "build/"
       "local.properties"
       "/tmp"
+      "/bin"
+      ""
       "*.log"
       "vcs.xml"
       "lint/"
@@ -30,11 +33,12 @@
     extraConfig = {
       user.signingkey = "${extraArgs.etcDir}/keys/pgp-public.converted.ssh_pub";
       gpg.format = "ssh";
+      commit.gpgsign = true;
 
       fetch.prune = true;
-      core = {
-        editor = "nvim";
-      };
+      # core = {
+      #   editor = "hx";
+      # };
 
       color = {
         status = "auto";
@@ -50,8 +54,8 @@
         pull = "pull --ff-only";
 
         st = "status";
-        co = "checkout";
-        cm = "commit";
+        ch = "checkout";
+        co = "commit";
         br = "branch";
         d = "diff";
         c = "clone";
