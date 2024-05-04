@@ -1,4 +1,4 @@
-# theme = "kanagawa-dragon" # inlay hints are broken
+# theme = "kanagawa_dragon" # inlay hints are broken
 theme = "autumn_night_variant"
 
 [editor]
@@ -17,12 +17,13 @@ normal = "block"
 select = "underline"
 
 [editor.statusline]
-left = ["mode", "spinner", "version-control", "file-name", "read-only-indicator", "file-modification-indicator"]
+left = ["mode", "file-name", "read-only-indicator", "file-modification-indicator"]
 center = []
-right = ["diagnostics", "selections", "file-type"]
+right = ["diagnostics", "spinner", "version-control"]
 mode.normal = "NOR"
 mode.insert = "INS"
 mode.select = "SEL"
+separator = "│"
 
 [editor.lsp]
 display-inlay-hints = true
@@ -33,23 +34,24 @@ ignore = false
 git-global = false
 
 [editor.whitespace.render]
-space = "all"
-tab = "all"
-nbsp = "none"
-nnbsp = "none"
+space = "none"
+tab = "none"
+nbsp = "all"
+nnbsp = "all"
 newline = "none"
 
 [editor.whitespace.characters]
 space = " "
-nbsp = " "
-nnbsp = " "
+nbsp = "⍽"
+nnbsp = "␣"
 tab = " "
 newline = " "
 tabpad = " "
 
 [editor.indent-guides]
 render = true
-character = "⸽"
+# character = "⸽"
+character = "▏"
 skip-levels = 1
 
 [editor.soft-wrap]
