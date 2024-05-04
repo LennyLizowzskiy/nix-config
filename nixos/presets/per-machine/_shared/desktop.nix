@@ -98,6 +98,8 @@
     popsicle # usb flasher
     onefetch # git info fetcher
     gping
+    asciinema
+    grex
     nix-alien
   ];
 

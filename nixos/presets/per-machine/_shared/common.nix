@@ -45,8 +45,10 @@
     busybox
     steam-run
     aria
+    ouch
     btop
     eza
+    sd
     sops
     unzip
     zip

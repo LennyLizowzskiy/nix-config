@@ -3,7 +3,7 @@ pull:
 
 push:
     git add -A
-    git commit -S -m "+"
+    git commit -m "+"
     git push origin
 
 system-clean:
@@ -12,7 +12,7 @@ system-clean:
     sudo nix store gc
 
 update:
-    sudo nixos-rebuild switch --flake ".?submodules=1" |& nom && fish
+    sudo nixos-rebuild switch --flake ".?submodules=1"
 
 update-full:
     nix flake update
