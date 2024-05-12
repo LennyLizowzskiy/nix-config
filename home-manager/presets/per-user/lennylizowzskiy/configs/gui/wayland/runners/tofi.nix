@@ -13,8 +13,8 @@
       padding-top = "25%";
       result-spacing = 25;
       num-results = 8;
-      font = "monospace";
-      background-color = "#000A";
+      # font = "monospace";
+      # background-color = "#000A";
       # matching-algorithm = "fuzzy";
     };
   };

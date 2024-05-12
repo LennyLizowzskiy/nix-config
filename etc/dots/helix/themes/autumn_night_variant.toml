@@ -1,3 +1,4 @@
 inherits = "autumn_night"
 
 "type" = { fg = "my_white3", modifiers = ["normal"] }
+"ui.virtual.indent-guide" = { fg = "my_gray2" }

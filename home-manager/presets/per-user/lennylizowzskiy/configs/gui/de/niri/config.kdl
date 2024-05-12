@@ -34,8 +34,8 @@ binds {
   
   Mod+Q { spawn "foot"; }
 
-  Mod+S { spawn "tofi-drun", "--drun-launch=true"; }
-  Mod+Shift+Alt { spawn "bash", "-c", "grim -g \"\$(slurp)\" - | convert - -shave 2x2 PNG:- | wl-copy"; }
+  Mod+S { spawn "tofi-drun" "--drun-launch=true"; }
+  Mod+Shift+C { spawn "bash" "-c" "grim -g \"\\$(slurp)\" - | convert - -shave 2x2 PNG:- | wl-copy"; }
 }
 
 // Fix OBS with server-side decorations missing a minimum width.

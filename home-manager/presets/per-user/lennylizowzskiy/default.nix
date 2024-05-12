@@ -32,7 +32,9 @@
     ./configs/cli/yt-dlp.nix
     ./configs/cli/zoxide.nix
     ./configs/cli/zellij.nix
-    ./configs/cli/file-managers/lf
+    ./configs/cli/atuin.nix
+    # ./configs/cli/file-managers/lf
+    ./configs/cli/file-managers/yazi
 
     ./configs/vcs/jj/jj.nix
     ./configs/vcs/git/git-cliff.nix
@@ -77,6 +79,7 @@
 
   home.shellAliases = {
     "." = "ls -a";
+    "lss" = "eza --tree";
     ".." = "cd ..";
     "..." = "cd ../..";
   };
@@ -84,5 +87,11 @@
   programs.git = {
     userName = "Lenny Lizowzskiy";
     userEmail = "contact@lizowzskiy.ru";
+
+    extraConfig = {
+      user.signingkey = "${extraArgs.etcDir}/keys/pgp-public.converted.ssh_pub";
+      gpg.format = "ssh";
+      commit.gpgsign = true;
+    };
   };
 }

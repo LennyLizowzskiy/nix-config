@@ -23,7 +23,6 @@
       "local.properties"
       "/tmp"
       "/bin"
-      ""
       "*.log"
       "vcs.xml"
       "lint/"
@@ -31,14 +30,7 @@
     ];
 
     extraConfig = {
-      user.signingkey = "${extraArgs.etcDir}/keys/pgp-public.converted.ssh_pub";
-      gpg.format = "ssh";
-      commit.gpgsign = true;
-
       fetch.prune = true;
-      # core = {
-      #   editor = "hx";
-      # };
 
       color = {
         status = "auto";
@@ -60,7 +52,7 @@
         d = "diff";
         c = "clone";
         cs = "clone --depth 1 --single-branch";
-        
+
         tags = "tag -l";
         branches = "branch -a";
         remotes = "remote -v";

@@ -25,6 +25,8 @@
       firefox.enable = false;
       waybar.enable = false;
       helix.enable = false;
+      yazi.enable = false;
+      zellij.enable = false;
 
       kitty.variant256Colors = true;
     };

@@ -5,6 +5,8 @@
     inputs.niri-flake.nixosModules.niri
   ];
 
+  niri-flake.cache.enable = false;
+
   programs.niri = {
     enable = true;
   };

@@ -126,6 +126,9 @@
 
           stable = nixpkgs-stable.legacyPackages.${p.system};
           unfree = nixpkgs-unfree.legacyPackages.${p.system};
+
+          nix = f.stable.nix;
+          nixos-rebuild = f.stable.nixos-rebuild;
         })
       ];
     in
@@ -137,12 +140,11 @@
               hostname,
               args ? { },
               modules ? [ ],
-              enableGui ? false,
             }:
             with inputs;
             nixpkgs.lib.nixosSystem {
               specialArgs = {
-                inherit inputs enableGui;
+                inherit inputs;
 
                 hostname = hostname;
 
@@ -163,7 +165,7 @@
                       })
                     ] ++ sharedOverlays;
 
-                    nixpkgs.config.permittedInsecurePackages = [ "nix-2.16.2" ];
+                    # nixpkgs.config.permittedInsecurePackages = [ "nix-2.16.2" ];
                   }
                 )
               ] ++ modules;
@@ -172,14 +174,12 @@
         {
           grogoroth = mkNixOsConf {
             hostname = "grogoroth";
-            enableGui = true;
 
             modules = [ ./nixos/presets/per-machine/grogoroth ];
           };
 
           rher = mkNixOsConf {
             hostname = "rher";
-            enableGui = true;
 
             modules = [ ./nixos/presets/per-machine/rher ];
           };

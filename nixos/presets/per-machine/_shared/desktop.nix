@@ -49,6 +49,7 @@
 
     git-open
     genymotion
+    slides
     # httpie
     hoppscotch
     git-extras
@@ -82,12 +83,12 @@
     ripdrag
     v2raya
     fractal
-    atool
-    trash-cli
-    lame
+    atool # compact
+    trash-cli # trash
+    lame # convert music
     sshfs
-    bubblewrap
-    resources
+    bubblewrap # isolation
+    resources # gui task manager
     mpv # vid
     celluloid # vid
     amberol # music

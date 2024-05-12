@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
-  # services.openssh.enable = true;
+  services.openssh.enable = false;
   # services.openssh.settings.PasswordAuthentication = false;
-  # programs.ssh.startAgent = true;
+  programs.ssh.startAgent = lib.mkForce false;
   # security.pam.sshAgentAuth.enable = true;
 
   hardware.gpgSmartcards.enable = true;

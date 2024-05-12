@@ -39,7 +39,7 @@
     sd # sed-like
     fdupes # find duplicates
     screen
-    nix-init
+    # nix-init
     ffmpeg
     imagemagickBig
     busybox

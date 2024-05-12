@@ -95,8 +95,11 @@ in
           middle_button_emulation = "true";
           tap-and-drag = "true";
         };
+      };
 
-        sensitivity = "0";
+      device = {
+        name = "device:msft0001:00-04f3:31bd-touchpad";
+        sensitivity = "+0.5";
       };
 
       decoration = {

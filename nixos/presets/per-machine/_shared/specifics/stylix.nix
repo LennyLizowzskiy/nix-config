@@ -17,7 +17,7 @@
     #   sha256 = "1v9z2b3nq4rmc6ikf1magmqg7d6m2nwmizk33phkw6ld9c6y6xy0";
     # };
 
-    image = "${etcDir}/wallpapers/nix-wallpaper-nineish-dark-gray.png";
+    image = "${etcDir}/starry-night-takahashi-cc0.jpg";
 
     cursor = {
 

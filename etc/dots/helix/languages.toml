@@ -12,20 +12,39 @@ command = "nixd"
 command = "biome"
 args = ["lsp-proxy"]
 
+[language-server.rust-analyzer.config]
+imports = { granularity = { group = "module" }, prefix = "self" }
+cargo = { allFeatures = true, targetDir = true, buildScripts = { enable = true }, loadOutDirsFromCheck = true, runBuildScripts = true }
+check = { command = "clippy", allTargets = false }
+procMacro = { enable = true, ignored = { leptos_macro = ["server"] } }
+rustfmt = { overrideCommand = ["leptosfmt", "--stdin", "--rustfmt", "--override-macro-names", "html"] }
+
+[language-server.rust-analyzer.config.inlayHints]
+lifetimeElisionHints = { enable = false, useParameterNames = false }
+renderColons = { enable = false }
+typeHints = { hideNamedConstructor = true, hideClosureInitialization = true }
+chainingHints = { enable = false }
+closingBraceHints = { enable = false }
+hideClosureInitialization = { enabla = true }
+hideNamedConstructor = { enable = true }
+
+[language-server.tailwindcss]
+name = "tailwindcss"
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+
+[language-server.nu]
+name = "nu-lsp"
+command = "nu"
+args = ["--lsp"]
+
+
 [[language]]
 name = "nix"
 indent = { tab-width = 2, unit = " " }
 auto-format = true
 formatter = { command = "nixfmt", args = ["--quiet"] }
 language-servers = ["nixd"]
-
-[language-server.rust-analyzer.config]
-imports = { granularity = { group = "module" }, prefix = "self" }
-cargo = { allFeatures = true, targetDir = true, buildScripts = { enable = true }, loadOutDirsFromCheck = true, runBuildScripts = true }
-check = { command = "clippy", allTargets = false }
-procMacro = { enable = true, ignored = { leptos_macro = ["server"] } }
-
-
 
 [[language]]
 name = "javascript"
@@ -44,10 +63,20 @@ language-servers = ["biome"]
 
 [[language]]
 name = "json"
-file-types = ["json"]
-scope = "source.json"
 auto-format = true
 language-servers = ["biome"]
+
+[[language]]
+name = "nu"
+language-servers = ["nu-lsp"]
+
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server", "tailwindcss"]
+
+[[language]]
+name = "css"
+language-servers = ["vscode-css-language-server", "tailwindcss"]
 
 [[language]]
 name = "rust"
