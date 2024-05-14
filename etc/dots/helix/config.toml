@@ -8,7 +8,7 @@ shell = ["bash", "-c"]
 default-line-ending = "lf"
 # color-modes = true
 auto-save = true
-completion-replace = true
+# completion-replace = true
 bufferline = "multiple"
 
 [editor.cursor-shape]

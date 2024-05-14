@@ -1,6 +1,11 @@
-{ hostname, lib, ... }:
+{ hostname, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    upower
+    ironbar
+  ];
+
   imports = [
     ./hyprland.nix
     ./hyprpaper.nix
@@ -9,7 +14,7 @@
     ../../wayland/notifications/mako.nix
     ../../wayland/runners/tofi.nix
     ../../wayland/screenshots/swappy.nix
-    ../../wayland/statusbars/waybar
+    # ../../wayland/statusbars/waybar
     # ../../wayland/statusbars/ironbar
 
     ../../../services/batsignal.nix

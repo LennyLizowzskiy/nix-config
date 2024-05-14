@@ -1,5 +1,6 @@
 {
   config,
+  lib,
   pkgs,
   hostname,
   inputs,
@@ -52,6 +53,8 @@ in
       #     enable = "true";
       #   };
       # };
+
+      exec-once = [ "${lib.getExe pkgs.ironbar} &" ];
 
       monitor = monitors."${hostname}";
 

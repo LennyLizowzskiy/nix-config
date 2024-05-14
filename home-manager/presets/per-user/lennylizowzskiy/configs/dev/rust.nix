@@ -12,7 +12,9 @@
     ## misc for Rust-specific stuff
     leptosfmt
     cargo-leptos
+    dioxus-cli
     slint-lsp
+    cargo-tauri
     trunk
 
     (rust-bin.stable.latest.default.override {
@@ -45,6 +47,39 @@
     cargo-about
     cargo-wizard
     cargo-xwin
+    cargo-pgo
+    cargo-apk
+    cargo-wipe
+    cargo-wasi
+    cargo-msrv
+    cargo-lock
+    cargo-info
+    cargo-i18n
+    cargo-hack
+    cargo-fuzz
+    cargo-dist
+    cargo-sweep
+    cargo-limit
+    cargo-insta
+    cargo-cross
+    cargo-clone
+    cargo-bloat
+    cargo-release
+    cargo-nextest
+    cargo-modules
+    cargo-mobile2
+    cargo-license
+    cargo-show-asm
+    cargo-outdated
+    cargo-generate
+    cargo-codspeed
+    cargo-tarpaulin
+    cargo-auditable
+    # cargo-information
+    cargo-autoinherit
+    cargo-whatfeatures
+    cargo-semver-checks
+    cargo-bundle-licenses
     # cargo-appimage
     # cargo-ft
   ];
