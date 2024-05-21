@@ -1,0 +1,3 @@
+[submodule "misc/external/secrets"]
+	path = misc/external/secrets
+	url = git@github.com:LennyLizowzskiy/secrets.git

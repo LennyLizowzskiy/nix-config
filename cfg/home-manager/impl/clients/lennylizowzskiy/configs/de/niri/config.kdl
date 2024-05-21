@@ -1,0 +1,46 @@
+output "DP-2" {
+  mode "2560x1440@142.001"
+}
+
+input {
+  // focus-follows-mouse
+  workspace-auto-back-and-forth
+  
+  keyboard {
+    track-layout "global"
+
+    xkb {
+      layout "us,ru"
+      options "grp:toggle,numpad:mac"
+    }
+  }
+
+  touchpad {
+    // click-method "button-areas"
+  }
+}
+
+prefer-no-csd
+
+binds {
+  Mod+H { focus-column-left; }
+  Mod+J { focus-workspace-down; }
+  Mod+K { focus-workspace-up; }
+  Mod+L { focus-column-right; }
+  Mod+WheelScrollDown  cooldown-ms=150 { focus-workspace-down; }
+  Mod+WheelScrollUp    cooldown-ms=150 { focus-workspace-up; }
+  Mod+WheelScrollRight                 { focus-column-right; }
+  Mod+WheelScrollLeft                  { focus-column-left; }
+  
+  Mod+Q { spawn "foot"; }
+
+  Mod+S { spawn "tofi-drun" "--drun-launch=true"; }
+  Mod+Shift+C { spawn "bash" "-c" "grim -g \"\\$(slurp)\" - | convert - -shave 2x2 PNG:- | wl-copy"; }
+}
+
+// Fix OBS with server-side decorations missing a minimum width.
+window-rule {
+    match app-id=r#"^com\.obsproject\.Studio$"#
+
+    min-width 876
+}
