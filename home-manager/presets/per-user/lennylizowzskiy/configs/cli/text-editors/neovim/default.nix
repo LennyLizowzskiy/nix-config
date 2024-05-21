@@ -23,14 +23,15 @@
 
   programs.neovim = {
     enable = true;
-    package = pkgs.neovim-nightly;
-    extraLuaPackages = ps: with ps; [
-      magick
-      lua-curl
-      nvim-nio
-      mimetypes
-      xml2lua
-    ];
+    # package = pkgs.neovim-nightly;
+    extraLuaPackages =
+      ps: with ps; [
+        magick
+        lua-curl
+        nvim-nio
+        mimetypes
+        xml2lua
+      ];
   };
 
   # programs.git.extraConfig.core.editor = "nvim";

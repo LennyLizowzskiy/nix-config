@@ -28,6 +28,11 @@
   ];
 
   programs.niri = {
-    config = builtins.readFile ./config.kdl;
+    config =
+      let
+        cfgTxt =
+          
+      in
+        "${cfgTxt}\n${(builtins.readFile ./config.kdl)}";
   };
 }

@@ -29,10 +29,6 @@ separator = "│"
 display-inlay-hints = true
 display-messages = true
 
-[editor.file-picker]
-ignore = false
-git-global = false
-
 [editor.whitespace.render]
 space = "none"
 tab = "none"

@@ -5,9 +5,7 @@
     enable = true;
     # homedir = "${config.home.homeDirectory}/.config/gnupg";
 
-    publicKeys = [
-      { source = "${extraArgs.etcDir}/keys/pgp-public.asc"; }
-    ];
+    publicKeys = [ { source = "${extraArgs.etcDir}/keys/pgp-public.asc"; } ];
 
     scdaemonSettings = {
       disable-ccid = true;

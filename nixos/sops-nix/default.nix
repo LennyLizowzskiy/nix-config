@@ -1,4 +1,10 @@
-{ inputs, pkgs, config, etcDir, ... }:
+{
+  inputs,
+  pkgs,
+  config,
+  etcDir,
+  ...
+}:
 
 {
   # imports = [
@@ -17,7 +23,7 @@
 
   #   secrets = {
   #     "test" = {
-        
+
   #     };
   #   };
   # };
