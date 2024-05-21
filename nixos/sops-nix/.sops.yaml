@@ -1,7 +1,0 @@
-keys:
-  - &primary 88B5A880B41D918AF950324E130A9DC3C6ED6BF3
-creation_rules:
-  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
-    key_groups:
-      - pgp:
-        - *primary
