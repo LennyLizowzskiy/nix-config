@@ -1,6 +1,6 @@
 {
   inputs,
-  mainConfig,
+  extraArgs,
   ...
 }:
 
@@ -80,7 +80,7 @@
     userEmail = "contact@lizowzskiy.ru";
 
     extraConfig = {
-      user.signingkey = "${mainConfig.keysDir}/pgp-public.converted.ssh_pub";
+      user.signingkey = "${extraArgs.keysDir}/pgp-public.converted.ssh_pub";
       gpg.format = "ssh";
       commit.gpgsign = true;
     };

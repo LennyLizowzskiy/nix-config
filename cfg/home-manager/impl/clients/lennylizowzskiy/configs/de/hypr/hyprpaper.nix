@@ -1,12 +1,13 @@
 {
   config,
   mainConfig,
+  extraArgs,
   lib,
   ...
 }:
 
 let
-  bg = "${mainConfig.wallpapersDir}/wallpapers/dark-colorful-polygons.png";
+  bg = "${extraArgs.wallpapersDir}/wallpapers/dark-colorful-polygons.png";
 
   monitors = {
     rher = {

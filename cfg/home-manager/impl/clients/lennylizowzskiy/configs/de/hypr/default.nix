@@ -20,5 +20,5 @@ if (mainConfig.local.de == "hyprland") then {
     ../../services/batsignal.nix
     ../../services/udiskie.nix
     ../../services/secrets/gnome-keyring.nix
-  ] ++ (if (mainConfig.local.hostname == "rher") then [ ../../../services/applets/blueman.nix ] else [ ]);
+  ] ++ (if (mainConfig.local.hostname == "rher") then [ ../../services/applets/blueman.nix ] else [ ]);
 } else {}
