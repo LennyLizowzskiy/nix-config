@@ -1,0 +1,114 @@
+[language-server.lua-language-server.config]
+Lua = { telemetry = { enable = true } }
+
+[language-server.yaml-language-server.config]
+redhat = { telemetry = { enabled = false } }
+yaml = { keyOrdering = false, format = { enable = true } }
+
+[language-server.nixd]
+command = "nixd"
+
+[language-server.biome]
+command = "biome"
+args = ["lsp-proxy"]
+
+[language-server.rust-analyzer.config]
+imports = { granularity = { group = "module" }, prefix = "self" }
+cargo = { allFeatures = true, targetDir = true, buildScripts = { enable = true }, loadOutDirsFromCheck = true, runBuildScripts = true }
+check = { command = "clippy", allTargets = false }
+procMacro = { enable = true, ignored = { leptos_macro = ["server"] } }
+rustfmt = { overrideCommand = ["leptosfmt", "--stdin", "--rustfmt", "--override-macro-names", "html"] }
+
+# [language-server.rust-analyzer.config.inlayHints]
+# lifetimeElisionHints = { enable = false, useParameterNames = false }
+# renderColons = { enable = false }
+# typeHints = { hideNamedConstructor = true, hideClosureInitialization = true }
+# chainingHints = { enable = false }
+# closingBraceHints = { enable = false }
+# hideClosureInitialization = { enabla = true }
+# hideNamedConstructor = { enable = true }
+
+[language-server.tailwindcss]
+name = "tailwindcss"
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+
+[language-server.nu]
+name = "nu-lsp"
+command = "nu"
+args = ["--lsp"]
+
+
+[[language]]
+name = "nix"
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+formatter = { command = "nixfmt", args = ["--quiet"] }
+language-servers = ["nixd"]
+
+[[language]]
+name = "javascript"
+auto-format = true
+language-servers = ["biome"]
+
+[[language]]
+name = "typescript"
+auto-format = true
+language-servers = ["biome"]
+
+[[language]]
+name = "jsx"
+auto-format = true
+language-servers = ["biome"]
+
+[[language]]
+name = "json"
+auto-format = true
+language-servers = ["biome"]
+
+[[language]]
+name = "nu"
+language-servers = ["nu-lsp"]
+
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server", "tailwindcss"]
+
+[[language]]
+name = "css"
+language-servers = ["vscode-css-language-server", "tailwindcss"]
+
+[[language]]
+name = "rust"
+
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+
+
+[[language]]
+name = "lua"
+formatter = { command = "stylua", args = ["-"] }
+
+[[language]]
+name = "python"
+formatter = { command = "ruff", args = ["format", "-"] }
+
+[[language]]
+name = "javascript"
+formatter = { command = "biome", args = ["format", "--stdin-file-path=x.js"] }
+
+[[language]]
+name = "typescript"
+formatter = { command = "biome", args = ["format", "--stdin-file-path=x.ts"] }
+
+[[language]]
+name = "jsx"
+formatter = { command = "biome", args = ["format", "--stdin-file-path=x.jsx"] }
+
+[[language]]
+name = "json"
+formatter = { command = "biome", args = ["format", "--stdin-file-path=x.json"] }
