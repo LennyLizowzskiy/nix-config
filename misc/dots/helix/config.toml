@@ -1,0 +1,54 @@
+# theme = "kanagawa_dragon" # inlay hints are broken
+theme = "autumn_night_variant"
+
+[editor]
+line-number = "relative"
+mouse = false
+shell = ["bash", "-c"]
+default-line-ending = "lf"
+# color-modes = true
+auto-save = true
+# completion-replace = true
+bufferline = "multiple"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "file-name", "read-only-indicator", "file-modification-indicator"]
+center = []
+right = ["diagnostics", "spinner", "version-control"]
+mode.normal = "NOR"
+mode.insert = "INS"
+mode.select = "SEL"
+separator = "│"
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+
+[editor.whitespace.render]
+space = "none"
+tab = "none"
+nbsp = "all"
+nnbsp = "all"
+newline = "none"
+
+[editor.whitespace.characters]
+space = " "
+nbsp = "⍽"
+nnbsp = "␣"
+tab = " "
+newline = " "
+tabpad = " "
+
+[editor.indent-guides]
+render = true
+# character = "⸽"
+character = "▏"
+skip-levels = 1
+
+[editor.soft-wrap]
+enable = true

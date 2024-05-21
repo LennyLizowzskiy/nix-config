@@ -1,11 +1,11 @@
-{ keysDir, ... }:
+{ extraVars, ... }:
 
 {
   programs.gpg = {
     enable = true;
     # homedir = "${config.home.homeDirectory}/.config/gnupg";
 
-    publicKeys = [ { source = "${keysDir}/pgp-public.asc"; } ];
+    publicKeys = [ { source = "${extraVars.keysDir}/pgp-public.asc"; } ];
 
     scdaemonSettings = {
       disable-ccid = true;
