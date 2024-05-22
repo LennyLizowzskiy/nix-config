@@ -8,7 +8,7 @@
   # TODO: wireguard
   # networking.wireguard.interfaces = { 
   #   wg0 = {
-      
+
   #   };
   # };
 }

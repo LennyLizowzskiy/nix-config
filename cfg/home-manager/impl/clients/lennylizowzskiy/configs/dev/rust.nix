@@ -16,6 +16,12 @@
     slint-lsp
     cargo-tauri
     trunk
+    sqlx-cli
+    rust-bindgen-unwrapped
+    tokio-console
+    wasm-pack
+    crate2nix
+    corrosion
 
     (rust-bin.stable.latest.default.override {
       extensions = [
@@ -24,63 +30,68 @@
       ];
 
       targets = [
+        "x86_64-unknown-linux-gnu"
         "x86_64-pc-windows-gnu"
         "wasm32-unknown-unknown"
       ];
     })
 
     ## cargo plugins
-    cargo-expand
-    cargo-deb
-    cargo-ndk
-    cargo-watch
-    cargo-make
-    cargo-deny
-    cargo-chef
     bacon
-    cargo-release
-    cargo-zigbuild
-    cargo-outdated
-    cargo-update
-    cargo-semver-checks
-    cargo-cache
     cargo-about
+    cargo-apk
+    # cargo-appimage
+    cargo-auditable
+    cargo-autoinherit
+    cargo-bloat
+    cargo-bundle-licenses
+    cargo-cache
+    cargo-careful
+    cargo-crev
+    cargo-chef
+    cargo-clone
+    cargo-codspeed
+    cargo-cross
+    cargo-deb
+    cargo-deny
+    cargo-dist
+    cargo-expand
+    cargo-features-manager
+    # cargo-ft
+    cargo-fuzz
+    cargo-generate
+    cargo-hack
+    cargo-i18n
+    cargo-info
+    # cargo-information
+    cargo-insta
+    cargo-license
+    cargo-limit
+    cargo-lock
+    cargo-make
+    cargo-mobile2
+    cargo-modules
+    cargo-msrv
+    cargo-ndk
+    cargo-nextest
+    cargo-outdated
+    cargo-outdated
+    cargo-pgo
+    cargo-release
+    cargo-release
+    cargo-semver-checks
+    cargo-semver-checks
+    cargo-show-asm
+    cargo-sweep
+    cargo-swift
+    cargo-tarpaulin
+    cargo-update
+    cargo-wasi
+    cargo-watch
+    cargo-whatfeatures
+    cargo-wipe
     cargo-wizard
     cargo-xwin
-    cargo-pgo
-    cargo-apk
-    cargo-wipe
-    cargo-wasi
-    cargo-msrv
-    cargo-lock
-    cargo-info
-    cargo-i18n
-    cargo-hack
-    cargo-fuzz
-    cargo-dist
-    cargo-sweep
-    cargo-limit
-    cargo-insta
-    cargo-cross
-    cargo-clone
-    cargo-bloat
-    cargo-release
-    cargo-nextest
-    cargo-modules
-    cargo-mobile2
-    cargo-license
-    cargo-show-asm
-    cargo-outdated
-    cargo-generate
-    cargo-codspeed
-    cargo-tarpaulin
-    cargo-auditable
-    # cargo-information
-    cargo-autoinherit
-    cargo-whatfeatures
-    cargo-semver-checks
-    cargo-bundle-licenses
-    # cargo-appimage
-    # cargo-ft
+    cargo-zigbuild
   ];
 }

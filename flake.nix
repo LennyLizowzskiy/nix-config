@@ -116,7 +116,7 @@
           mkNixOsConf =
             {
               args ? { },
-              modules ? [ ]
+              modules ? [ ],
             }:
             with inputs;
             nixpkgs.lib.nixosSystem {
@@ -133,19 +133,20 @@
                 home-manager.nixosModules.home-manager
                 ./cfg/nixos/modules/local.nix
                 ./main.nix
-              
-                ({ ... }: { nixpkgs.overlays = sharedOverlays; })
+
+                (
+                  { ... }:
+                  {
+                    nixpkgs.overlays = sharedOverlays;
+                  }
+                )
               ] ++ modules;
             };
         in
         {
-          grogoroth = mkNixOsConf {
-            modules = [ ./cfg/nixos/impl/clients/grogoroth ];
-          };
+          grogoroth = mkNixOsConf { modules = [ ./cfg/nixos/impl/clients/grogoroth ]; };
 
-          rher = mkNixOsConf {
-            modules = [ ./cfg/nixos/impl/clients/rher ];
-          };
+          rher = mkNixOsConf { modules = [ ./cfg/nixos/impl/clients/rher ]; };
         };
     };
 }

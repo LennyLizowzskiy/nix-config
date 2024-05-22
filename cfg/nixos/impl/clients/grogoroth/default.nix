@@ -7,9 +7,12 @@
     hw.displays = [
       {
         name = "DP-2";
-        resolution = [ 2560 1440 ];
-        refreshRate = "142.001";
-        scaling = "1";
+        resolution = [
+          2560
+          1440
+        ];
+        refreshRate = 142.001;
+        scaling = 1;
       }
     ];
   };
@@ -18,20 +21,20 @@
     [
       ./.hardware.nix
       ../.shared
-    ] ++ (with inputs.nixos-hardware.nixosModules; [
+    ]
+    ++ (with inputs.nixos-hardware.nixosModules; [
       common-cpu-amd
       common-cpu-amd-pstate
       common-pc
       common-pc-ssd
     ]);
 
-  fileSystems."/".options =
-    [
-      "noatime"
-      "nodiratime"
-      "discard"
-    ];
-  
+  fileSystems."/".options = [
+    "noatime"
+    "nodiratime"
+    "discard"
+  ];
+
   hardware.opengl.extraPackages = with pkgs; [
     rocmPackages.clr.icd
     amdvlk

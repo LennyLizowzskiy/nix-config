@@ -7,9 +7,12 @@
     hw.displays = [
       {
         name = "eDP-1";
-        resolution = [ 2560 1600 ];
-        refreshRate = "60.0";
-        scaling = "2";
+        resolution = [
+          2560
+          1600
+        ];
+        refreshRate = 60.0;
+        scaling = 2;
       }
     ];
   };

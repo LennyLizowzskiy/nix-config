@@ -19,9 +19,9 @@ let
     };
   };
 
-  getHyprpapers =
-    lib.attrsets.mapAttrsToList (name: value: "${name}, ${value}")
-      monitors."${mainConfig.local.hostname}";
+  getHyprpapers = lib.attrsets.mapAttrsToList (
+    name: value: "${name}, ${value}"
+  ) monitors."${mainConfig.local.hostname}";
 in
 {
   programs.hyprpaper = {

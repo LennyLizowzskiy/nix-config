@@ -24,6 +24,8 @@
     zip
     archiver
     archivemount
+    bottom
+    
 
     wl-clipboard
     wl-clipboard-x11

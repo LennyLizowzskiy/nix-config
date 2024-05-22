@@ -1,6 +1,4 @@
-{
-  ...
-}:
+{ ... }:
 
 {
   security.sudo.enable = false;

@@ -1,4 +1,9 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 lib.mkIf (config.local.de == "sway") {
   programs.sway = {
@@ -11,9 +16,7 @@ lib.mkIf (config.local.de == "sway") {
     '';
   };
 
-  xdg.portal.extraPortals = with pkgs; [
-    xdg-desktop-portal-gtk
-  ];
+  xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
 
   services.greetd = {
     enable = true;
@@ -25,7 +28,6 @@ lib.mkIf (config.local.de == "sway") {
       initial_session = default_session;
     };
   };
-
 
   security.polkit.enable = lib.mkForce true;
 

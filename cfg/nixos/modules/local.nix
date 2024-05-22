@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 #
 # NixOS module
@@ -15,21 +20,27 @@ in
     local = {
       shell = mkOption {
         type = types.enum [
-          "fish" "nu"
+          "fish"
+          "nu"
         ];
         default = "fish";
       };
 
       de = mkOption {
         type = types.enum [
-          "hyprland" "plasma6" "niri" "sway"
+          "hyprland"
+          "plasma6"
+          "niri"
+          "sway"
+          "jay"
         ];
         default = "plasma6";
       };
 
       terminal = mkOption {
         type = types.enum [
-          "alacritty" "foot"
+          "alacritty"
+          "foot"
         ];
         default = "foot";
       };
@@ -68,44 +79,48 @@ in
   };
 
   config =
-  let
-    term =
-      if cfg.terminal == "foot" then
-        pkgs.foot
-      else if cfg.terminal == "alacritty" then
-        pkgs.alacritty
-      else
-        abort "invalid local.terminal";
+    let
+      term =
+        if cfg.terminal == "foot" then
+          pkgs.foot
+        else if cfg.terminal == "alacritty" then
+          pkgs.alacritty
+        else
+          abort "invalid local.terminal";
 
-    termBin =
-      if cfg.terminal == "foot" then
-        "${pkgs.foot}/bin/foot"
-      else if cfg.terminal == "alacritty" then
-        lib.getExe pkgs.alacritty
-      else
-        abort "invalid local.terminal";
-  in
-  {
-    # Shell
-    programs.fish.enable = cfg.shell == "fish";
+      termBin =
+        if cfg.terminal == "foot" then
+          "${pkgs.foot}/bin/foot"
+        else if cfg.terminal == "alacritty" then
+          lib.getExe pkgs.alacritty
+        else
+          abort "invalid local.terminal";
+    in
+    {
+      # Shell
+      programs.fish.enable = cfg.shell == "fish";
 
-    users.users.lennylizowzskiy.shell = (
-      if cfg.shell == "fish" then
-        pkgs.fish
-      else if cfg.shell == "nu" then
-        pkgs.nushellFull
-      else
-        abort "invalid local.shell"
-    );
+      users.users.lennylizowzskiy.shell = (
+        if cfg.shell == "fish" then
+          pkgs.fish
+        else if cfg.shell == "nu" then
+          pkgs.nushellFull
+        else
+          abort "invalid local.shell"
+      );
 
-    # Hostname
-    networking.hostName = cfg.hostname;
+      # Hostname
+      networking.hostName = cfg.hostname;
 
-    # Terminal
-    environment.sessionVariables = {
-      TERMINAL = termBin;
+      # Terminal
+      environment.sessionVariables = {
+        TERMINAL = termBin;
+      };
+
+      environment.shellAliases = {
+        terminal = "${termBin}";
+      };
+
+      # --- other things are defined in other files ---
     };
-    
-    # --- other things are defined in other files ---
-  };
 }

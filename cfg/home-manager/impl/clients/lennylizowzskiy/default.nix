@@ -1,12 +1,9 @@
-{
-  inputs,
-  extraArgs,
-  ...
-}:
+{ inputs, extraArgs, ... }:
 
 {
   imports = [
     inputs.personalPkgs.homeManagerModules.default
+    "${extraArgs.rootDir}/cfg/home-manager/modules"
 
     ./configs/command-not-found.nix
     ./configs/nix.nix
@@ -46,6 +43,7 @@
     ./configs/dev/idea.nix
     ./configs/dev/direnv.nix
     ./configs/dev/java.nix
+    ./configs/dev/haskell.nix
 
     # ./configs/gui/theming-gtkqt.nix
     ./configs/gui/apps/feh.nix
@@ -61,6 +59,7 @@
 
     ./configs/de/niri
     ./configs/de/hypr
+    ./configs/de/jay
 
     ./configs/services/secrets/gnupg.nix
   ];

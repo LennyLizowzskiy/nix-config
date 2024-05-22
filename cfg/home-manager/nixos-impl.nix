@@ -1,8 +1,4 @@
-{
-  inputs,
-  config,
-  ...
-}@vars:
+{ inputs, config, ... }@vars:
 
 {
   # imports = [ inputs.home-manager.nixosModules.home-manager ];

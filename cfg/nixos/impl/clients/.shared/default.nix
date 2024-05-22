@@ -1,4 +1,9 @@
-{ pkgs, lib, rootDir, ... }:
+{
+  pkgs,
+  lib,
+  rootDir,
+  ...
+}:
 
 {
   imports = [

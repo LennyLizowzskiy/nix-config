@@ -1,7 +1,5 @@
 { ... }:
 
 {
-  imports = [
-    ./local.nix
-  ];
+  imports = [ ./local.nix ];
 }

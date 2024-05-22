@@ -1,7 +1,5 @@
 { ... }:
 
 {
-  imports = [
-    ../home-manager/nixos-impl.nix
-  ];
+  imports = [ ../home-manager/nixos-impl.nix ];
 }
