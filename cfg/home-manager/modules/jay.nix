@@ -8,29 +8,29 @@ let
   tomlFormatter = pkgs.formats.toml {};
 in
 {
-  config = {
+  options = {
     wayland.windowManager.jay = {
       enable = mkEnableOption "Jay - a window manager";
 
-      settings = { # toml
+      settings = mkOption { # toml
         type = types.attrs;
         default = {};
       };
 
-      extraConfig = {
+      extraConfig = mkOption {
         type = types.str;
         default = "";
       };
     };
   };
 
-  options = mkIf cfg.enable {
+  config = mkIf cfg.enable {
     home.packages = with pkgs; [
       jay
     ];
 
     xdg.configFile = {
-      "jay/config.toml".source = "${tomlFormatter.generate "jay_config.toml" cfg.settings}\n${cfg.extraConfig}";
+      "jay/config.toml".text = "${builtins.readFile (tomlFormatter.generate "jay_config.toml" cfg.settings)}\n\n${cfg.extraConfig}";
     };
   };
 }

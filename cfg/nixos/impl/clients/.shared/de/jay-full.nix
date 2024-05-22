@@ -1,9 +1,12 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 lib.mkIf (config.local.de == "jay") {
-  environment.systemPackages = with pkgs; [
-    jay
-  ];
+  environment.systemPackages = with pkgs; [ jay ];
 
   xdg.portal = {
     enable = true;
@@ -19,7 +22,7 @@ lib.mkIf (config.local.de == "jay") {
     enable = true;
     settings = rec {
       default_session = {
-        command = "${lib.getExe pkgs.greetd.tuigreet} --remember --time --cmd ${lib.getExe pkgs.jay}";
+        command = ''${lib.getExe pkgs.greetd.tuigreet} --remember --time --cmd "jay run"'';
         user = "greeter";
       };
       initial_session = default_session;

@@ -25,6 +25,7 @@
     ./de/niri-full.nix
     ./de/plasma6.nix
     ./de/sway-full.nix
+    ./de/jay-full.nix
     ./bluetooth.nix
     ./distrobox.nix
     ./fine-tuning.nix
