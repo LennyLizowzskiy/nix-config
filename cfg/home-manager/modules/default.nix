@@ -1,7 +1,5 @@
 { ... }:
 
 {
-  imports = [
-    ./jay.nix
-  ];
+  imports = [ ./jay.nix ];
 }

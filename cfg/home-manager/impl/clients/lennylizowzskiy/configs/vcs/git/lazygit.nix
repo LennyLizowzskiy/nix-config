@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ delta ];
+  home.packages = with pkgs; [ difftastic ];
 
   programs.lazygit = {
     enable = true;
@@ -24,8 +24,7 @@
         };
 
         paging = {
-          colorArg = "always";
-          pager = "delta --dark --paging=never";
+          pager = "difft --background dark --color always";
         };
       };
     };

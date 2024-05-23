@@ -1,6 +1,11 @@
-{ extraArgs, ... }:
+{ pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    git-open
+    git-extras
+  ];
+
   home.shellAliases = {
     "g" = "git";
   };
@@ -8,8 +13,12 @@
   programs.git = {
     enable = true;
 
-    delta = {
+    # delta = {
+    #   enable = true;
+    # };
+    difftastic = {
       enable = true;
+      color = "always";
     };
 
     ignores = [

@@ -1,43 +1,69 @@
 { pkgs, ... }:
 
 {
+  environment.shellAliases = {
+    dl = "aria2c";
+    arch = "ouch";
+    info = "fastfetch";
+    tasks = "btm";
+    scan = "rustscan";
+    detect = "magika";
+    log = "tailspin";
+
+    cat = "bat --style plain";
+    nano = "micro";
+    ip = "ip --color=auto";
+    grep = "rg";
+    dig = "doggo";
+    sysctl = "systeroid";
+
+    lsg = "eza --git";
+    lss = "eza --tree";
+    "." = "eza -a";
+    ".." = "cd ..";
+    "..." = "cd ../..";
+  };
+
   environment.systemPackages = with pkgs; [
     just
-    dua # disk storage usage util
-    duf # disk storage usage util
+    dust # du alt
+    dua # du alt
+    duf # df alt
     fd # find-like
     sd # sed-like
     fdupes # find duplicates
-    screen
-    # nix-init
     ffmpeg
     imagemagickBig
-    busybox
+    await
+    ripgrep
+    httpie
+    curlie
+    ripgrep-all
+    rustscan
+    # magika
+    tailspin
+    systeroid
+    fselect
+
+    # busybox
+    toybox
     steam-run
     aria
     ouch
-    btop
     eza
     sd
     sops
-    unzip
-    zip
-    archiver
-    archivemount
     bottom
-    
+    tealdeer
 
     wl-clipboard
     wl-clipboard-x11
 
     steam-run # FHS env on demand
 
-    git-open
     genymotion
     slides
-    # httpie
     hoppscotch
-    git-extras
     youtube-music
     p7zip
     rar

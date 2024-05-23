@@ -12,12 +12,6 @@ in
       pkgs.vscode-extensions.vadimcn.vscode-lldb.adapter.out;
   };
 
-  home.shellAliases = {
-    edithex = "hexcurses";
-    editfile = "hx";
-    editdir = "hx";
-  };
-
   home.packages = with pkgs; [
     ## supplementary
     git
@@ -42,6 +36,7 @@ in
     wasmer
     yarn
     rpm
+    hyperfine
 
     ## hex editors
     hexcurse

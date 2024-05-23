@@ -67,13 +67,6 @@
   manual.manpages.enable = false;
   programs.man.enable = false;
 
-  home.shellAliases = {
-    "." = "ls -a";
-    "lss" = "eza --tree";
-    ".." = "cd ..";
-    "..." = "cd ../..";
-  };
-
   programs.git = {
     userName = "Lenny Lizowzskiy";
     userEmail = "contact@lizowzskiy.ru";

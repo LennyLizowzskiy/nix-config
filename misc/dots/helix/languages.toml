@@ -17,7 +17,7 @@ imports = { granularity = { group = "module" }, prefix = "self" }
 cargo = { allFeatures = true, targetDir = true, buildScripts = { enable = true }, loadOutDirsFromCheck = true, runBuildScripts = true }
 check = { command = "clippy", allTargets = false }
 procMacro = { enable = true, ignored = { leptos_macro = ["server"] } }
-rustfmt = { overrideCommand = ["leptosfmt", "--stdin", "--rustfmt", "--override-macro-names", "html"] }
+rustfmt = { overrideCommand = ["leptosfmt", "--stdin", "--rustfmt"] }
 
 # [language-server.rust-analyzer.config.inlayHints]
 # lifetimeElisionHints = { enable = false, useParameterNames = false }
