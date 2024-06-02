@@ -35,11 +35,24 @@
     "discard"
   ];
 
+  systemd.tmpfiles.rules = [ "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}" ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
+
+  environment.variables = {
+    # VAAPI and VDPAU config for accelerated video.
+    # See https://wiki.archlinux.org/index.php/Hardware_video_acceleration
+    "VDPAU_DRIVER" = "radeonsi";
+    "LIBVA_DRIVER_NAME" = "radeonsi";
+  };
+
   hardware.opengl.extraPackages = with pkgs; [
+    vaapiVdpau
+    libvdpau-va-gl
     rocmPackages.clr.icd
     amdvlk
   ];
+
   hardware.opengl.extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
-  systemd.tmpfiles.rules = [ "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}" ];
-  boot.initrd.kernelModules = [ "amdgpu" ];
+
+  services.xserver.videoDrivers = [ "amdgpu" ];
 }

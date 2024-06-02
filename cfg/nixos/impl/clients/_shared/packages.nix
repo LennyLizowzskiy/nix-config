@@ -15,7 +15,7 @@
     ip = "ip --color=auto";
     grep = "rg";
     dig = "doggo";
-    sysctl = "systeroid";
+    # sysctl = "systeroid";
 
     lsa = "eza --all";
     lsg = "eza --git";
@@ -43,7 +43,7 @@
     rustscan
     # magika
     tailspin
-    systeroid
+    # systeroid
     fselect
     floorp-unwrapped
     # busybox
