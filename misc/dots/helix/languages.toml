@@ -8,6 +8,9 @@ yaml = { keyOrdering = false, format = { enable = true } }
 [language-server.nixd]
 command = "nixd"
 
+[laguage-server.nixd.config]
+diagnostic = { suppress = ["sema-def-not-used", "sema-escaping-with", "var-bind-to-this", "escaping-this-with"] }
+
 [language-server.biome]
 command = "biome"
 args = ["lsp-proxy"]

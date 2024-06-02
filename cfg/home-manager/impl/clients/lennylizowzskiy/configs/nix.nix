@@ -1,5 +1,5 @@
 { extraArgs, ... }:
 
 {
-  imports = [ "${extraArgs.rootDir}/cfg/.shared/nix.nix" ];
+  imports = [ "${extraArgs.rootDir}/cfg/_shared/nix.nix" ];
 }

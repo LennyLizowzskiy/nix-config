@@ -107,6 +107,15 @@
 
           nix = f.stable.nix;
           nixos-rebuild = f.stable.nixos-rebuild;
+
+          floorp = p.floorp.override {
+            ffmpegSupport = true;
+            gssSupport = true;
+            pipewireSupport = true;
+            alsaSupport = true;
+            jackSupport = true;
+            smartcardSupport = true;
+          };
         })
       ];
     in

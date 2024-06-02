@@ -3,7 +3,7 @@ theme = "autumn_night_variant"
 
 [editor]
 line-number = "relative"
-mouse = false
+# mouse = false
 shell = ["bash", "-c"]
 default-line-ending = "lf"
 # color-modes = true

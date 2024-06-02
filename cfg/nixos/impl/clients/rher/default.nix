@@ -1,4 +1,9 @@
-{ inputs, externalDir, ... }:
+{
+  pkgs,
+  inputs,
+  externalDir,
+  ...
+}:
 
 {
   local = {
@@ -20,7 +25,7 @@
   imports =
     [
       ./.hardware.nix
-      ../.shared
+      ../_shared
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
       common-hidpi
@@ -44,4 +49,22 @@
     "${externalDir}/secrets/sog-CAROOT-CA.crt"
     "${externalDir}/secrets/sog-issuer-CA.crt"
   ];
+
+  environment.variables = {
+    # VAAPI and VDPAU config for accelerated video.
+    # See https://wiki.archlinux.org/index.php/Hardware_video_acceleration
+    "VDPAU_DRIVER" = "radeonsi";
+    "LIBVA_DRIVER_NAME" = "radeonsi";
+  };
+
+  hardware.opengl.extraPackages = with pkgs; [
+    vaapiVdpau
+    libvdpau-va-gl
+    rocmPackages.clr.icd
+    amdvlk
+  ];
+
+  hardware.opengl.extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
+
+  services.xserver.videoDrivers = [ "amdgpu" ];
 }

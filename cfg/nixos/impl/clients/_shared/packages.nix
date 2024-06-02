@@ -17,6 +17,7 @@
     dig = "doggo";
     sysctl = "systeroid";
 
+    lsa = "eza --all";
     lsg = "eza --git";
     lss = "eza --tree";
     "." = "eza -a";
@@ -44,7 +45,7 @@
     tailspin
     systeroid
     fselect
-
+    floorp-unwrapped
     # busybox
     toybox
     steam-run

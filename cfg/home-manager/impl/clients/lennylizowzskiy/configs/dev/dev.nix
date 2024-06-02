@@ -15,6 +15,7 @@ in
   home.packages = with pkgs; [
     ## supplementary
     git
+    gh-dash
     curl
     wget
     unzip
@@ -22,6 +23,7 @@ in
     gzip
     fd
     ripgrep
+    ripgrep-all
     fzf
     gnumake
     cmake
@@ -32,11 +34,13 @@ in
     just
     tree-sitter
     flatpak-builder
+    hyperfine
     ## extra package managers
     wasmer
     yarn
     rpm
-    hyperfine
+    dpkg
+    pacman
 
     ## hex editors
     hexcurse
@@ -52,6 +56,7 @@ in
     virtualenv
     zig
     gcc
+    (lib.lowPrio musl)
     kotlin
     kotlin-native
     detekt

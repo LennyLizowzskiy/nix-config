@@ -20,7 +20,7 @@
   imports =
     [
       ./.hardware.nix
-      ../.shared
+      ../_shared
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
       common-cpu-amd

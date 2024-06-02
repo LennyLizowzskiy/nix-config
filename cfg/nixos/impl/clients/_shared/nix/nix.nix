@@ -7,7 +7,7 @@
 }:
 
 {
-  imports = [ "${rootDir}/cfg/.shared/nix.nix" ];
+  imports = [ "${rootDir}/cfg/_shared/nix.nix" ];
 
   environment.etc."channels/nixpkgs".source = inputs.nixpkgs.outPath;
   nix.settings.system-features = [ "recursive-nix" ];
