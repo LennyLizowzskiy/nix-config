@@ -34,7 +34,9 @@ in
     systemd.enable = true;
 
     settings = {
-      exec-once = [ "${lib.getExe pkgs.ironbar} &" ];
+      exec-once = [
+        # "${lib.getExe pkgs.ironbar} &" 
+      ];
 
       monitor = monitors."${hostname}";
 

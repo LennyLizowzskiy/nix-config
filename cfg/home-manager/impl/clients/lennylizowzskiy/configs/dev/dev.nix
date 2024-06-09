@@ -101,7 +101,7 @@ in
     ols # odin lsp
     ruff
     ruff-lsp # py lsp (linter)
-    nodePackages.pyright # py lsp (type-checker)
+    pyright # py lsp (type-checker)
     # pyre # py lsp (type-checker)
     zls # zig lsp
     # rust-analyzer defined in rust.nix

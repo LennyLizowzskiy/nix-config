@@ -67,10 +67,20 @@
     };
   };
 
+  services.gvfs.enable = true;
+
+  services.upower = {
+    enable = true;
+
+    percentageLow = 25;
+    percentageCritical = 10;
+    percentageAction = 5;
+  };
+
   networking.networkmanager.enable = true;
   networking.nameservers = [
-    "8.8.8.8"
-    "8.8.4.4"
+    "1.1.1.1"
+    "1.0.0.1"
   ];
 
   services.envfs.enable = true; # "A fuse filesystem that dynamically populates contents of /bin and /usr/bin/ so that it contains all executables from the PATH of the requesting process"
