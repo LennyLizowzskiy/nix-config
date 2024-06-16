@@ -10,6 +10,7 @@
   imports = [ inputs.stylix.nixosModules.stylix ];
 
   stylix = {
+    enable = true;
     autoEnable = true;
 
     base16Scheme = "${themesDir}/base16/kanagawa-dragon.yaml";

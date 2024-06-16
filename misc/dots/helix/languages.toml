@@ -52,12 +52,12 @@ language-servers = ["nixd"]
 [[language]]
 name = "javascript"
 auto-format = true
-language-servers = ["biome"]
+language-servers = ["javascript-language-server", "biome"]
 
 [[language]]
 name = "typescript"
 auto-format = true
-language-servers = ["biome"]
+language-servers = ["typescript-language-server", "biome"]
 
 [[language]]
 name = "jsx"

@@ -3,6 +3,11 @@
 {
   imports = [ inputs.ags.homeManagerModules.default ];
 
+  home.packages = with pkgs; [
+    brightnessctl
+
+  ];
+
   programs.ags = {
     enable = true;
 
@@ -10,6 +15,9 @@
       libdbusmenu-gtk3
       gnome.gnome-bluetooth
       brightnessctl
+      gtksourceview
+      accountsservice
+      webkitgtk
     ];
   };
 }

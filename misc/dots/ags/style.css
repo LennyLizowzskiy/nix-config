@@ -1,3 +1,7 @@
+* {
+  font-family: monospace;
+}
+
 window.bar {
   background-color: @theme_bg_color;
   color: @theme_fg_color;

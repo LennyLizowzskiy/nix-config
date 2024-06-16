@@ -104,7 +104,7 @@ in
         if cfg.shell == "fish" then
           pkgs.fish
         else if cfg.shell == "nu" then
-          pkgs.nushellFull
+          pkgs.nushell
         else
           abort "invalid local.shell"
       );

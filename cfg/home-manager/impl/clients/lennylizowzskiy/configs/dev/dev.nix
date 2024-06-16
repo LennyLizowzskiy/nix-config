@@ -52,6 +52,9 @@ in
 
     ## compilers, linkers & runtimes
     nodePackages.nodejs
+    bun
+    swc
+
     python3
     virtualenv
     zig
