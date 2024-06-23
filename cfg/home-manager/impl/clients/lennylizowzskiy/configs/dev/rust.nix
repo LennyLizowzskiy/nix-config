@@ -75,11 +75,8 @@
     cargo-ndk
     cargo-nextest
     cargo-outdated
-    cargo-outdated
     cargo-pgo
     cargo-release
-    cargo-release
-    cargo-semver-checks
     cargo-semver-checks
     cargo-show-asm
     cargo-sweep
@@ -91,6 +88,7 @@
     cargo-whatfeatures
     cargo-wipe
     cargo-wizard
+    cargo-wasi
     cargo-xwin
     cargo-zigbuild
   ];

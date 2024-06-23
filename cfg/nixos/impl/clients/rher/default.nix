@@ -57,14 +57,14 @@
     "LIBVA_DRIVER_NAME" = "radeonsi";
   };
 
-  hardware.opengl.extraPackages = with pkgs; [
+  hardware.graphics.extraPackages = with pkgs; [
     vaapiVdpau
     libvdpau-va-gl
     rocmPackages.clr.icd
     amdvlk
   ];
 
-  hardware.opengl.extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
+  hardware.graphics.extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
 
   services.xserver.videoDrivers = [ "amdgpu" ];
 }

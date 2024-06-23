@@ -32,7 +32,7 @@ namespace Layout {
 			spacing: spacing,
 			hpack: "end",
 			children: [
-				SysTray(),
+				// SysTray(),
 				Notifications(),
 				Volume(),
 				// HyprKbLanguage(),
@@ -46,7 +46,6 @@ export default (monitor: number) => {
 	return Widget.Window({
 		name: `bar-${monitor}`,
 		class_name: "bar",
-		css: "height: 32px",
 		monitor,
 		anchor: ["top", "left", "right"],
 		exclusivity: "exclusive",

@@ -15,6 +15,8 @@ in
   home.packages = with pkgs; [
     ## supplementary
     git
+    typst
+    typst-live
     gh-dash
     curl
     wget
@@ -24,6 +26,7 @@ in
     fd
     ripgrep
     ripgrep-all
+    ast-grep
     fzf
     gnumake
     cmake
@@ -54,7 +57,6 @@ in
     nodePackages.nodejs
     bun
     swc
-
     python3
     virtualenv
     zig
@@ -73,6 +75,7 @@ in
     actionlint
 
     ## lsp & formatters
+    typstyle
     buf # proto linter, formatter, templater
     editorconfig-checker
     ktlint
@@ -91,7 +94,7 @@ in
     clang-tools # c, c++, objc, cuda, proto lsp
     # rustfmt and clippy defined in rust.nix
     yaml-language-server
-    nodePackages.bash-language-server
+    bash-language-server
     slint-lsp
     nodePackages.typescript-language-server
     nixfmt-rfc-style

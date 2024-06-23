@@ -45,8 +45,10 @@
     tailspin
     # systeroid
     fselect
-    floorp-unwrapped
+    # floorp
+    # floorp-unwrapped
     # busybox
+    links2
     toybox
     steam-run
     aria
@@ -74,7 +76,7 @@
     archiver
     brave
     opera
-    firefox
+    firefox-bin
     prismlauncher
     masterpdfeditor
     microsoft-edge

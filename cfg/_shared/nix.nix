@@ -14,6 +14,7 @@
         "flakes"
         "repl-flake"
         "ca-derivations"
+        # "big-parallel"
       ];
       # trusted-users = [
       #   "root"

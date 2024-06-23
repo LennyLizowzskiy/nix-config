@@ -3,7 +3,6 @@ local icons = shared.icons
 return {
   { -- list for showing diagnostics, references, telescope results, quickfix and location lists
     "folke/trouble.nvim",
-    branch = "dev",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
@@ -74,21 +73,21 @@ return {
           quickfix = icons.quickfix .. " ",
           refactor = icons.refactor .. " ",
           source = icons.source .. " ",
-          combined = icons._fallback .. " "
+          combined = icons._fallback .. " ",
         },
         update_on_insert = true,
         show_count = false,
       },
       mappings = {
-        code_action = "<leader>aq"
+        code_action = "<leader>aq",
       },
-    }
+    },
   },
   {
     "nvimdev/lspsaga.nvim",
     dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-      'nvim-tree/nvim-web-devicons'
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons",
     },
     event = "LspAttach",
     opts = {
@@ -103,9 +102,7 @@ return {
         auto_save = true,
       },
       definition = {
-        keys = {
-
-        },
+        keys = {},
       },
     },
   },
@@ -182,9 +179,7 @@ return {
       "spec",
       "yaml",
     },
-    init = function()
-
-    end,
+    init = function() end,
     config = function()
       local lint = require("lint")
 
@@ -194,7 +189,7 @@ return {
         kotlin = { "ktlint" },
         spec = { "rpmspec" },
         yaml = {
-          "actionlint" -- TODO: make it activate only when file is in the "*/.github/workflows/*"
+          "actionlint", -- TODO: make it activate only when file is in the "*/.github/workflows/*"
         },
       }
     end,
@@ -224,7 +219,9 @@ return {
       floating_window = true,
       hint_enable = true,
       hint_prefix = " ",
-      hint_inline = function() return true end,
+      hint_inline = function()
+        return true
+      end,
       select_signature_key = "<C-n>",
     },
     config = function(_, opts)
@@ -251,7 +248,7 @@ return {
         Error = icons.error,
         Warn = icons.warn,
         Hint = icons.hint,
-        Info = icons.info
+        Info = icons.info,
       }
       for type, icon in pairs(signs) do
         local hl = "DiagnosticSign" .. type

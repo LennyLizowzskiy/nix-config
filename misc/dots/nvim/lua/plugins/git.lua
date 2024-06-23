@@ -11,6 +11,11 @@ return {
     opts = {},
   },
   {
+    "moyiz/git-dev.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
+  {
     "NeogitOrg/neogit",
     dependencies = {
       "nvim-lua/plenary.nvim",

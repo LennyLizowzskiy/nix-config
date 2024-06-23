@@ -10,6 +10,7 @@
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-master.url = "github:nixos/nixpkgs";
     nixpkgs-unfree = {
       url = "github:numtide/nixpkgs-unfree";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,7 +37,6 @@
     rust-overlay = {
       url = "github:oxalica/rust-overlay/stable";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
 
     nixos-ez-flake = {
@@ -104,18 +104,10 @@
 
           stable = nixpkgs-stable.legacyPackages.${p.system};
           unfree = nixpkgs-unfree.legacyPackages.${p.system};
+          master = nixpkgs-master.legacyPackages.${p.system};
 
           nix = f.stable.nix;
           nixos-rebuild = f.stable.nixos-rebuild;
-
-          floorp = p.floorp.override {
-            ffmpegSupport = true;
-            gssSupport = true;
-            pipewireSupport = true;
-            alsaSupport = true;
-            jackSupport = true;
-            smartcardSupport = true;
-          };
         })
       ];
     in

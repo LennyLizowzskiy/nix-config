@@ -24,14 +24,14 @@ let
   ) monitors."${mainConfig.local.hostname}";
 in
 {
-  programs.hyprpaper = {
-    enable = config.wayland.windowManager.hyprland.enable;
-    systemd.enable = config.wayland.windowManager.hyprland.enable;
+  # programs.hyprpaper = {
+  #   enable = config.wayland.windowManager.hyprland.enable;
+  #   systemd.enable = config.wayland.windowManager.hyprland.enable;
 
-    settings = {
-      preload = [ bg ];
+  #   settings = {
+  #     preload = [ bg ];
 
-      wallpapers = getHyprpapers;
-    };
-  };
+  #     wallpapers = getHyprpapers;
+  #   };
+  # };
 }

@@ -35,7 +35,8 @@ in
 
     settings = {
       exec-once = [
-        # "${lib.getExe pkgs.ironbar} &" 
+        # "${lib.getExe pkgs.ironbar} &"
+        "${lib.getExe pkgs.ags} -c ~/.config/ags/config.js"
       ];
 
       monitor = monitors."${hostname}";
@@ -46,6 +47,7 @@ in
 
       env = [
         "GDK_SCALE, ${scaling."${hostname}"}"
+        "GDK_BACKEND, wayland"
         "WLR_DRM_NO_ATOMIC, 1"
       ];
 

@@ -4,7 +4,7 @@ const padding = "8px";
 
 export default () => {
     const value = battery.bind("percent")
-        .as((p) => (p > 0 ? p / 100 : 0))
+        .as((p) => (p > 0 ? p : 0))
         .as((p) => `󰂄 ${p}%`);
 
     return Widget.Box({
