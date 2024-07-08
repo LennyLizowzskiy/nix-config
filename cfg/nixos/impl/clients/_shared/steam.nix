@@ -12,6 +12,7 @@ in
 {
   programs.steam = {
     enable = true;
+
     gamescopeSession = {
       enable = true;
       args = gamescopeArgs;

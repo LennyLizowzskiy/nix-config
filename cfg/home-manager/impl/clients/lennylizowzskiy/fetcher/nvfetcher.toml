@@ -1,0 +1,7 @@
+[zjstatus]
+src.github = "dj95/zjstatus"
+fetch.github = "dj95/zjstatus"
+
+[zellij-room]
+src.github = "rvcas/room"
+fetch.github = "rvcas/room"

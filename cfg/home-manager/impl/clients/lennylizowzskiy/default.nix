@@ -5,6 +5,8 @@
     inputs.personalPkgs.homeManagerModules.default
     "${extraArgs.rootDir}/cfg/home-manager/modules"
 
+    ./fetcher
+
     ./configs/command-not-found.nix
     ./configs/nix.nix
     ./configs/stylix.nix

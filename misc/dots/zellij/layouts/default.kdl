@@ -1,0 +1,22 @@
+layout {
+    pane
+
+    pane size=1 borderless=true {
+        plugin location="file:~/.misc/dev/zjstatus/zjstatus.wasm" {
+            hide_frame_for_single_pane "true"
+
+            format_left  "{mode}#[fg=#c5c9c5,bg=#0d0c0c,italic] {session}#[bg=#0d0c0c] {tabs}"
+            format_space "#[bg=#0d0c0c]"
+
+            mode_normal          "#[bg=#87a987]  "
+            mode_tmux            "#[bg=#938AA9]  "
+            mode_default_to_mode "tmux"
+
+            tab_normal               "#[fg=#A8B1B6,bg=#0d0c0c] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
+            tab_active               "#[fg=#7FB4CA,bg=#0d0c0c,italic] [{index}] {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
+            tab_fullscreen_indicator " "
+            tab_sync_indicator       " "
+            tab_floating_indicator   "󱂬 "
+        }
+    }
+}

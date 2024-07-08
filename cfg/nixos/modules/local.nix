@@ -41,6 +41,7 @@ in
         type = types.enum [
           "alacritty"
           "foot"
+          "kitty"
         ];
         default = "foot";
       };
@@ -85,6 +86,8 @@ in
           pkgs.foot
         else if cfg.terminal == "alacritty" then
           pkgs.alacritty
+        else if cfg.terminal == "kitty" then
+          pkgs.kitty
         else
           abort "invalid local.terminal";
 
@@ -93,6 +96,8 @@ in
           "${pkgs.foot}/bin/foot"
         else if cfg.terminal == "alacritty" then
           lib.getExe pkgs.alacritty
+        else if cfg.terminal == "kitty" then
+          lib.getExe pkgs.kitty
         else
           abort "invalid local.terminal";
     in

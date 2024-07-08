@@ -1,0 +1,42 @@
+{
+    "zellij-room": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "zellij-room",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "rvcas",
+            "repo": "room",
+            "rev": "v1.0.1",
+            "sha256": "sha256-LWmtaFuxbFyHWa7BMEVvp7rHmm1JLg0SjJFi/V98VKY=",
+            "type": "github"
+        },
+        "version": "v1.0.1"
+    },
+    "zjstatus": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "zjstatus",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "dj95",
+            "repo": "zjstatus",
+            "rev": "v0.16.0",
+            "sha256": "sha256-3Zo8kD/NQhHTkeVSRCSXYX86fnZyk/EJ15pH365tZY0=",
+            "type": "github"
+        },
+        "version": "v0.16.0"
+    }
+}

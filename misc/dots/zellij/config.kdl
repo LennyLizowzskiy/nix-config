@@ -1,18 +1,19 @@
-theme "stylix"
+theme "kanagawa-dragon"
+
 themes {
-	stylix {
-		bg "#a6a69c"
-		black "#a6a69c"
-		blue "#8ba4b0"
-		cyan "#8ea4a2"
-		fg "#c5c9c5"
-		green "#8a9a7b"
-		magenta "#a292a3"
-		orange "#e46876"
-		red "#c4746e"
-		white "#c5c9c5"
-		yellow "#c4b28a"
-	}
+    kanagawa-dragon {
+        fg 197 201 197
+        bg 24 22 22
+        black 13 12 12
+        red 196 116 110
+        green 138 154 123
+        yellow 196 178 138
+        blue 139 164 176
+        magenta 162 146 163
+        cyan 142 164 162
+        white 200 192 147
+        orange 191 106 63
+    }
 }
 
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
@@ -202,20 +203,6 @@ keybinds {
     }
 }
 
-plugins {
-    tab-bar location="zellij:tab-bar"
-    status-bar location="zellij:status-bar"
-    strider location="zellij:strider"
-    compact-bar location="zellij:compact-bar"
-    session-manager location="zellij:session-manager"
-    welcome-screen location="zellij:session-manager" {
-        welcome_screen true
-    }
-    filepicker location="zellij:strider" {
-        cwd "/"
-    }
-}
-
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
 // eg. when terminal window with an active zellij session is closed
 // Options:
@@ -332,7 +319,7 @@ plugins {
 // Examples:
 //
 // copy_command "xclip -selection clipboard" // x11
-// copy_command "wl-copy"                    // wayland
+copy_command "wl-copy"                    // wayland
 // copy_command "pbcopy"                     // osx
 
 // Choose the destination for copied text

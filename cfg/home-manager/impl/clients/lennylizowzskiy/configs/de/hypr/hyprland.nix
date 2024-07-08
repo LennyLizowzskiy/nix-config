@@ -36,7 +36,7 @@ in
     settings = {
       exec-once = [
         # "${lib.getExe pkgs.ironbar} &"
-        "${lib.getExe pkgs.ags} -c ~/.config/ags/config.js"
+        "${lib.getExe pkgs.ags} -c ~/.config/ags/config.js &"
       ];
 
       monitor = monitors."${hostname}";
@@ -224,7 +224,7 @@ in
           "SUPER SHIFT, S, exec, ${screenshotArea}"
           "SUPER SHIFT ALT, S, exec, ${screenshotAreaAndEdit}"
 
-          "${mainMod}, Q, exec, foot"
+          "${mainMod}, Q, exec, ${mainConfig.environment.sessionVariables.TERMINAL}"
 
           "${mainMod}, C, killactive,"
           "${mainMod}, M, exit,"

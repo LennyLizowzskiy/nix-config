@@ -52,3 +52,7 @@ skip-levels = 1
 
 [editor.soft-wrap]
 enable = true
+
+
+[keys.normal]
+C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]

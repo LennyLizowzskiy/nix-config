@@ -1,5 +1,6 @@
 * {
   font-family: monospace;
+  font-size: 14px;
 }
 
 window.bar {
@@ -14,6 +15,16 @@ button {
   background-color: transparent;
 }
 
+.media {
+  font-style: italic;
+  /* padding-left: 50px; */
+}
+
+.clock {
+  min-width: 50px;
+}
+
+
 button:active {
   background-color: @theme_selected_bg_color;
 }
@@ -22,16 +33,13 @@ button:hover {
   border-bottom: 3px solid @theme_fg_color;
 }
 
-label {
-  font-weight: bold;
-}
-
 .workspaces button.focused {
   border-bottom: 3px solid @theme_selected_bg_color;
 }
 
 .client-title {
-  color: @theme_selected_bg_color;
+  font-family: "Jetbrains Mono";
+  /* color: @theme_selected_bg_color; */
 }
 
 .notification {
@@ -42,3 +50,44 @@ levelbar block,
 highlight {
   min-height: 10px;
 }
+
+/* window.bar { */
+/* background-color: @theme_bg_color; */
+/* color: @theme_fg_color; */
+/* } */
+
+/* button { */
+/* min-width: 0; */
+/* padding-top: 0; */
+/* padding-bottom: 0; */
+/* background-color: transparent; */
+/* } */
+
+/* button:active { */
+/* background-color: @theme_selected_bg_color; */
+/* } */
+
+/* button:hover { */
+/* border-bottom: 3px solid @theme_fg_color; */
+/* } */
+
+/* label { */
+/* font-weight: bold; */
+/* } */
+
+/* .workspaces button.focused { */
+/* border-bottom: 3px solid @theme_selected_bg_color; */
+/* } */
+
+/* .client-title { */
+/* color: @theme_selected_bg_color; */
+/* } */
+
+/* .notification { */
+/* color: yellow; */
+/* } */
+
+/* levelbar block, */
+/* highlight { */
+/* min-height: 10px; */
+/* } */

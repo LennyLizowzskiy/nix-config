@@ -17,9 +17,9 @@
     dig = "doggo";
     # sysctl = "systeroid";
 
-    lsa = "eza --all";
-    lsg = "eza --git";
-    lss = "eza --tree";
+    lsa = "eza --git-ignore --all";
+    lsg = "eza --git-ignore --git";
+    lss = "eza --git-ignore --tree";
     "." = "eza -a";
     ".." = "cd ..";
     "..." = "cd ../..";
@@ -34,6 +34,9 @@
     sd # sed-like
     fdupes # find duplicates
     ffmpeg
+    qrtool
+    impala
+    tree
     imagemagickBig
     await
     ripgrep
@@ -93,7 +96,7 @@
     scrcpy
     xca
     tealdeer
-    gnome.gnome-font-viewer
+    gnome-font-viewer
     ripdrag
     v2raya
     fractal

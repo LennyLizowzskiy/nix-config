@@ -1,17 +1,6 @@
 { pkgs, lib, ... }:
 
-let
-  devPath = ".misc/dev/";
-  mkDevPluginPaths =
-    with lib;
-    (plugins: builtins.foldl' (acc: x: acc // { "${devPath}/${x.pname}".source = x; }) { } plugins);
-in
 {
-  home.file = (mkDevPluginPaths (with pkgs; [ mold ])) // {
-    "${devPath}/vscode-codelldb-adapter".source =
-      pkgs.vscode-extensions.vadimcn.vscode-lldb.adapter.out;
-  };
-
   home.packages = with pkgs; [
     ## supplementary
     git
@@ -38,6 +27,8 @@ in
     tree-sitter
     flatpak-builder
     hyperfine
+    gitleaks
+    trippy
     ## extra package managers
     wasmer
     yarn
@@ -45,25 +36,31 @@ in
     dpkg
     pacman
 
-    ## hex editors
-    hexcurse
-    gnome.ghex
+    ## hex editors & decompilers
+    radare2
+    iaito
+    ghidra-bin
+    frida-tools
+    ghex
 
     ## util
     python312Packages.jupytext
     lldb
+    delve
 
     ## compilers, linkers & runtimes
     nodePackages.nodejs
     bun
     swc
+    go
+    # gccgo
     python3
     virtualenv
     zig
     gcc
     (lib.lowPrio musl)
-    kotlin
-    kotlin-native
+    # kotlin
+    # kotlin-native
     detekt
     ktlint
     ktfmt
@@ -81,6 +78,9 @@ in
     ktlint
     taplo # toml lsp
     biome # js, ts, jsx linter, formatter & lsp
+    gopls
+    golangci-lint
+    golangci-lint-langserver
     html-tidy # html validator
     prettierd
     nodePackages.prettier-plugin-toml
@@ -95,6 +95,7 @@ in
     # rustfmt and clippy defined in rust.nix
     yaml-language-server
     bash-language-server
+    dot-language-server
     slint-lsp
     nodePackages.typescript-language-server
     nixfmt-rfc-style
