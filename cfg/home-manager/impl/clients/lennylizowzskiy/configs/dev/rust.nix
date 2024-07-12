@@ -17,7 +17,7 @@
     cargo-tauri
     trunk
     sqlx-cli
-    rust-bindgen-unwrapped
+    # rust-bindgen-unwrapped
     tokio-console
     wasm-pack
     crate2nix

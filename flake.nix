@@ -39,9 +39,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-ez-flake = {
-      url = "github:name-snrl/nixos-ez-flake";
+    # nixos-ez-flake = {
+    #   url = "github:name-snrl/nixos-ez-flake";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
+    lix = {
+      url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
+      flake = false;
+    };
+
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.lix.follows = "lix";
     };
 
     crane = {
@@ -146,6 +157,7 @@
 
               modules = [
                 home-manager.nixosModules.home-manager
+                lix-module.nixosModules.default
                 ./cfg/nixos/modules/local.nix
                 ./main.nix
 

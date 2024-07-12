@@ -35,15 +35,18 @@
     fdupes # find duplicates
     ffmpeg
     qrtool
+    busybox
     impala
     tree
     imagemagickBig
+    svgbob
     await
     ripgrep
     httpie
     curlie
     ripgrep-all
     rustscan
+    systemctl-tui
     # magika
     tailspin
     # systeroid

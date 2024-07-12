@@ -14,7 +14,12 @@
 
       # Monospace
       hackgen-nf-font # hackcjk (genjyuu-gothic) + nerd
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      (nerdfonts.override {
+        fonts = [
+          "JetBrainsMono"
+          "CommitMono"
+        ];
+      })
     ];
 
     fontconfig = {

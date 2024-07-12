@@ -41,10 +41,29 @@ name = "nu-lsp"
 command = "nu"
 args = ["--lsp"]
 
+[language-server.neocmakelsp]
+command = "neocmakelsp"
+args = ["--stdio"]
+
+[language-server.asm-lsp]
+command = "asm-lsp"
+
+[language-server.tinymist]
+command = "tinymist"
+args = ["lsp"]
+
+[language-server.basedpyright]
+command = "basedpyright-langserver"
+args = ["--stdio"]
+
+[language-server.ruff]
+command = "ruff"
+args = ["server --preview"]
+
 
 [[language]]
 name = "nix"
-indent = { tab-width = 2, unit = " " }
+indent = { tab-width = 2, unit = "  " }
 auto-format = true
 formatter = { command = "nixfmt", args = ["--quiet"] }
 language-servers = ["nixd"]
@@ -82,15 +101,22 @@ name = "css"
 language-servers = ["vscode-css-language-server", "tailwindcss"]
 
 [[language]]
-name = "rust"
+name = "cmake"
+auto-format = true
+language-servers = ["neocmakelsp"]
 
-[language.auto-pairs]
-'(' = ')'
-'{' = '}'
-'[' = ']'
-'"' = '"'
-'`' = '`'
+[[language]]
+name = "asm"
+scope = "source.asm"
+language-servers = ["asm-lsp"]
+file-types = ["s", "asm"]
+roots = [".git"]
+injection-regex = "asm"
+indent = { tab-width = 4, unit = "    " }
 
+[[language]]
+name = "typst"
+language-servers = ["tinymist"]
 
 [[language]]
 name = "lua"
@@ -99,6 +125,7 @@ formatter = { command = "stylua", args = ["-"] }
 [[language]]
 name = "python"
 formatter = { command = "ruff", args = ["format", "-"] }
+language-servers = ["ruff", "basedpyright"]
 
 [[language]]
 name = "javascript"
@@ -115,3 +142,14 @@ formatter = { command = "biome", args = ["format", "--stdin-file-path=x.jsx"] }
 [[language]]
 name = "json"
 formatter = { command = "biome", args = ["format", "--stdin-file-path=x.json"] }
+
+[[language]]
+name = "rust"
+
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+

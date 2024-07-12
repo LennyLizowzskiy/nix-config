@@ -4,6 +4,8 @@
   home.packages = with pkgs; [
     ## supplementary
     git
+    k9s
+    commitlint-rs
     typst
     typst-live
     gh-dash
@@ -29,6 +31,12 @@
     hyperfine
     gitleaks
     trippy
+    bugstalker
+    slumber
+    tabiew
+    rust-bindgen
+    rust-cbindgen
+
     ## extra package managers
     wasmer
     yarn
@@ -81,6 +89,8 @@
     gopls
     golangci-lint
     golangci-lint-langserver
+    neocmakelsp
+    asm-lsp
     html-tidy # html validator
     prettierd
     nodePackages.prettier-plugin-toml
@@ -104,11 +114,11 @@
     marksman # md lsp
     lua-language-server
     tailwindcss-language-server
-    typst-lsp
+    tinymist
     ols # odin lsp
     ruff
     ruff-lsp # py lsp (linter)
-    pyright # py lsp (type-checker)
+    basedpyright # py lsp (type-checker)
     # pyre # py lsp (type-checker)
     zls # zig lsp
     # rust-analyzer defined in rust.nix
