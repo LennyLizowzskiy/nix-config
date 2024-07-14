@@ -8,6 +8,11 @@ yaml = { keyOrdering = false, format = { enable = true } }
 [language-server.nixd]
 command = "nixd"
 
+[language-server.typos]
+command = "typos-lsp"
+# config.config = "~/code/typos-lsp/crates/typos-lsp/tests/typos.toml"
+config.diagnosticSeverity = "Hint"
+
 [language-server.nixd.config]
 diagnostic = { suppress = ["sema-def-not-used", "sema-escaping-with", "var-bind-to-this", "escaping-this-with"] }
 
@@ -72,21 +77,25 @@ language-servers = ["nixd"]
 name = "javascript"
 auto-format = true
 language-servers = ["javascript-language-server", "biome"]
+formatter = { command = "biome", args = ["format", "--stdin-file-path=x.js"] }
 
 [[language]]
 name = "typescript"
 auto-format = true
+formatter = { command = "biome", args = ["format", "--stdin-file-path=x.ts"] }
 language-servers = ["typescript-language-server", "biome"]
 
 [[language]]
 name = "jsx"
 auto-format = true
-language-servers = ["biome"]
+language-servers = ["typescript-language-server", "biome"]
+formatter = { command = "biome", args = ["format", "--stdin-file-path=x.jsx"] }
 
 [[language]]
 name = "json"
 auto-format = true
-language-servers = ["biome"]
+language-servers = ["vscode-json-language-server", "biome"]
+formatter = { command = "biome", args = ["format", "--stdin-file-path=x.json"] }
 
 [[language]]
 name = "nu"
@@ -128,23 +137,8 @@ formatter = { command = "ruff", args = ["format", "-"] }
 language-servers = ["ruff", "basedpyright"]
 
 [[language]]
-name = "javascript"
-formatter = { command = "biome", args = ["format", "--stdin-file-path=x.js"] }
-
-[[language]]
-name = "typescript"
-formatter = { command = "biome", args = ["format", "--stdin-file-path=x.ts"] }
-
-[[language]]
-name = "jsx"
-formatter = { command = "biome", args = ["format", "--stdin-file-path=x.jsx"] }
-
-[[language]]
-name = "json"
-formatter = { command = "biome", args = ["format", "--stdin-file-path=x.json"] }
-
-[[language]]
 name = "rust"
+language-servers = ["rust-analyzer", "typos"]
 
 [language.auto-pairs]
 '(' = ')'

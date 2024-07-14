@@ -80,6 +80,8 @@
     actionlint
 
     ## lsp & formatters
+    typos
+    typos-lsp
     typstyle
     buf # proto linter, formatter, templater
     editorconfig-checker
