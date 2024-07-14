@@ -44,19 +44,19 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
-    lix = {
-      url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
-      flake = false;
-    };
+    # lix = {
+    #   url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
+    #   flake = false;
+    # };
 
-    lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.lix.follows = "lix";
-    };
+    # lix-module = {
+    #   url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.lix.follows = "lix";
+    # };
 
     crane = {
-      url = "github:ipetkov/crane?ref=v0.16.3";
+      url = "github:ipetkov/crane";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -131,8 +131,8 @@
           unfree = nixpkgs-unfree.legacyPackages.${p.system};
           master = nixpkgs-master.legacyPackages.${p.system};
 
-          nix = f.stable.nix;
-          nixos-rebuild = f.stable.nixos-rebuild;
+          # nix = f.stable.nix;
+          # nixos-rebuild = f.stable.nixos-rebuild;
         })
       ];
     in
@@ -157,13 +157,13 @@
 
               modules = [
                 home-manager.nixosModules.home-manager
-                lix-module.nixosModules.default
                 ./cfg/nixos/modules/local.nix
                 ./main.nix
 
                 (
-                  { ... }:
+                  { pkgs, ... }:
                   {
+                    nix.package = pkgs.lix;
                     nixpkgs.overlays = sharedOverlays;
                   }
                 )

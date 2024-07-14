@@ -12,6 +12,12 @@
   environment.etc."channels/nixpkgs".source = inputs.nixpkgs.outPath;
   # nix.settings.system-features = [ "recursive-nix" ];
 
+  nix.settings.trusted-users = [
+    "root"
+    "@wheel"
+    "lennylizowzskiy"
+  ];
+
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   system.stateVersion = lib.trivial.release;

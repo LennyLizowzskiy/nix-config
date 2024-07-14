@@ -69,9 +69,9 @@
     (lib.lowPrio musl)
     # kotlin
     # kotlin-native
-    detekt
-    ktlint
-    ktfmt
+    # detekt
+    # ktlint
+    # ktfmt
     mold
     odin
     typescript

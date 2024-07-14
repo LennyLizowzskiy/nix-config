@@ -60,7 +60,7 @@
   hardware.graphics.extraPackages = with pkgs; [
     vaapiVdpau
     libvdpau-va-gl
-    rocmPackages.clr.icd
+    # rocmPackages.clr.icd
     amdvlk
   ];
 
