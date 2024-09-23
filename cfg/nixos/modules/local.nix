@@ -33,8 +33,9 @@ in
           "niri"
           "sway"
           "jay"
+          "cosmic"
         ];
-        default = "plasma6";
+        default = "cosmic";
       };
 
       terminal = mkOption {

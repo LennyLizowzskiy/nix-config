@@ -9,9 +9,9 @@
 
   programs.firejail.enable = true;
 
-  services.opensnitch = {
-    enable = true;
-  };
+  # services.opensnitch = {
+  #   enable = true;
+  # };
 
   # environment = {
   #   memoryAllocator.provider = "scudo";

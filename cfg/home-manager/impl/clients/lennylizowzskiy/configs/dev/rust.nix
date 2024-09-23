@@ -18,7 +18,7 @@
     trunk
     sqlx-cli
     # rust-bindgen-unwrapped
-    tokio-console
+    # tokio-console
     wasm-pack
     crate2nix
     corrosion
@@ -49,7 +49,7 @@
     cargo-careful
     cargo-crev
     cargo-chef
-    cargo-clone
+    # cargo-clone
     cargo-codspeed
     cargo-cross
     cargo-deb
@@ -62,7 +62,7 @@
     cargo-generate
     cargo-hack
     cargo-i18n
-    cargo-info
+    # cargo-info
     # cargo-information
     cargo-insta
     cargo-license

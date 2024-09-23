@@ -12,18 +12,24 @@
 
   stylix = {
     # enable = true;
-    autoEnable = true;
+    autoEnable = false;
 
     targets = {
-      vim.enable = false;
-      nixvim.enable = false;
-      vscode.enable = false;
-      firefox.enable = false;
-      waybar.enable = false;
-      helix.enable = false;
-      yazi.enable = false;
-      zellij.enable = false;
-
+      bat.enable = true;
+      btop.enable = true;
+      foot.enable = true;
+      fzf.enable = true;
+      gitui.enable = true;
+      gnome.enable = true;
+      gtk.enable = true;
+      hyprland.enable = true;
+      k9s.enable = true;
+      kde.enable = true;
+      lazygit.enable = true;
+      vesktop.enable = true;
+      waybar.enable = true;
+    
+      kitty.enable = true;
       kitty.variant256Colors = true;
     };
   };

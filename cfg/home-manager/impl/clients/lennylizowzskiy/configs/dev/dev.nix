@@ -3,6 +3,9 @@
 {
   home.packages = with pkgs; [
     ## supplementary
+    pandoc
+    texliveBasic
+    devenv
     git
     k9s
     commitlint-rs
@@ -36,10 +39,12 @@
     tabiew
     rust-bindgen
     rust-cbindgen
+    # lldb_18
 
     ## extra package managers
-    wasmer
+    # wasmer
     yarn
+    pnpm
     rpm
     dpkg
     pacman
@@ -50,6 +55,7 @@
     ghidra-bin
     frida-tools
     ghex
+    rizin
 
     ## util
     python312Packages.jupytext
@@ -57,10 +63,14 @@
     delve
 
     ## compilers, linkers & runtimes
-    nodePackages.nodejs
+    # nodePackages.nodejs
+    erlang
+    gleam
+    nodePackages_latest.nodejs
     bun
     swc
     go
+    flutter
     # gccgo
     python3
     virtualenv
@@ -83,6 +93,8 @@
     typos
     typos-lsp
     typstyle
+    lightningcss
+    oxlint
     buf # proto linter, formatter, templater
     editorconfig-checker
     ktlint

@@ -2,12 +2,14 @@
   pkgs,
   lib,
   rootDir,
+  inputs,
   ...
 }:
 
 {
   imports = [
     "${rootDir}/cfg/nixos"
+    inputs.nixos-cosmic.nixosModules.default
 
     ./keyring/gnome-keyring.nix
     ./keyring/keys.nix
@@ -26,9 +28,11 @@
     ./de/plasma6.nix
     ./de/sway-full.nix
     ./de/jay-full.nix
+    ./de/cosmic.nix
     ./bluetooth.nix
     ./distrobox.nix
     ./fine-tuning.nix
+    ./proxy.nix
     ./gamemode.nix
     ./git.nix
     ./hardened.nix
@@ -77,11 +81,17 @@
     percentageAction = 5;
   };
 
-  networking.networkmanager.enable = true;
-  networking.nameservers = [
-    "1.1.1.1"
-    "1.0.0.1"
-  ];
+  networking = {
+    networkmanager.enable = true;
+
+    nameservers = [
+      "1.1.1.1"
+      "1.0.0.1"
+    ];
+
+    firewall.enable = false;
+    resolvconf.dnsExtensionMechanism = false;
+  };
 
   services.envfs.enable = true; # "A fuse filesystem that dynamically populates contents of /bin and /usr/bin/ so that it contains all executables from the PATH of the requesting process"
   # programs.nix-ld.dev.enable = true;

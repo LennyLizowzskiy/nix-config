@@ -11,21 +11,28 @@
     log = "tailspin";
 
     cat = "bat --style plain";
-    nano = "micro";
+    # nano = "micro";
     ip = "ip --color=auto";
     grep = "rg";
-    dig = "doggo";
+    # dig = "doggo";
     # sysctl = "systeroid";
 
     lsa = "eza --git-ignore --all";
     lsg = "eza --git-ignore --git";
     lss = "eza --git-ignore --tree";
-    "." = "eza -a";
+    "." = "eza --all";
     ".." = "cd ..";
     "..." = "cd ../..";
   };
 
   environment.systemPackages = with pkgs; [
+    
+    dash
+    geesefs
+    appflowy
+    snipaste
+    sshs
+    zed-editor
     just
     dust # du alt
     dua # du alt
@@ -39,6 +46,7 @@
     impala
     tree
     imagemagickBig
+    ripunzip
     svgbob
     await
     ripgrep
@@ -87,6 +95,7 @@
     masterpdfeditor
     microsoft-edge
     telegram-desktop
+    materialgram
     audacity
     figma-linux
     warp-terminal

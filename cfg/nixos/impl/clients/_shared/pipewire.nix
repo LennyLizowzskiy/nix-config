@@ -18,7 +18,7 @@ let
     };
 in
 {
-  sound.enable = true;
+  # sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
 
@@ -50,7 +50,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    easyeffects
-    pavucontrol
+    # easyeffects
+    # pavucontrol
   ];
 }

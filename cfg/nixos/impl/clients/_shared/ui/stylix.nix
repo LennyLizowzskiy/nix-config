@@ -21,9 +21,9 @@
 
     image = "${wallpapersDir}/starry-night-takahashi-cc0.jpg";
 
-    cursor = {
+    # cursor = {
 
-    };
+    # };
 
     fonts = {
       # packages = with pkgs; [

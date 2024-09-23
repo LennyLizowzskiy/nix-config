@@ -63,7 +63,7 @@
     ./configs/de/hypr
     ./configs/de/jay
 
-    ./configs/services/secrets/gnupg.nix
+    # ./configs/services/secrets/gnupg.nix
   ];
 
   manual.manpages.enable = false;
@@ -71,12 +71,12 @@
 
   programs.git = {
     userName = "Lenny Lizowzskiy";
-    userEmail = "contact@lizowzskiy.ru";
+    userEmail = "contact@lizowzskiy.su";
 
     extraConfig = {
-      user.signingkey = "${extraArgs.keysDir}/pgp-public.converted.ssh_pub";
+      # user.signingkey = "${extraArgs.keysDir}/pgp-public.converted.ssh_pub";
       gpg.format = "ssh";
-      commit.gpgsign = true;
+      # commit.gpgsign = true;
     };
   };
 }

@@ -12,7 +12,7 @@
       display = {
         disableLinewrap = false;
         hideCursor = false;
-        binaryPrefix = "jedec";
+        size.binaryPrefix = "jedec";
         # temp = "ndigits";
         # unit = "CELSIUS";
       };

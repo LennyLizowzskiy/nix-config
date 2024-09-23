@@ -1,4 +1,4 @@
-{ inputs, config, ... }@vars:
+{ inputs, config, pkgs, ... }@vars:
 
 {
   # imports = [ inputs.home-manager.nixosModules.home-manager ];
@@ -7,7 +7,8 @@
     useGlobalPkgs = true;
     useUserPackages = true;
 
-    backupFileExtension = "hm-backup";
+    # backupFileExtension = "hm-back";
+    backupFileExtension = "backup-" + pkgs.lib.readFile "${pkgs.runCommand "timestamp" {} "echo -n `date '+%Y%m%d%H%M%S'` > $out"}";
 
     extraSpecialArgs = {
       inherit inputs;

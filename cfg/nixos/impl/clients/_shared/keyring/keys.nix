@@ -1,20 +1,20 @@
 { pkgs, lib, ... }:
 
 {
-  services.openssh.enable = false;
+  # services.openssh.enable = true;
   # services.openssh.settings.PasswordAuthentication = false;
-  programs.ssh.startAgent = lib.mkForce false;
-  # security.pam.sshAgentAuth.enable = true;
+  programs.ssh.startAgent = lib.mkForce true;
+  security.pam.sshAgentAuth.enable = true;
 
   hardware.gpgSmartcards.enable = true;
 
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-    enableExtraSocket = true;
-    enableBrowserSocket = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  #   enableExtraSocket = true;
+  #   enableBrowserSocket = true;
 
-    pinentryPackage = pkgs.pinentry-gnome3;
+  #   pinentryPackage = pkgs.pinentry-gnome3;
 
     # settings = {
     #   personal-cipher-preferences = "AES256 AES192 AES";
@@ -30,7 +30,7 @@
     #   list-options = "show-uid-validity";
     #   verify-options = "show-uid-validity";
     # };
-  };
+  # };
 
   services.pcscd.enable = true;
 }

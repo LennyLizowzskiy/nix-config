@@ -45,11 +45,6 @@
     "pcie_aspm.policy=powersupersave"
   ];
 
-  security.pki.certificateFiles = [
-    "${externalDir}/secrets/sog-CAROOT-CA.crt"
-    "${externalDir}/secrets/sog-issuer-CA.crt"
-  ];
-
   environment.variables = {
     # VAAPI and VDPAU config for accelerated video.
     # See https://wiki.archlinux.org/index.php/Hardware_video_acceleration

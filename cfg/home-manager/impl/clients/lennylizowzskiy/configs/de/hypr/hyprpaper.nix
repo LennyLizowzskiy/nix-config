@@ -7,21 +7,21 @@
 }:
 
 let
-  bg = "${extraArgs.wallpapersDir}/wallpapers/dark-colorful-polygons.png";
+  # bg = "${extraArgs.wallpapersDir}/wallpapers/dark-colorful-polygons.png";
 
-  monitors = {
-    rher = {
-      "eDP-1" = bg;
-    };
+  # monitors = {
+  #   rher = {
+  #     "eDP-1" = bg;
+  #   };
 
-    grogoroth = {
-      "DP-2" = bg;
-    };
-  };
+  #   grogoroth = {
+  #     "DP-2" = bg;
+  #   };
+  # };
 
-  getHyprpapers = lib.attrsets.mapAttrsToList (
-    name: value: "${name}, ${value}"
-  ) monitors."${mainConfig.local.hostname}";
+  # getHyprpapers = lib.attrsets.mapAttrsToList (
+  #   name: value: "${name}, ${value}"
+  # ) monitors."${mainConfig.local.hostname}";
 in
 {
   # programs.hyprpaper = {

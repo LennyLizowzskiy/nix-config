@@ -3,6 +3,7 @@ theme = "autumn_night_variant"
 
 [editor]
 line-number = "relative"
+auto-format = false
 # mouse = false
 shell = ["bash", "-c"]
 default-line-ending = "lf"
@@ -10,6 +11,10 @@ default-line-ending = "lf"
 # auto-save = true
 completion-replace = true
 bufferline = "multiple"
+
+[editor.auto-save]
+focus-lost = true
+after-delay = { enable = true, timeout = 1500 }
 
 [editor.cursor-shape]
 insert = "bar"

@@ -1,5 +1,5 @@
 {
-  # pkgs,
+  pkgs,
   # lib,
   # config,
   ...
@@ -13,6 +13,8 @@
 # in
 {
   # home.packages = with pkgs; [ neovim-nightly ];
+
+  home.packages = with pkgs; [ neovide ];
 
   home.shellAliases = {
     # v = "nvim";

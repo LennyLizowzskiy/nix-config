@@ -36,7 +36,7 @@ in
     settings = {
       exec-once = [
         # "${lib.getExe pkgs.ironbar} &"
-        "${lib.getExe pkgs.ags} -c ~/.config/ags/config.js &"
+        # "${lib.getExe pkgs.ags} -c ~/.config/ags/config.js &"
       ];
 
       monitor = monitors."${hostname}";
@@ -143,26 +143,26 @@ in
           "noshadow, ${pip}"
           "move cursor 0 0, ${pip}"
 
-          "forceinput, ${idea}"
+          # "forceinput, ${idea}"
           "noborder, ${idea}"
           "immediate, ${idea}"
-          "windowdance, ${idea}"
+          # "windowdance, ${idea}"
           # "center, ${idea}"
 
-          "forceinput, ${android-studio}"
+          # "forceinput, ${android-studio}"
           "noborder, ${android-studio}"
           "immediate, ${android-studio}"
-          "windowdance, ${android-studio}"
+          # "windowdance, ${android-studio}"
           # "center, ${idea}"
 
-          "forceinput, ${jb-toolbox}"
+          # "forceinput, ${jb-toolbox}"
           "move 100%-20% 5%, ${jb-toolbox}"
           "pin, ${jb-toolbox}"
           "noborder, ${jb-toolbox}"
 
-          "forceinput, ${vscode}"
+          # "forceinput, ${vscode}"
           "noborder, ${vscode}"
-          "windowdance, ${vscode}"
+          # "windowdance, ${vscode}"
 
           "maxsize 60% 40%, ${openFolderWindow}"
           "center 1, ${openFolderWindow}"
@@ -232,7 +232,7 @@ in
 
           "${mainMod}, F, fullscreen, 0"
           "${mainMod} SHIFT, F, fullscreen, 1"
-          "${mainMod} CTRL, F, fakefullscreen,"
+          # "${mainMod} CTRL, F, fakefullscreen,"
 
           # "${mainMod}, left, movefocus, l"
           # "${mainMod}, right, movefocus, r"

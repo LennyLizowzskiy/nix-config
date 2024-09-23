@@ -3,7 +3,7 @@
 {
   local = {
     shell = "fish";
-    de = "hyprland";
+    de = "cosmic";
     terminal = "alacritty";
   };
 }

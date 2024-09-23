@@ -93,6 +93,11 @@
 
         rh = "reset HEAD"; # unstage changes
 
+        wa = "worktree add";
+        wl = "worktree list";
+        wls = "worktree list";
+        wr = "worktree remove";
+
         tags = "tag -l";
         branches = "branch -a";
         remotes = "remote -v";

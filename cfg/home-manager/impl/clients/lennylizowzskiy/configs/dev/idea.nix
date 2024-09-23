@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    jetbrains.idea-community
-    jetbrains.rust-rover
+    # jetbrains.idea-community
+    # jetbrains.rust-rover
   ];
 }

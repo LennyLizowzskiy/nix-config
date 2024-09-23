@@ -37,7 +37,6 @@ rustfmt = { overrideCommand = ["leptosfmt", "--stdin", "--rustfmt"] }
 # hideNamedConstructor = { enable = true }
 
 [language-server.tailwindcss]
-name = "tailwindcss"
 command = "tailwindcss-language-server"
 args = ["--stdio"]
 

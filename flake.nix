@@ -39,6 +39,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-cosmic = {
+      url = "github:lilyinstarlight/nixos-cosmic";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # nixos-ez-flake = {
     #   url = "github:name-snrl/nixos-ez-flake";
     #   inputs.nixpkgs.follows = "nixpkgs";
