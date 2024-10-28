@@ -2,7 +2,6 @@ commit:
     git commit -am "+"
 
 wsl:
-    nix flake update
     sudo nixos-rebuild switch --option eval-cache false --flake .#wsl
 
 update-flake:
