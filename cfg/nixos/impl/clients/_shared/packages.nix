@@ -44,7 +44,7 @@
     qrtool
     busybox
     impala
-    tree
+    # tree
     imagemagickBig
     ripunzip
     svgbob
@@ -54,7 +54,7 @@
     curlie
     ripgrep-all
     rustscan
-    systemctl-tui
+    # systemctl-tui
     # magika
     tailspin
     # systeroid

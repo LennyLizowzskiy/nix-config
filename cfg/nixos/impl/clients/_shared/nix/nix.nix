@@ -15,7 +15,6 @@
   nix.settings.trusted-users = [
     "root"
     "@wheel"
-    "lennylizowzskiy"
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];

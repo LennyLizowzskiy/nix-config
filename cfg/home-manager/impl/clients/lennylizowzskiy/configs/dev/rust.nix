@@ -31,6 +31,7 @@
 
       targets = [
         "x86_64-unknown-linux-gnu"
+        "x86_64-unknown-linux-musl"
         "x86_64-pc-windows-gnu"
         "wasm32-unknown-unknown"
       ];
@@ -38,7 +39,6 @@
 
     ## cargo plugins
     bacon
-    cargo-about
     cargo-apk
     # cargo-appimage
     cargo-auditable

@@ -52,10 +52,12 @@
     lennylizowzskiy = {
       isNormalUser = true;
       createHome = true;
-      # shell = pkgs.nushellFull;
+      # shell = pkgs.nushell;
       # shell = pkgs.fish;
 
       initialHashedPassword = "$y$j9T$oJX8GijWaFwGIoyMQozuI0$IFMHCAQXsZIRLcRdFsifIT3ZJHuz9NcYHhHXPLA4cCA";
+
+      group = "lennylizowzskiy";
 
       extraGroups = [
         "networkmanager"
@@ -70,6 +72,12 @@
       ];
     };
   };
+
+  users.groups.lennylizowzskiy = {};
+
+  nix.settings.trusted-users = [
+    "lennylizowzskiy"
+  ];
 
   services.gvfs.enable = true;
 

@@ -9,7 +9,7 @@
     };
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     # nixpkgs-master.url = "github:nixos/nixpkgs";
     nixpkgs-unfree = {
       url = "github:numtide/nixpkgs-unfree";
@@ -44,25 +44,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # nixos-ez-flake = {
-    #   url = "github:name-snrl/nixos-ez-flake";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    # lix = {
-    #   url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
-    #   flake = false;
-    # };
-
-    # lix-module = {
-    #   url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   inputs.lix.follows = "lix";
-    # };
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
     crane = {
       url = "github:ipetkov/crane";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     android-nixpkgs = {
@@ -179,6 +164,8 @@
           grogoroth = mkNixOsConf { modules = [ ./cfg/nixos/impl/clients/grogoroth ]; };
 
           rher = mkNixOsConf { modules = [ ./cfg/nixos/impl/clients/rher ]; };
+
+          wsl = mkNixOsConf { modules = [ ./cfg/nixos/impl/clients/wsl ]; };
         };
     };
 }
