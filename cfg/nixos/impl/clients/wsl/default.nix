@@ -66,11 +66,8 @@
     log = "tailspin";
 
     cat = "bat --style plain";
-    # nano = "micro";
     ip = "ip --color=auto";
     grep = "rg";
-    # dig = "doggo";
-    # sysctl = "systeroid";
 
     lsa = "eza --git-ignore --all";
     lsg = "eza --git-ignore --git";
@@ -94,9 +91,7 @@
     inputs.nixos-wsl.nixosModules.default
   ];
 
-  local = {
-    hostname = "nixwsl";
-  };
+  local.hostname = "nixwsl";
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
@@ -112,17 +107,6 @@
   programs.nix-ld.enable = true;
 
   documentation.man.enable = false;
-  
-  boot = {
-    kernelParams = [
-      "mitigations=off"
-      "nowatchdog"
-      "nmi_watchdog=0"
-      "quiet"
-    ];
-
-    tmp.cleanOnBoot = true;
-  };
 
   users.users.lennylizowzskiy = {
     shell = lib.mkForce pkgs.nushell;
