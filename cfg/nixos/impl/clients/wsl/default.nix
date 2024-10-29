@@ -32,7 +32,6 @@
     cargo-generate
 
     busybox
-    zed-editor
     just
     ffmpeg
     wl-clipboard
@@ -57,18 +56,6 @@
   ];
 
   environment.shellAliases = {
-    dl = "aria2c";
-    arch = "ouch";
-    info = "fastfetch";
-    tasks = "btm";
-    scan = "rustscan";
-    detect = "magika";
-    log = "tailspin";
-
-    cat = "bat --style plain";
-    ip = "ip --color=auto";
-    grep = "rg";
-
     lsa = "eza --git-ignore --all";
     lsg = "eza --git-ignore --git";
     lss = "eza --git-ignore --tree";
@@ -114,10 +101,5 @@
     createHome = true;
     group = "lennylizowzskiy";
   };
-  
   users.groups.lennylizowzskiy = {};
-
-  nix.settings.trusted-users = [
-    "lennylizowzskiy"
-  ];
 }
