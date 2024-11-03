@@ -1,4 +1,4 @@
-{ extraArgs, ... }:
+{ ... }:
 
 {
   # programs.gpg = {

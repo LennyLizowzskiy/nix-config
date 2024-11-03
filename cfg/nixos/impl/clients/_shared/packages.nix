@@ -26,7 +26,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    
+
     dash
     geesefs
     appflowy
@@ -95,7 +95,7 @@
     masterpdfeditor
     microsoft-edge
     telegram-desktop
-    materialgram
+    # materialgram
     audacity
     figma-linux
     warp-terminal

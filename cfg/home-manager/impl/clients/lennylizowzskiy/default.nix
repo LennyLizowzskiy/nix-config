@@ -58,6 +58,7 @@
     ./configs/gui/apps/terminals/foot.nix
 
     ./configs/gui/apps/text-editors/vscode.nix
+    ./configs/gui/apps/text-editors/zed.nix
 
     ./configs/de/niri
     ./configs/de/hypr

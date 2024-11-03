@@ -48,6 +48,20 @@
     ./xserver.nix
   ];
 
+  environment.variables = {
+    QT_QPA_PLATFORM = "wayland";
+    NIXOS_OZONE_WL = "1";
+  };  
+  
+  programs.ssh = {
+    startAgent = true;
+    askPassword = "${pkgs.lxqt.lxqt-openssh-askpass}/bin/lxqt-openssh-askpass";
+  };
+
+  environment.systemPackages = with pkgs; [
+    lxqt.lxqt-openssh-askpass
+  ];
+
   users.users = {
     lennylizowzskiy = {
       isNormalUser = true;

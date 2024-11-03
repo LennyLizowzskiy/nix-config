@@ -10,5 +10,4 @@ update-flake:
 switch:
     sudo nixos-rebuild switch --option eval-cache false --show-trace --flake .
 
-update:
-    update-flake switch
+update: update-flake switch

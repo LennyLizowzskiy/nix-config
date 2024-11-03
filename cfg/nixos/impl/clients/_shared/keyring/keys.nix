@@ -1,8 +1,6 @@
 { pkgs, lib, ... }:
 
 {
-  # services.openssh.enable = true;
-  # services.openssh.settings.PasswordAuthentication = false;
   programs.ssh.startAgent = lib.mkForce true;
   security.pam.sshAgentAuth.enable = true;
 

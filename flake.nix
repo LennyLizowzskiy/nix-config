@@ -114,6 +114,7 @@
 
         (f: p: {
           clang = p.lib.hiPrio p.clang; # fix collisions with gcc
+          musl = p.lib.lowPrio p.musl;
 
           nix-alien = nix-alien.packages.${p.system}.nix-alien;
 
@@ -123,6 +124,8 @@
 
           # nix = f.stable.nix;
           # nixos-rebuild = f.stable.nixos-rebuild;
+
+          vscode = (p.vscode.override { commandLineArgs = "--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations"; });
         })
       ];
     in
