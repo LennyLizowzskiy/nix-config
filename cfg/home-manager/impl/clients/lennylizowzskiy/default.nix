@@ -89,14 +89,11 @@
     controlPersist = "15m";
 
     extraConfig = ''
-      Host *
-          IdentityAgent none
-          IdentitiesOnly yes
-
-      Host github.com
-          User git
-          IdentityFile ~/.ssh/id_ed25519_sk_355
-          IdentityFile ~/.ssh/id_ed25519_sk_370
-      '';
+    Host *
+      IdentityAgent none
+      IdentitiesOnly yes
+      # IdentityFile ~/.ssh/id_ed25519_sk_355
+      IdentityFile ~/.ssh/id_ed25519_sk_370
+    '';
   };
 }
