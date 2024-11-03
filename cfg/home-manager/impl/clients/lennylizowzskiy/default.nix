@@ -80,4 +80,23 @@
       # commit.gpgsign = true;
     };
   };
+
+  programs.ssh = {
+    enable = true;
+
+    addKeysToAgent = "confirm";
+    compression = true;
+    controlPersist = "15m";
+
+    extraConfig = ''
+      Host *
+          IdentityAgent none
+          IdentitiesOnly yes
+
+      Host github.com
+          User git
+          IdentityFile ~/.ssh/id_ed25519_sk_355
+          IdentityFile ~/.ssh/id_ed25519_sk_370
+      '';
+  };
 }
