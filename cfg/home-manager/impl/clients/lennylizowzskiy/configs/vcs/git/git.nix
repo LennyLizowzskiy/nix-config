@@ -36,6 +36,12 @@
       "vcs.xml"
       "lint/"
       ".DS_Store"
+      "dist/"
+      "downloads/"
+      "*.db"
+      "*.sqlite*"
+      ".env"
+      "env/"
     ];
 
     extraConfig = {

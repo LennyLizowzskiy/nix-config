@@ -26,14 +26,16 @@ if (mainConfig.local.de == "niri") then
       grim
       slurp
       brightnessctl
+      libnotify
+      wireplumber
     ];
 
     programs.niri = {
-      config = null;
-      #   let
-      #     cfgTxt = "";
-      #   in
-      #   "${cfgTxt}\n${(builtins.readFile ./config.kdl)}";
+      config =
+        let
+          cfgTxt = "";
+        in
+        "${cfgTxt}\n\n${(builtins.readFile ./config.kdl)}";
     };
   }
 else

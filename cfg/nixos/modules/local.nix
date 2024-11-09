@@ -115,6 +115,10 @@ in
           abort "invalid local.shell"
       );
 
+      environment.systemPackages = [
+        term
+      ];
+
       # Hostname
       networking.hostName = cfg.hostname;
 

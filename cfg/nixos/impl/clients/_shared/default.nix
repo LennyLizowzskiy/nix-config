@@ -17,7 +17,7 @@
     ./nix/nh.nix
     ./nix/nix-alien.nix
     ./nix/nix.nix
-    ./proxy/shadowsocks.nix
+    # ./proxy/shadowsocks.nix
     ./ui/fonts.nix
     ./ui/graphics.nix
     ./ui/gtk-fix.nix
@@ -43,16 +43,15 @@
     ./qmk.nix
     ./steam.nix
     ./sudo.nix
-    ./waydroid.nix
+    # ./waydroid.nix
     ./wireshark.nix
     ./xserver.nix
   ];
 
   environment.variables = {
     QT_QPA_PLATFORM = "wayland";
-    NIXOS_OZONE_WL = "1";
-  };  
-  
+  };
+
   programs.ssh = {
     startAgent = true;
     enableAskPassword = true;
@@ -61,6 +60,7 @@
 
   environment.systemPackages = with pkgs; [
     lxqt.lxqt-openssh-askpass
+    devenv
   ];
 
   users.users = {
@@ -88,7 +88,7 @@
     };
   };
 
-  users.groups.lennylizowzskiy = {};
+  users.groups.lennylizowzskiy = { };
 
   nix.settings.trusted-users = [
     "lennylizowzskiy"

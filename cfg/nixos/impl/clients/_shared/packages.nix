@@ -56,7 +56,7 @@
     rustscan
     # systemctl-tui
     # magika
-    tailspin
+    # tailspin
     # systeroid
     fselect
     # floorp
@@ -100,7 +100,6 @@
     figma-linux
     warp-terminal
     vesktop
-    figma-linux
     gimp
     inkscape-with-extensions
     nicotine-plus

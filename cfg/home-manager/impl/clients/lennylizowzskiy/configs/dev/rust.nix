@@ -41,33 +41,33 @@
     bacon
     cargo-apk
     # cargo-appimage
-    cargo-auditable
+    # cargo-auditable
     cargo-autoinherit
     cargo-bloat
     cargo-bundle-licenses
-    cargo-cache
+    # cargo-cache
     cargo-careful
     cargo-crev
     cargo-chef
     # cargo-clone
-    cargo-codspeed
-    cargo-cross
-    cargo-deb
+    # cargo-codspeed
+    # cargo-cross
+    # cargo-deb
     cargo-deny
-    cargo-dist
-    cargo-expand
+    # cargo-dist
+    # cargo-expand
     cargo-features-manager
     # cargo-ft
-    cargo-fuzz
+    # cargo-fuzz
     cargo-generate
     cargo-hack
-    cargo-i18n
+    # cargo-i18n
     # cargo-info
     # cargo-information
-    cargo-insta
+    # cargo-insta
     cargo-license
     cargo-limit
-    cargo-lock
+    # cargo-lock
     cargo-make
     cargo-mobile2
     cargo-modules
@@ -78,18 +78,18 @@
     cargo-pgo
     cargo-release
     cargo-semver-checks
-    cargo-show-asm
-    cargo-sweep
-    cargo-swift
-    cargo-tarpaulin
+    # cargo-show-asm
+    # cargo-sweep
+    # cargo-swift
+    # cargo-tarpaulin
     cargo-update
     cargo-wasi
     cargo-watch
-    cargo-whatfeatures
+    # cargo-whatfeatures
     cargo-wipe
-    cargo-wizard
+    # cargo-wizard
     cargo-wasi
     cargo-xwin
-    cargo-zigbuild
+    # cargo-zigbuild
   ];
 }

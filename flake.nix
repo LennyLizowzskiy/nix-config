@@ -112,7 +112,7 @@
         android-nixpkgs.overlays.default
         rust-overlay.overlays.default
 
-        (f: p: {
+        (f: p: rec {
           clang = p.lib.hiPrio p.clang; # fix collisions with gcc
           musl = p.lib.lowPrio p.musl;
 
@@ -126,6 +126,7 @@
           # nixos-rebuild = f.stable.nixos-rebuild;
 
           vscode = (p.vscode.override { commandLineArgs = "--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations"; });
+          yazi = stable.yazi;
         })
       ];
     in
