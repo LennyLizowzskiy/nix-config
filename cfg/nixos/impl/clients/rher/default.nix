@@ -1,7 +1,6 @@
 {
   pkgs,
   inputs,
-  externalDir,
   ...
 }:
 
@@ -40,9 +39,11 @@
     "nodiratime"
     "discard"
   ];
+
+  systemd.tmpfiles.rules = [ "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}" ];
   boot.kernelParams = [
     "mem_sleep_default=deep"
-    "pcie_aspm.policy=powersupersave"
+    # "pcie_aspm.policy=powersupersave"
   ];
 
   environment.variables = {
@@ -55,7 +56,7 @@
   hardware.graphics.extraPackages = with pkgs; [
     vaapiVdpau
     libvdpau-va-gl
-    # rocmPackages.clr.icd
+    rocmPackages.clr.icd
     amdvlk
   ];
 
