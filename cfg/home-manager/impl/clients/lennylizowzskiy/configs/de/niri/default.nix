@@ -31,11 +31,7 @@ if (mainConfig.local.de == "niri") then
     ];
 
     programs.niri = {
-      config =
-        let
-          cfgTxt = "";
-        in
-        "${cfgTxt}\n\n${(builtins.readFile ./config.kdl)}";
+      config = "${builtins.readFile ./config.kdl}";
     };
   }
 else

@@ -5,12 +5,14 @@ theme = "autumn_night_variant"
 line-number = "relative"
 auto-format = false
 # mouse = false
-shell = ["bash", "-c"]
+shell = ["dash", "-c"]
 default-line-ending = "lf"
 # color-modes = true
 # auto-save = true
 completion-replace = true
 bufferline = "multiple"
+completion-timeout = 50
+idle-timeout = 200
 
 [editor.auto-save]
 focus-lost = true
@@ -58,6 +60,9 @@ skip-levels = 1
 [editor.soft-wrap]
 enable = true
 
-
 [keys.normal]
+o = [":o", "insert_register"]
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+
+[keys.normal.space]
+F = "file_picker_in_current_buffer_directory"
