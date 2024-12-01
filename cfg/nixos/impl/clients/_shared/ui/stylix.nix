@@ -43,8 +43,8 @@
       };
 
       monospace = {
-        package = pkgs.nerdfonts.override { fonts = [ "IBMPlexMono" ]; };
-        name = "BlexMono Nerd Font";
+        package = pkgs.nerd-fonts.lilex;
+        name = "Lilex Nerd Font";
       };
 
       # monospace = {

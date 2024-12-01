@@ -157,7 +157,7 @@
                 (
                   { pkgs, ... }:
                   {
-                    nix.package = pkgs.lix;
+                    # nix.package = pkgs.lix;
                     nixpkgs.overlays = sharedOverlays;
                   }
                 )

@@ -27,7 +27,7 @@
 
       substituters = [
         "https://nix-community.cachix.org"        
-        "https://cache.garnix.io"
+        # "https://cache.garnix.io"
         "https://numtide.cachix.org"
         "https://cosmic.cachix.org"        
         "https://crane.cachix.org"

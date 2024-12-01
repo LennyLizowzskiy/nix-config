@@ -53,7 +53,8 @@
       caladea
       carlito
 
-      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+      nerd-fonts.symbols-only
+      nerd-fonts.lilex
     ];
 
     fontconfig = {
