@@ -2,7 +2,7 @@
 
 {
   programs.atuin = {
-    enable = true;
+    enable = false;
     settings = {
       update_check = false;
       style = "compact";
